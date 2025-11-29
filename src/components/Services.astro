@@ -1,0 +1,116 @@
+---
+const services = [
+  {
+    step: '01',
+    title: 'AI Education & Awareness',
+    description: 'Comprehensive GenAI training programs tailored to your team. From introductory workshops to advanced implementation courses.',
+    details: ['Team workshops', 'Executive briefings', 'Hands-on training', 'YouTube channel content'],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>`
+  },
+  {
+    step: '02',
+    title: 'Use Case Identification',
+    description: 'Strategic analysis of your business processes to identify high-impact AI opportunities with the best ROI potential.',
+    details: ['Process audit', 'Opportunity mapping', 'ROI analysis', 'Priority ranking'],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>`
+  },
+  {
+    step: '03',
+    title: 'AI Systems Implementation',
+    description: 'End-to-end development and deployment of custom AI solutions integrated seamlessly with your existing infrastructure.',
+    details: ['Custom development', 'API integrations', 'Testing & QA', 'Deployment'],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>`
+  },
+  {
+    step: '04',
+    title: 'Optimization & Maintenance',
+    description: 'Continuous monitoring, improvement, and support to ensure your AI systems perform optimally and evolve with your business.',
+    details: ['Performance monitoring', 'Model updates', 'Ongoing support', 'Strategy reviews'],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+    </svg>`
+  },
+];
+---
+
+<section class="py-24 lg:py-32 bg-charcoal text-cream relative overflow-hidden" id="services">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <div class="w-12 h-px bg-accent"></div>
+        <span class="text-sm font-medium text-stone-light uppercase tracking-widest">Our Process</span>
+        <div class="w-12 h-px bg-accent"></div>
+      </div>
+      <h2 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
+        From vision to <em class="text-accent">reality</em>
+      </h2>
+      <p class="text-lg text-stone-light">
+        A proven 4-step methodology that transforms your AI aspirations into tangible business outcomes.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+      {services.map((service, index) => (
+        <div
+          class="group relative bg-charcoal-light rounded-2xl p-8 lg:p-10 border border-white/5 hover:border-accent/30 transition-all duration-500"
+        >
+          <!-- Step indicator -->
+          <div class="flex items-start justify-between mb-8">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-charcoal transition-all duration-300">
+                <Fragment set:html={service.icon} />
+              </div>
+              <span class="font-display text-5xl text-white/10 group-hover:text-accent/20 transition-colors duration-300">
+                {service.step}
+              </span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <h3 class="font-display text-2xl lg:text-3xl mb-4 text-white group-hover:text-accent transition-colors duration-300">
+            {service.title}
+          </h3>
+          <p class="text-stone-light leading-relaxed mb-6">
+            {service.description}
+          </p>
+
+          <!-- Details list -->
+          <ul class="flex flex-wrap gap-3">
+            {service.details.map((detail) => (
+              <li class="text-sm px-4 py-2 bg-white/5 rounded-full text-stone-light">
+                {detail}
+              </li>
+            ))}
+          </ul>
+
+          <!-- Corner accent -->
+          <div class="absolute bottom-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-accent/30 rounded-br-xl"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <a href="#contact" class="inline-flex items-center gap-3 text-accent hover:text-white transition-colors duration-300 group">
+        <span class="text-lg font-medium">Start your AI journey</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

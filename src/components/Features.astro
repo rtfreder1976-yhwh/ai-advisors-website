@@ -1,0 +1,87 @@
+---
+const features = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+    </svg>`,
+    title: 'Extensive Experience',
+    description: 'Proven implementations across industries with deep expertise in AI solutions that deliver measurable results.',
+    number: '01'
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>`,
+    title: 'Practical Approach',
+    description: 'Focus on real benefits and concrete implementations. No theoretical fluff—just actionable strategies that work.',
+    number: '02'
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>`,
+    title: 'Simple Language',
+    description: 'Complex AI concepts translated into clear, understandable terms. Step-by-step guidance through every phase.',
+    number: '03'
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+    </svg>`,
+    title: 'Flexibility',
+    description: 'Solutions for both AI newcomers and advanced companies. Tailored approaches that match your unique needs and budget.',
+    number: '04'
+  },
+];
+---
+
+<section class="py-24 lg:py-32 bg-white relative overflow-hidden" id="why">
+  <!-- Background decoration -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cream/50 to-transparent pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-16 lg:mb-24">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-px bg-accent"></div>
+        <span class="text-sm font-medium text-stone uppercase tracking-widest">Why Choose Us</span>
+      </div>
+      <h2 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+        Built for <em>results</em>
+      </h2>
+      <p class="text-lg text-stone">
+        We combine deep technical expertise with practical business acumen to deliver AI solutions that actually work.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+      {features.map((feature, index) => (
+        <div
+          class="group relative bg-cream rounded-2xl p-8 lg:p-10 card-hover"
+        >
+          <!-- Number -->
+          <span class="absolute top-8 right-8 font-display text-6xl text-stone-light/30 select-none">
+            {feature.number}
+          </span>
+
+          <!-- Icon -->
+          <div class="w-14 h-14 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-6 transition-transform duration-300 group-hover:scale-110">
+            <Fragment set:html={feature.icon} />
+          </div>
+
+          <!-- Content -->
+          <h3 class="font-display text-2xl mb-3 text-charcoal">
+            {feature.title}
+          </h3>
+          <p class="text-stone leading-relaxed">
+            {feature.description}
+          </p>
+
+          <!-- Hover accent line -->
+          <div class="absolute bottom-0 left-8 right-8 h-0.5 bg-accent scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

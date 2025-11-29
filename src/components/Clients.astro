@@ -1,0 +1,44 @@
+---
+// Client logos represented as text since we don't have actual logos
+const clients = [
+  { name: 'World Bank', abbrev: 'WB' },
+  { name: 'Energy House', abbrev: 'EH' },
+  { name: 'CFO Pro', abbrev: 'CFO' },
+  { name: 'TechVenture', abbrev: 'TV' },
+  { name: 'DataFlow', abbrev: 'DF' },
+  { name: 'SmartScale', abbrev: 'SS' },
+];
+---
+
+<section class="py-20 bg-white border-y border-stone-light/20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <p class="text-sm font-medium text-stone uppercase tracking-widest">Trusted by industry leaders</p>
+    </div>
+
+    <!-- Logo carousel -->
+    <div class="relative overflow-hidden">
+      <!-- Gradient fades -->
+      <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+      <!-- Scrolling container -->
+      <div class="flex logo-scroll">
+        <!-- First set -->
+        {[...clients, ...clients].map((client) => (
+          <div class="flex-shrink-0 px-8 lg:px-12">
+            <div class="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-cream rounded-lg flex items-center justify-center">
+                  <span class="font-display text-sm text-charcoal">{client.abbrev}</span>
+                </div>
+                <span class="text-charcoal font-medium whitespace-nowrap">{client.name}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

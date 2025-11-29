@@ -1,0 +1,143 @@
+---
+const navLinks = [
+  { href: '#services', label: 'Services' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 bg-charcoal rounded-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+        <span class="text-cream font-display text-xl">Ai</span>
+      </div>
+      <span class="font-display text-xl tracking-tight hidden sm:block">AI Advisors</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium text-stone hover:text-charcoal transition-colors duration-200 relative group"
+        >
+          {link.label}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      ))}
+      <a
+        href="#contact"
+        class="btn-primary text-sm px-6 py-3"
+      >
+        <span>Book Consultation</span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+      id="mobile-menu-btn"
+      aria-label="Toggle menu"
+    >
+      <span class="w-6 h-0.5 bg-charcoal transition-all duration-300" id="line1"></span>
+      <span class="w-6 h-0.5 bg-charcoal transition-all duration-300" id="line2"></span>
+      <span class="w-4 h-0.5 bg-charcoal transition-all duration-300 ml-auto" id="line3"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    class="md:hidden fixed inset-0 bg-cream/98 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300"
+    id="mobile-menu"
+  >
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      {navLinks.map((link, index) => (
+        <a
+          href={link.href}
+          class="text-3xl font-display text-charcoal hover:text-accent transition-colors duration-200 mobile-link"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="#contact"
+        class="btn-primary text-lg px-8 py-4 mt-4 mobile-link"
+        style="animation-delay: 0.3s"
+      >
+        <span>Book Consultation</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  header.scrolled {
+    background-color: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 rgba(26, 26, 26, 0.05);
+  }
+
+  #mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #mobile-menu.active .mobile-link {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  #mobile-menu-btn.active #line1 {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  #mobile-menu-btn.active #line2 {
+    opacity: 0;
+  }
+
+  #mobile-menu-btn.active #line3 {
+    transform: rotate(-45deg) translate(3px, -3px);
+    width: 1.5rem;
+  }
+</style>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    mobileMenu?.classList.toggle('active');
+    document.body.style.overflow = mobileMenu?.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // Close mobile menu on link click
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenuBtn?.classList.remove('active');
+      mobileMenu?.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
