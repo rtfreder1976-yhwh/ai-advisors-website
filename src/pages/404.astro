@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found | AI Advisors" description="The page you're looking for doesn't exist.">
+  <div class="min-h-screen flex items-center justify-center bg-cream">
+    <div class="text-center px-6">
+      <!-- 404 Number -->
+      <h1 class="font-display text-8xl md:text-9xl text-charcoal/10 mb-4">404</h1>
+
+      <!-- Message -->
+      <h2 class="heading-display text-3xl md:text-4xl mb-4 text-charcoal">
+        Page not <em>found</em>
+      </h2>
+      <p class="text-stone text-lg mb-8 max-w-md mx-auto">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+
+      <!-- CTA -->
+      <a href="/" class="btn-primary inline-flex">
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </div>
+</Layout>

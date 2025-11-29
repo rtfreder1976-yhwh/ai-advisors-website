@@ -4,12 +4,18 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
 const {
-  title = 'AI Advisors | AI Consulting for Business Growth',
-  description = 'Transform your business with intelligent AI solutions. Expert consulting, implementation, and training for Polish SMEs.'
+  title = 'Singing River AI | AI Consulting for Business Growth',
+  description = 'Transform your business with intelligent AI solutions. Expert consulting, implementation, and training for businesses.',
+  image = '/og-image.svg'
 } = Astro.props;
+
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -19,14 +25,80 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Open Graph -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Singing River AI" />
+    <meta name="keywords" content="AI consulting, artificial intelligence, business automation, AI implementation, machine learning, AI training, Alabama" />
 
     <title>{title}</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Singing River AI",
+      "description": description,
+      "url": "https://singingriverai.com",
+      "logo": "https://singingriverai.com/favicon.svg",
+      "image": "https://singingriverai.com/og-image.svg",
+      "telephone": "+1-256-740-3195",
+      "email": "info@singingriverai.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2784 Underwood Mountain Road",
+        "addressLocality": "Tuscumbia",
+        "addressRegion": "AL",
+        "postalCode": "35674",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.7312",
+        "longitude": "-87.7025"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "sameAs": [],
+      "founder": {
+        "@type": "Person",
+        "name": "Todd Frederickson",
+        "jobTitle": "AI Advisor & Founder"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "serviceType": ["AI Consulting", "AI Implementation", "AI Training", "Business Automation"]
+    })} />
   </head>
   <body class="grain-overlay">
     <slot />

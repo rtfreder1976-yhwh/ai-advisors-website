@@ -1,0 +1,6 @@
+# Robots.txt for Singing River AI
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://singingriverai.com/sitemap-index.xml
