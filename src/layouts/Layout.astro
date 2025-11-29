@@ -12,7 +12,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {
   title = 'Singing River AI | AI Consulting for Business Growth',
   description = 'Transform your business with intelligent AI solutions. Expert consulting, implementation, and training for businesses.',
-  image = '/og-image.svg'
+  image = '/og-image.png'
 } = Astro.props;
 
 const ogImageURL = new URL(image, Astro.site);
@@ -56,10 +56,10 @@ const ogImageURL = new URL(image, Astro.site);
 
     <title>{title}</title>
 
-    <!-- JSON-LD Structured Data - Organization -->
+    <!-- JSON-LD Structured Data - LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "@id": "https://singingriverai.com/#organization",
       "name": "Singing River AI",
       "legalName": "Singing River AI",

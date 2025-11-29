@@ -21,7 +21,7 @@ interface Props {
 const { title, description, serviceName, serviceDescription, serviceCategory, services, icon } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = new URL('/og-image.svg', Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
 ---
 
 <!doctype html>
