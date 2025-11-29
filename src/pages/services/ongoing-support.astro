@@ -1,0 +1,44 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  {
+    name: "AI System Optimization",
+    description: "Continuous monitoring and improvement of your AI systems to ensure peak performance and evolving business alignment."
+  },
+  {
+    name: "Maintenance & Updates",
+    description: "Regular updates, patches, and maintenance to keep your AI solutions running smoothly and securely."
+  },
+  {
+    name: "Performance Monitoring",
+    description: "Proactive monitoring dashboards and alerts to track AI system health, accuracy, and business impact."
+  },
+  {
+    name: "Model Retraining",
+    description: "Periodic retraining of AI models with new data to maintain accuracy and adapt to changing business conditions."
+  },
+  {
+    name: "Technical Support",
+    description: "Responsive support for troubleshooting, questions, and technical assistance when you need it."
+  },
+  {
+    name: "Quarterly Strategy Reviews",
+    description: "Regular check-ins to assess AI performance, identify new opportunities, and plan future enhancements."
+  }
+];
+
+const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+</svg>`;
+---
+
+<ServiceLayout
+  title="Ongoing Support & Optimization | Singing River AI"
+  description="Continuous AI support and optimization services. We ensure your AI systems perform optimally and evolve with your business needs."
+  serviceName="Ongoing Support & Optimization"
+  serviceDescription="Continuous monitoring, improvement, and support to ensure your AI systems perform optimally and evolve with your business. We're your long-term partner in AI success."
+  serviceCategory="Support Services"
+  services={services}
+  icon={icon}
+/>

@@ -1,0 +1,44 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  {
+    name: "AI Team Workshops",
+    description: "Hands-on training sessions to educate your team on AI fundamentals, practical applications, and best practices for implementation."
+  },
+  {
+    name: "Executive AI Briefings",
+    description: "Strategic sessions for leadership teams covering AI opportunities, risk assessment, and implementation roadmaps tailored to your industry."
+  },
+  {
+    name: "Custom Training Programs",
+    description: "Tailored educational programs designed for your team's specific needs, skill levels, and industry requirements."
+  },
+  {
+    name: "AI Tools Certification",
+    description: "Structured certification programs to ensure your team masters the AI tools and platforms relevant to your business."
+  },
+  {
+    name: "Ongoing Learning Support",
+    description: "Continuous access to updated materials, Q&A sessions, and resources as AI technology evolves."
+  },
+  {
+    name: "Train-the-Trainer Programs",
+    description: "Empower internal champions to lead AI education initiatives within your organization."
+  }
+];
+
+const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+</svg>`;
+---
+
+<ServiceLayout
+  title="AI Education & Training | Singing River AI"
+  description="Comprehensive AI training programs for your team. From introductory workshops to advanced implementation courses, we help your organization build AI expertise."
+  serviceName="AI Education & Training"
+  serviceDescription="Comprehensive GenAI training programs tailored to your team. From introductory workshops to advanced implementation courses, we build the AI expertise your organization needs to thrive."
+  serviceCategory="Training Services"
+  services={services}
+  icon={icon}
+/>

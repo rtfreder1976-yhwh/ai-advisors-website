@@ -1,0 +1,45 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  {
+    name: "Custom AI Solutions",
+    description: "End-to-end development and deployment of AI solutions tailored specifically to your business requirements and workflows."
+  },
+  {
+    name: "AI Integration Services",
+    description: "Seamless integration of AI tools and capabilities with your existing systems, software, and business processes."
+  },
+  {
+    name: "Process Automation",
+    description: "Intelligent automation solutions that streamline operations, reduce manual work, and improve efficiency across your organization."
+  },
+  {
+    name: "Chatbot & Virtual Assistant Development",
+    description: "Custom conversational AI solutions for customer service, internal support, and business process automation."
+  },
+  {
+    name: "Data Pipeline Setup",
+    description: "Design and implementation of data infrastructure needed to power your AI initiatives effectively."
+  },
+  {
+    name: "Testing & Quality Assurance",
+    description: "Rigorous testing protocols to ensure your AI solutions perform reliably and meet your business requirements."
+  }
+];
+
+const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>`;
+---
+
+<ServiceLayout
+  title="AI Implementation | Singing River AI"
+  description="End-to-end AI implementation services. We build and deploy custom AI solutions integrated seamlessly with your existing infrastructure."
+  serviceName="AI Implementation"
+  serviceDescription="End-to-end development and deployment of custom AI solutions integrated seamlessly with your existing infrastructure. From concept to launch, we handle the technical complexity so you can focus on results."
+  serviceCategory="Implementation Services"
+  services={services}
+  icon={icon}
+/>
