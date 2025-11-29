@@ -56,14 +56,21 @@ const ogImageURL = new URL(image, Astro.site);
 
     <title>{title}</title>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "Organization",
+      "@id": "https://singingriverai.com/#organization",
       "name": "Singing River AI",
+      "legalName": "Singing River AI",
       "description": description,
       "url": "https://singingriverai.com",
-      "logo": "https://singingriverai.com/favicon.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://singingriverai.com/favicon.svg",
+        "width": "512",
+        "height": "512"
+      },
       "image": "https://singingriverai.com/og-image.svg",
       "telephone": "+1-256-740-3195",
       "email": "info@singingriverai.com",
@@ -81,23 +88,187 @@ const ogImageURL = new URL(image, Astro.site);
         "longitude": "-87.7025"
       },
       "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Invoice",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
       "sameAs": [],
       "founder": {
         "@type": "Person",
         "name": "Todd Frederickson",
-        "jobTitle": "AI Advisor & Founder"
+        "jobTitle": "Founder & AI Advisor"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United States"
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "State",
+          "name": "Alabama"
+        }
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Business Automation",
+        "AI Implementation",
+        "Digital Transformation",
+        "Process Optimization"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Consulting Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "AI Education & Training",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Team Workshops",
+                  "description": "Hands-on training sessions to educate your team on AI fundamentals and practical applications"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Executive AI Briefings",
+                  "description": "Strategic sessions for leadership on AI opportunities and implementation roadmaps"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom AI Training Programs",
+                  "description": "Tailored educational programs designed for your team's specific needs and industry"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "AI Strategy & Consulting",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Readiness Assessment",
+                  "description": "Comprehensive evaluation of your business processes to identify AI opportunities"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Use Case Identification",
+                  "description": "Strategic analysis to find high-impact AI opportunities with the best ROI potential"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Implementation Roadmap",
+                  "description": "Detailed planning and prioritization for your AI transformation journey"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "AI Implementation",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom AI Solutions",
+                  "description": "End-to-end development and deployment of AI solutions tailored to your business"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Integration Services",
+                  "description": "Seamless integration of AI tools with your existing systems and workflows"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Process Automation",
+                  "description": "Intelligent automation solutions to streamline operations and reduce manual work"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Ongoing Support",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI System Optimization",
+                  "description": "Continuous monitoring and improvement of your AI systems for peak performance"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Maintenance & Support",
+                  "description": "Ongoing technical support and updates to keep your AI solutions running smoothly"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    })} />
+
+    <!-- JSON-LD Structured Data - WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://singingriverai.com/#website",
+      "url": "https://singingriverai.com",
+      "name": "Singing River AI",
+      "description": "AI Consulting for Business Growth",
+      "publisher": {
+        "@id": "https://singingriverai.com/#organization"
+      }
+    })} />
+
+    <!-- JSON-LD Structured Data - WebPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": title,
+      "description": description,
+      "isPartOf": {
+        "@id": "https://singingriverai.com/#website"
       },
-      "serviceType": ["AI Consulting", "AI Implementation", "AI Training", "Business Automation"]
+      "about": {
+        "@id": "https://singingriverai.com/#organization"
+      }
     })} />
   </head>
   <body class="grain-overlay">
