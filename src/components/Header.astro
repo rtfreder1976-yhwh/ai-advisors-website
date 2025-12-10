@@ -10,6 +10,11 @@ const serviceLinks = [
   { href: '/services/ai-implementation', label: 'AI Implementation' },
   { href: '/services/ongoing-support', label: 'Ongoing Support' },
 ];
+
+const locationLinks = [
+  { href: '/huntsville-ai-consulting', label: 'Huntsville AI Consulting' },
+  { href: '/shoals-ai-consulting', label: 'Shoals AI Consulting' },
+];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
@@ -50,6 +55,28 @@ const serviceLinks = [
                 View All Services
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locations Dropdown -->
+      <div class="relative group/locations">
+        <button class="text-sm font-medium text-stone hover:text-charcoal transition-colors duration-200 flex items-center gap-1">
+          Locations
+          <svg class="w-4 h-4 transition-transform duration-200 group-hover/locations:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/locations:opacity-100 group-hover/locations:visible transition-all duration-200">
+          <div class="bg-white rounded-xl shadow-xl border border-stone-light/20 py-2 min-w-[240px]">
+            {locationLinks.map((link) => (
+              <a
+                href={link.href}
+                class="block px-4 py-2 text-sm text-stone hover:text-charcoal hover:bg-cream transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -102,11 +129,24 @@ const serviceLinks = [
           ))}
         </div>
       </div>
+      <div class="text-center mobile-link" style="animation-delay: 0.1s">
+        <p class="text-sm text-stone uppercase tracking-widest mb-3">Locations</p>
+        <div class="flex flex-col gap-2">
+          {locationLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-xl font-display text-charcoal hover:text-accent transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
       {navLinks.map((link, index) => (
         <a
           href={link.href}
           class="text-3xl font-display text-charcoal hover:text-accent transition-colors duration-200 mobile-link"
-          style={`animation-delay: ${(index + 1) * 0.1}s`}
+          style={`animation-delay: ${(index + 2) * 0.1}s`}
         >
           {link.label}
         </a>
@@ -114,7 +154,7 @@ const serviceLinks = [
       <a
         href="/#contact"
         class="btn-primary text-lg px-8 py-4 mt-4 mobile-link"
-        style="animation-delay: 0.4s"
+        style="animation-delay: 0.5s"
       >
         <span>Book Consultation</span>
       </a>

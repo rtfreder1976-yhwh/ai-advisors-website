@@ -1,0 +1,1094 @@
+{
+  "schemaInstructions": "Update each page's JSON-LD schema with the corresponding schema below. Replace existing schema or add if not present. All @id references should remain consistent across pages.",
+  
+  "homepage": {
+    "description": "Schema for the homepage (index.astro or equivalent)",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://singingriverai.com/#organization",
+          "name": "Singing River AI",
+          "url": "https://singingriverai.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://singingriverai.com/logo.png",
+            "width": 300,
+            "height": 300
+          },
+          "image": "https://singingriverai.com/logo.png",
+          "description": "Practical AI consulting for small businesses in North Alabama. From education to implementation, we deliver affordable AI solutions that actually work.",
+          "telephone": "(256) 740-3195",
+          "email": "info@singingriverai.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuscumbia",
+            "addressRegion": "AL",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Huntsville",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Florence",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Muscle Shoals",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Tuscumbia",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Sheffield",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Decatur",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Athens",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "North Alabama"
+            }
+          ],
+          "founder": {
+            "@id": "https://singingriverai.com/#founder"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://singingriverai.com/#localbusiness",
+          "name": "Singing River AI",
+          "url": "https://singingriverai.com",
+          "telephone": "(256) 740-3195",
+          "email": "info@singingriverai.com",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuscumbia",
+            "addressRegion": "AL",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.7312,
+            "longitude": -87.7025
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Huntsville",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Florence",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "North Alabama"
+            }
+          ],
+          "serviceType": [
+            "AI Consulting",
+            "AI Training",
+            "AI Implementation",
+            "Business Automation"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Consulting Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Free 30-Minute Consultation",
+                  "description": "Discuss your AI needs and explore possibilities"
+                },
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://singingriverai.com/#founder",
+          "name": "Todd Frederickson",
+          "jobTitle": "Founder & AI Advisor",
+          "description": "AI consultant with 24+ years in technology and business transformation, specializing in practical AI solutions for small businesses.",
+          "worksFor": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Business Automation",
+            "AI Implementation",
+            "Small Business Consulting",
+            "CRM Automation",
+            "ChatGPT",
+            "Generative AI",
+            "Process Optimization"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://singingriverai.com/#website",
+          "url": "https://singingriverai.com",
+          "name": "Singing River AI",
+          "description": "AI Consulting for Small Business",
+          "publisher": {
+            "@id": "https://singingriverai.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/#webpage",
+          "url": "https://singingriverai.com",
+          "name": "Singing River AI | AI Consulting for Small Business",
+          "description": "Practical AI consulting for small businesses in North Alabama. Affordable AI strategy, training, and implementation that delivers real results.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://singingriverai.com/logo.png"
+          }
+        }
+      ]
+    }
+  },
+
+  "aiConsulting": {
+    "description": "Schema for /services/ai-consulting page",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://singingriverai.com/services/ai-consulting/#service",
+          "name": "AI Strategy & Consulting",
+          "description": "Strategic analysis of your business processes to identify high-impact AI opportunities with the best ROI potential. Includes process audit, opportunity mapping, ROI analysis, and priority ranking.",
+          "provider": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "North Alabama"
+          },
+          "serviceType": "AI Consulting",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "description": "Contact for custom quote. Free 30-minute consultation available."
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Consulting Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Process Audit"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Opportunity Mapping"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "ROI Analysis"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Priority Ranking"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/services/ai-consulting/#webpage",
+          "url": "https://singingriverai.com/services/ai-consulting",
+          "name": "AI Strategy & Consulting | Singing River AI",
+          "description": "Strategic AI consulting for small businesses. Process audits, opportunity mapping, and ROI analysis to identify your best AI opportunities.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/services/ai-consulting/#service"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/services/ai-consulting/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://singingriverai.com/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "AI Strategy & Consulting",
+              "item": "https://singingriverai.com/services/ai-consulting"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://singingriverai.com/services/ai-consulting/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is AI consulting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI consulting helps businesses identify opportunities to use artificial intelligence to improve operations, reduce costs, and increase efficiency. It includes analyzing your current processes, finding high-impact AI use cases, and creating a roadmap for implementation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does AI consulting cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI consulting costs vary based on project scope. Singing River AI offers affordable solutions for small businesses, starting with a free 30-minute consultation to discuss your needs and provide a custom quote."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does an AI consulting engagement take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Initial strategy and assessment typically takes 2-4 weeks. Full implementation timelines depend on the complexity of your project, ranging from a few weeks for simple automations to several months for comprehensive AI systems."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "aiTraining": {
+    "description": "Schema for /services/ai-training page",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://singingriverai.com/services/ai-training/#service",
+          "name": "AI Education & Training",
+          "description": "Comprehensive GenAI training programs tailored to your team. From introductory workshops to advanced implementation courses, including team workshops, executive briefings, and hands-on training.",
+          "provider": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "North Alabama"
+          },
+          "serviceType": "AI Training",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "description": "Contact for custom quote. Free 30-minute consultation available."
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Training Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Team Workshops"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Executive Briefings"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Hands-on Training"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "ChatGPT Training for Teams"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/services/ai-training/#webpage",
+          "url": "https://singingriverai.com/services/ai-training",
+          "name": "AI Education & Training | Singing River AI",
+          "description": "AI training for employees and teams. Workshops, executive briefings, and hands-on ChatGPT training for your business.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/services/ai-training/#service"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/services/ai-training/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://singingriverai.com/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "AI Education & Training",
+              "item": "https://singingriverai.com/services/ai-training"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://singingriverai.com/services/ai-training/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does AI training for employees include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI training includes hands-on workshops covering tools like ChatGPT, practical business applications, prompt engineering, and best practices for using AI safely and effectively in the workplace."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long is a typical AI training workshop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Workshops range from half-day introductory sessions to multi-day comprehensive programs, depending on your team's needs and current AI literacy level."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer AI training in Huntsville?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide on-site AI training throughout North Alabama including Huntsville, Florence, the Shoals area, Decatur, and Athens. Remote training is also available."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "aiImplementation": {
+    "description": "Schema for /services/ai-implementation page",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://singingriverai.com/services/ai-implementation/#service",
+          "name": "AI Systems Implementation",
+          "description": "End-to-end development and deployment of custom AI solutions integrated seamlessly with your existing infrastructure. Includes custom development, API integrations, testing & QA, and deployment.",
+          "provider": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "North Alabama"
+          },
+          "serviceType": "AI Implementation",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "description": "Contact for custom quote. Free 30-minute consultation available."
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Implementation Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom AI Development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "API Integrations"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "CRM Automation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Business Workflow Automation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Testing & Deployment"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/services/ai-implementation/#webpage",
+          "url": "https://singingriverai.com/services/ai-implementation",
+          "name": "AI Implementation Services | Singing River AI",
+          "description": "Custom AI implementation for small businesses. CRM automation, API integrations, workflow automation, and seamless deployment.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/services/ai-implementation/#service"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/services/ai-implementation/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://singingriverai.com/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "AI Implementation",
+              "item": "https://singingriverai.com/services/ai-implementation"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://singingriverai.com/services/ai-implementation/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does AI implementation include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI implementation includes custom development of AI solutions, integration with your existing systems (CRM, email, scheduling tools), thorough testing, deployment, and training your team to use the new systems effectively."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you integrate AI with my existing CRM?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we specialize in integrating AI automation with popular CRMs and business tools. This includes automated lead follow-up, customer communication workflows, and intelligent task automation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does AI implementation take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simple automations can be implemented in 1-2 weeks. More complex AI systems with multiple integrations typically take 4-8 weeks. We'll provide a detailed timeline during your free consultation."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "ongoingSupport": {
+    "description": "Schema for /services/ongoing-support page",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://singingriverai.com/services/ongoing-support/#service",
+          "name": "AI Optimization & Maintenance",
+          "description": "Continuous monitoring, improvement, and support to ensure your AI systems perform optimally and evolve with your business. Includes performance monitoring, model updates, ongoing support, and strategy reviews.",
+          "provider": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "North Alabama"
+          },
+          "serviceType": "AI Support",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "description": "Contact for custom quote. Free 30-minute consultation available."
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Support Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Performance Monitoring"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Model Updates"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Ongoing Support"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Strategy Reviews"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/services/ongoing-support/#webpage",
+          "url": "https://singingriverai.com/services/ongoing-support",
+          "name": "Ongoing AI Support & Optimization | Singing River AI",
+          "description": "Continuous AI support and optimization for your business. Performance monitoring, updates, and strategy reviews to keep your AI systems running smoothly.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/services/ongoing-support/#service"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/services/ongoing-support/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://singingriverai.com/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Ongoing Support",
+              "item": "https://singingriverai.com/services/ongoing-support"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://singingriverai.com/services/ongoing-support/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why do AI systems need ongoing support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI systems require maintenance as your business evolves, tools update, and new opportunities emerge. Ongoing support ensures your automations continue working smoothly and can be optimized based on real-world performance data."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's included in AI optimization?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI optimization includes monitoring system performance, updating prompts and workflows based on results, expanding automations to new use cases, and regular strategy reviews to identify new opportunities."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "locationPageHuntsville": {
+    "description": "Schema for /huntsville-ai-consulting page (CREATE THIS PAGE)",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://singingriverai.com/huntsville-ai-consulting/#localbusiness",
+          "name": "Singing River AI - Huntsville",
+          "description": "AI consulting services for Huntsville businesses. Practical AI strategy, training, and implementation for companies in Huntsville, Madison, and the Research Park area.",
+          "url": "https://singingriverai.com/huntsville-ai-consulting",
+          "telephone": "(256) 740-3195",
+          "email": "info@singingriverai.com",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuscumbia",
+            "addressRegion": "AL",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Huntsville",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Madison",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            }
+          ],
+          "serviceType": [
+            "AI Consulting",
+            "AI Training",
+            "AI Implementation",
+            "Business Automation"
+          ],
+          "parentOrganization": {
+            "@id": "https://singingriverai.com/#organization"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://singingriverai.com/huntsville-ai-consulting/#service",
+          "name": "AI Consulting in Huntsville, Alabama",
+          "description": "Practical AI consulting for Huntsville businesses. From defense contractors to tech startups, we help companies implement AI solutions that deliver measurable ROI.",
+          "provider": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Huntsville",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Alabama"
+            }
+          },
+          "serviceType": "AI Consulting"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/huntsville-ai-consulting/#webpage",
+          "url": "https://singingriverai.com/huntsville-ai-consulting",
+          "name": "AI Consulting in Huntsville, AL | Singing River AI",
+          "description": "Huntsville AI consultant serving Research Park, Madison, and North Alabama. Affordable AI strategy, training, and implementation for local businesses.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/huntsville-ai-consulting/#service"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/huntsville-ai-consulting/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Huntsville AI Consulting",
+              "item": "https://singingriverai.com/huntsville-ai-consulting"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://singingriverai.com/huntsville-ai-consulting/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you provide AI consulting in Huntsville?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Singing River AI provides AI consulting services throughout Huntsville, Madison, and the greater North Alabama region. We're based in the Shoals area, just 90 minutes from Huntsville, and offer both on-site and remote consulting."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What industries do you serve in Huntsville?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with a variety of Huntsville businesses including defense contractors, tech startups, professional services firms, and local small businesses. Our AI solutions are tailored to each industry's specific needs and compliance requirements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does AI consulting cost in Huntsville?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our AI consulting is priced affordably for small and medium businesses—not enterprise rates. We offer a free 30-minute consultation to discuss your needs and provide a custom quote based on your specific project."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "locationPageShoals": {
+    "description": "Schema for /shoals-ai-consulting page (CREATE THIS PAGE)",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://singingriverai.com/shoals-ai-consulting/#localbusiness",
+          "name": "Singing River AI - Shoals",
+          "description": "AI consulting services for the Shoals area. Local AI strategy, training, and implementation for businesses in Florence, Muscle Shoals, Tuscumbia, and Sheffield.",
+          "url": "https://singingriverai.com/shoals-ai-consulting",
+          "telephone": "(256) 740-3195",
+          "email": "info@singingriverai.com",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuscumbia",
+            "addressRegion": "AL",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Florence",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Muscle Shoals",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Tuscumbia",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Sheffield",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            }
+          ],
+          "serviceType": [
+            "AI Consulting",
+            "AI Training",
+            "AI Implementation",
+            "Business Automation"
+          ],
+          "parentOrganization": {
+            "@id": "https://singingriverai.com/#organization"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://singingriverai.com/shoals-ai-consulting/#service",
+          "name": "AI Consulting in the Shoals, Alabama",
+          "description": "Local AI consulting for Shoals businesses. Your neighbor in Tuscumbia providing practical AI solutions for Florence, Muscle Shoals, Sheffield, and surrounding areas.",
+          "provider": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Florence",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Muscle Shoals",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Alabama"
+              }
+            }
+          ],
+          "serviceType": "AI Consulting"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/shoals-ai-consulting/#webpage",
+          "url": "https://singingriverai.com/shoals-ai-consulting",
+          "name": "AI Consulting in Florence & the Shoals | Singing River AI",
+          "description": "Local Shoals AI consultant based in Tuscumbia. Affordable AI strategy, training, and implementation for businesses in Florence, Muscle Shoals, Sheffield, and Colbert County.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/shoals-ai-consulting/#service"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/shoals-ai-consulting/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Shoals AI Consulting",
+              "item": "https://singingriverai.com/shoals-ai-consulting"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://singingriverai.com/shoals-ai-consulting/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is there an AI consultant in the Shoals area?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Singing River AI is based right here in Tuscumbia, serving businesses throughout the Shoals including Florence, Muscle Shoals, Sheffield, and surrounding areas. We're your local AI consultant."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer in-person AI consulting in Florence?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. As a Shoals-based business, we're happy to meet in person at your office in Florence or anywhere in the Quad Cities. We also offer remote consulting for flexibility."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What size businesses do you work with in the Shoals?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in small and medium-sized businesses—the backbone of the Shoals economy. Whether you're a solo professional, a local service business, or a growing company, we have AI solutions scaled to your needs and budget."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "aboutPage": {
+    "description": "Schema for /about page (if separate from homepage)",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://singingriverai.com/about/#person",
+          "name": "Todd Frederickson",
+          "jobTitle": "Founder & AI Advisor",
+          "description": "AI consultant with 24+ years in technology and business transformation. Founder of Singing River AI, helping small businesses in North Alabama implement practical AI solutions.",
+          "image": "https://storage.googleapis.com/msgsndr/rUGlMZiYXaprhVgsYQFV/media/692fc3d482f4c57fd9c029bd.png",
+          "worksFor": {
+            "@id": "https://singingriverai.com/#organization"
+          },
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Business Automation",
+            "AI Implementation",
+            "Small Business Consulting",
+            "CRM Automation",
+            "ChatGPT",
+            "Generative AI",
+            "Process Optimization",
+            "Digital Transformation"
+          ],
+          "alumniOf": [],
+          "award": []
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/about/#webpage",
+          "url": "https://singingriverai.com/about",
+          "name": "About Todd Frederickson | Singing River AI",
+          "description": "Meet Todd Frederickson, founder of Singing River AI. 24+ years of technology experience bringing practical AI solutions to North Alabama small businesses.",
+          "isPartOf": {
+            "@id": "https://singingriverai.com/#website"
+          },
+          "about": {
+            "@id": "https://singingriverai.com/about/#person"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://singingriverai.com/about/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://singingriverai.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://singingriverai.com/about"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

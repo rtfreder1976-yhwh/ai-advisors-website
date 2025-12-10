@@ -1,0 +1,378 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "AI Consulting Florence AL & the Shoals | Your Local AI Consultant | Singing River AI";
+const description = "Local AI consultant based in Tuscumbia serving Florence, Muscle Shoals, Sheffield & the Quad Cities. Practical AI solutions for Shoals businesses. Free consultation.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const services = [
+  {
+    title: "AI Strategy & Consulting",
+    description: "Understanding your business—how you get customers, what takes up your time, where the frustrations are. Then identifying where AI can help most, with realistic expectations."
+  },
+  {
+    title: "AI Training & Workshops",
+    description: "Intro workshops, hands-on ChatGPT training, team sessions at your Florence or Muscle Shoals office, and one-on-one coaching. Plain English, no jargon."
+  },
+  {
+    title: "AI Implementation",
+    description: "Automated lead follow-up, system integrations, chatbots, appointment scheduling, review requests, and customer reactivation sequences."
+  },
+  {
+    title: "Ongoing Support",
+    description: "AI isn't a one-time project. As your business evolves, your automations need attention. Have an AI expert available without adding to payroll."
+  }
+];
+
+const industries = [
+  {
+    title: "Professional Services",
+    description: "Client intake automation, document preparation, scheduling, follow-up sequences, and invoice reminders for law firms, accountants, and consultants."
+  },
+  {
+    title: "Healthcare & Medical Practices",
+    description: "Appointment scheduling, patient follow-up, prescription refill handling, staff scheduling, and insurance verification. HIPAA-compliant solutions."
+  },
+  {
+    title: "Real Estate Agents",
+    description: "Instant lead response, automated drip campaigns, expired listing outreach, past client reactivation, and review request systems."
+  },
+  {
+    title: "Home Services & Contractors",
+    description: "Lead capture, estimate follow-up, review requests, seasonal campaigns, and appointment confirmations for electricians, plumbers, HVAC, and more."
+  },
+  {
+    title: "Retail & Hospitality",
+    description: "Customer loyalty automation, event promotion, review generation, reservation management, and personalized communications."
+  }
+];
+
+const faqs = [
+  {
+    question: "Is there an AI consultant in the Shoals area?",
+    answer: "Yes! Singing River AI is based right here in Tuscumbia, serving businesses throughout the Shoals including Florence, Muscle Shoals, Sheffield, and surrounding areas. We're your local AI consultant."
+  },
+  {
+    question: "Do you offer in-person AI consulting in Florence?",
+    answer: "Absolutely. As a Shoals-based business, we're happy to meet in person at your office in Florence or anywhere in the Quad Cities. We also offer remote consulting for flexibility."
+  },
+  {
+    question: "What size businesses do you work with in the Shoals?",
+    answer: "We specialize in small and medium-sized businesses—the backbone of the Shoals economy. Whether you're a solo professional, a local service business, or a growing company, we have AI solutions scaled to your needs and budget."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://singingriverai.com/shoals-ai-consulting/#localbusiness",
+      "name": "Singing River AI - Shoals",
+      "description": "AI consulting services for the Shoals area. Local AI strategy, training, and implementation for businesses in Florence, Muscle Shoals, Tuscumbia, and Sheffield.",
+      "url": "https://singingriverai.com/shoals-ai-consulting",
+      "telephone": "(256) 740-3195",
+      "email": "info@singingriverai.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tuscumbia",
+        "addressRegion": "AL",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Florence", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+        { "@type": "City", "name": "Muscle Shoals", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+        { "@type": "City", "name": "Tuscumbia", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+        { "@type": "City", "name": "Sheffield", "containedInPlace": { "@type": "State", "name": "Alabama" } }
+      ],
+      "serviceType": ["AI Consulting", "AI Training", "AI Implementation", "Business Automation"],
+      "parentOrganization": { "@id": "https://singingriverai.com/#organization" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/shoals-ai-consulting/#service",
+      "name": "AI Consulting in the Shoals, Alabama",
+      "description": "Local AI consulting for Shoals businesses. Your neighbor in Tuscumbia providing practical AI solutions for Florence, Muscle Shoals, Sheffield, and surrounding areas.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Florence", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+        { "@type": "City", "name": "Muscle Shoals", "containedInPlace": { "@type": "State", "name": "Alabama" } }
+      ],
+      "serviceType": "AI Consulting"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/shoals-ai-consulting/#webpage",
+      "url": "https://singingriverai.com/shoals-ai-consulting",
+      "name": "AI Consulting in Florence & the Shoals | Singing River AI",
+      "description": "Local Shoals AI consultant based in Tuscumbia. Affordable AI strategy, training, and implementation for businesses in Florence, Muscle Shoals, Sheffield, and Colbert County.",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/shoals-ai-consulting/#service" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/shoals-ai-consulting/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "Shoals AI Consulting", "item": "https://singingriverai.com/shoals-ai-consulting" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/shoals-ai-consulting/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Singing River AI" />
+    <meta name="keywords" content="AI consulting Florence Alabama, Shoals area AI consultant, Florence AL AI services, Muscle Shoals AI, Tuscumbia AI consultant, Sheffield AI services" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Shoals AI Consulting</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Florence & the Shoals</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI Consulting for <em>Florence</em> & the Shoals
+            </h1>
+
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              The Shoals has always punched above its weight. A region of 150,000 people that gave the world Muscle Shoals sound, Helen Keller, and W.C. Handy. I'm Todd Frederickson, and I run Singing River AI right here in Tuscumbia—helping local businesses implement AI that actually works.
+            </p>
+
+            <a href="/#contact" class="btn-primary inline-flex">
+              <span>Book Free Consultation</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why AI Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Why AI Matters for <em>Shoals</em> Businesses
+          </h2>
+
+          <div class="max-w-3xl mx-auto prose prose-lg text-stone mb-12">
+            <p>
+              The Shoals economy is changing. New residents are discovering what locals have always known—this is a great place to live and work. That growth means opportunity, but it also means competition.
+            </p>
+            <p class="font-medium text-charcoal">
+              AI gives you an edge—not by replacing the personal relationships that define Shoals business, but by handling the busy work that gets in the way of those relationships.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-cream rounded-2xl p-6">
+              <h3 class="font-display text-lg mb-2 text-charcoal">Follow Up Instantly</h3>
+              <p class="text-stone text-sm leading-relaxed">When someone fills out your form at 9pm, AI responds immediately—while competitors wait until morning.</p>
+            </div>
+            <div class="bg-cream rounded-2xl p-6">
+              <h3 class="font-display text-lg mb-2 text-charcoal">Never Forget a Customer</h3>
+              <p class="text-stone text-sm leading-relaxed">AI remembers to check in with past clients, send birthday messages, and request reviews automatically.</p>
+            </div>
+            <div class="bg-cream rounded-2xl p-6">
+              <h3 class="font-display text-lg mb-2 text-charcoal">Stop Drowning in Admin</h3>
+              <p class="text-stone text-sm leading-relaxed">Scheduling, invoicing reminders, data entry—AI handles the repetitive tasks that steal hours from your week.</p>
+            </div>
+            <div class="bg-cream rounded-2xl p-6">
+              <h3 class="font-display text-lg mb-2 text-charcoal">Be Everywhere at Once</h3>
+              <p class="text-stone text-sm leading-relaxed">AI can respond to texts, answer common questions, and book appointments while you're focused on the work in front of you.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            AI Services for <em>Shoals</em> Businesses
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <div class="bg-white rounded-2xl p-8 card-hover">
+                <div class="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-6">
+                  <span class="font-display text-xl">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 class="font-display text-xl mb-3 text-charcoal">{service.title}</h3>
+                <p class="text-stone leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Industries We Serve in the <em>Shoals</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg mb-2 text-charcoal">{industry.title}</h3>
+                <p class="text-stone text-sm leading-relaxed">{industry.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Local Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Why Work with a <em>Shoals-Based</em> Consultant?
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 text-center">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Someone Who Shows Up</h3>
+              <p class="text-stone text-sm">Florence office in 15 minutes. Sheffield in 20. Try getting that from a remote consultant.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Someone Who Understands</h3>
+              <p class="text-stone text-sm">I know the Shoals business community, the relationships, and the local economy.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Someone Who Stays</h3>
+              <p class="text-stone text-sm">I'm not disappearing to chase clients in bigger markets. When you need me, I'm a local call away.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Shoals Pricing</h3>
+              <p class="text-stone text-sm">Rates appropriate for North Alabama businesses, not coastal consulting fees.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Let's Talk About Your <em class="text-accent">Business</em>
+          </h2>
+          <p class="text-stone-light text-lg mb-4">
+            I offer every Shoals business owner a free 30-minute consultation. No sales pitch—just an honest conversation about your business and whether AI might help.
+          </p>
+          <p class="text-stone-light mb-4">
+            We can meet at your office in Florence, grab coffee in Tuscumbia, or talk by phone.
+          </p>
+          <p class="text-stone-light mb-8">
+            <strong class="text-cream">Phone:</strong> (256) 740-3195 &nbsp;|&nbsp; <strong class="text-cream">Email:</strong> info@singingriverai.com
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

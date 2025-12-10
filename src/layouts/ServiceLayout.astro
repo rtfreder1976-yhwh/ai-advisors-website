@@ -85,7 +85,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
           "description": serviceDescription,
           "provider": { "@id": "https://singingriverai.com/#organization" },
           "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
-          "serviceType": serviceCategory,
+          "serviceType": serviceCategory.replace(" Services", ""),
           "offers": {
             "@type": "Offer",
             "availability": "https://schema.org/InStock",
@@ -97,7 +97,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": serviceName,
+            "name": `${serviceName} Services`,
             "itemListElement": services.map((service) => ({
               "@type": "Offer",
               "itemOffered": { "@type": "Service", "name": service.name }
