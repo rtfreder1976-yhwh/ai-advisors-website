@@ -31,6 +31,39 @@ const services = [
 const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
 </svg>`;
+
+const faqs = [
+  {
+    question: "What does AI training for employees include?",
+    answer: "AI training includes hands-on workshops covering tools like ChatGPT, practical business applications, prompt engineering, and best practices for using AI safely and effectively in the workplace."
+  },
+  {
+    question: "How long is a typical AI training workshop?",
+    answer: "Workshops range from half-day introductory sessions to multi-day comprehensive programs, depending on your team's needs and current AI literacy level."
+  },
+  {
+    question: "Do you offer AI training in Huntsville?",
+    answer: "Yes, we provide on-site AI training throughout North Alabama including Huntsville, Florence, the Shoals area, Decatur, and Athens. Remote training is also available."
+  }
+];
+
+const relatedServices = [
+  {
+    name: "AI Strategy & Consulting",
+    href: "/services/ai-consulting/",
+    description: "Identify the best AI opportunities for your business before training your team."
+  },
+  {
+    name: "AI Implementation",
+    href: "/services/ai-implementation/",
+    description: "Put your team's new skills to work with custom AI solutions."
+  },
+  {
+    name: "Ongoing Support",
+    href: "/services/ongoing-support/",
+    description: "Continue learning with ongoing access to resources and Q&A sessions."
+  }
+];
 ---
 
 <ServiceLayout
@@ -41,4 +74,6 @@ const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="
   serviceCategory="Training Services"
   services={services}
   icon={icon}
+  faqs={faqs}
+  relatedServices={relatedServices}
 />

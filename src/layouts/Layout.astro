@@ -56,219 +56,126 @@ const ogImageURL = new URL(image, Astro.site);
 
     <title>{title}</title>
 
-    <!-- JSON-LD Structured Data - LocalBusiness -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://singingriverai.com/#organization",
-      "name": "Singing River AI",
-      "legalName": "Singing River AI",
-      "description": description,
-      "url": "https://singingriverai.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://singingriverai.com/favicon.svg",
-        "width": "512",
-        "height": "512"
-      },
-      "image": "https://singingriverai.com/og-image.svg",
-      "telephone": "+1-256-740-3195",
-      "email": "info@singingriverai.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2784 Underwood Mountain Road",
-        "addressLocality": "Tuscumbia",
-        "addressRegion": "AL",
-        "postalCode": "35674",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "34.7312",
-        "longitude": "-87.7025"
-      },
-      "priceRange": "$$",
-      "currenciesAccepted": "USD",
-      "paymentAccepted": "Cash, Credit Card, Invoice",
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "17:00"
-        }
-      ],
-      "sameAs": [],
-      "founder": {
-        "@type": "Person",
-        "name": "Todd Frederickson",
-        "jobTitle": "Founder & AI Advisor"
-      },
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "United States"
+          "@type": "Organization",
+          "@id": "https://singingriverai.com/#organization",
+          "name": "Singing River AI",
+          "url": "https://singingriverai.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://singingriverai.com/og-image.png",
+            "width": 1200,
+            "height": 630
+          },
+          "image": "https://singingriverai.com/og-image.png",
+          "description": "Practical AI consulting for small businesses in North Alabama. From education to implementation, we deliver affordable AI solutions that actually work.",
+          "telephone": "(256) 740-3195",
+          "email": "info@singingriverai.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuscumbia",
+            "addressRegion": "AL",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Huntsville", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Florence", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Muscle Shoals", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Tuscumbia", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Sheffield", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Decatur", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Athens", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "AdministrativeArea", "name": "North Alabama" }
+          ],
+          "founder": { "@id": "https://singingriverai.com/#founder" },
+          "sameAs": []
         },
         {
-          "@type": "State",
-          "name": "Alabama"
-        }
-      ],
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Business Automation",
-        "AI Implementation",
-        "Digital Transformation",
-        "Process Optimization"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI Consulting Services",
-        "itemListElement": [
-          {
-            "@type": "OfferCatalog",
-            "name": "AI Education & Training",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "AI Team Workshops",
-                  "description": "Hands-on training sessions to educate your team on AI fundamentals and practical applications"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Executive AI Briefings",
-                  "description": "Strategic sessions for leadership on AI opportunities and implementation roadmaps"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Custom AI Training Programs",
-                  "description": "Tailored educational programs designed for your team's specific needs and industry"
-                }
-              }
-            ]
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://singingriverai.com/#localbusiness",
+          "name": "Singing River AI",
+          "url": "https://singingriverai.com",
+          "telephone": "(256) 740-3195",
+          "email": "info@singingriverai.com",
+          "priceRange": "$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuscumbia",
+            "addressRegion": "AL",
+            "addressCountry": "US"
           },
-          {
-            "@type": "OfferCatalog",
-            "name": "AI Strategy & Consulting",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "AI Readiness Assessment",
-                  "description": "Comprehensive evaluation of your business processes to identify AI opportunities"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Use Case Identification",
-                  "description": "Strategic analysis to find high-impact AI opportunities with the best ROI potential"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "AI Implementation Roadmap",
-                  "description": "Detailed planning and prioritization for your AI transformation journey"
-                }
-              }
-            ]
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.7312,
+            "longitude": -87.7025
           },
-          {
+          "areaServed": [
+            { "@type": "City", "name": "Huntsville", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "City", "name": "Florence", "containedInPlace": { "@type": "State", "name": "Alabama" } },
+            { "@type": "AdministrativeArea", "name": "North Alabama" }
+          ],
+          "serviceType": ["AI Consulting", "AI Training", "AI Implementation", "Business Automation"],
+          "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "AI Implementation",
+            "name": "AI Consulting Services",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Custom AI Solutions",
-                  "description": "End-to-end development and deployment of AI solutions tailored to your business"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "AI Integration Services",
-                  "description": "Seamless integration of AI tools with your existing systems and workflows"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Process Automation",
-                  "description": "Intelligent automation solutions to streamline operations and reduce manual work"
-                }
-              }
-            ]
-          },
-          {
-            "@type": "OfferCatalog",
-            "name": "Ongoing Support",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "AI System Optimization",
-                  "description": "Continuous monitoring and improvement of your AI systems for peak performance"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Maintenance & Support",
-                  "description": "Ongoing technical support and updates to keep your AI solutions running smoothly"
-                }
+                  "name": "Free 30-Minute Consultation",
+                  "description": "Discuss your AI needs and explore possibilities"
+                },
+                "price": "0",
+                "priceCurrency": "USD"
               }
             ]
           }
-        ]
-      }
-    })} />
-
-    <!-- JSON-LD Structured Data - WebSite -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://singingriverai.com/#website",
-      "url": "https://singingriverai.com",
-      "name": "Singing River AI",
-      "description": "AI Consulting for Business Growth",
-      "publisher": {
-        "@id": "https://singingriverai.com/#organization"
-      }
-    })} />
-
-    <!-- JSON-LD Structured Data - WebPage -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": `${canonicalURL}#webpage`,
-      "url": canonicalURL,
-      "name": title,
-      "description": description,
-      "isPartOf": {
-        "@id": "https://singingriverai.com/#website"
-      },
-      "about": {
-        "@id": "https://singingriverai.com/#organization"
-      }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://singingriverai.com/#founder",
+          "name": "Todd Frederickson",
+          "jobTitle": "Founder & AI Advisor",
+          "description": "AI consultant with 24+ years in technology and business transformation, specializing in practical AI solutions for small businesses.",
+          "worksFor": { "@id": "https://singingriverai.com/#organization" },
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Business Automation",
+            "AI Implementation",
+            "Small Business Consulting",
+            "CRM Automation",
+            "ChatGPT",
+            "Generative AI",
+            "Process Optimization"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://singingriverai.com/#website",
+          "url": "https://singingriverai.com",
+          "name": "Singing River AI",
+          "description": "AI Consulting for Small Business",
+          "publisher": { "@id": "https://singingriverai.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singingriverai.com/#webpage",
+          "url": "https://singingriverai.com",
+          "name": title,
+          "description": description,
+          "isPartOf": { "@id": "https://singingriverai.com/#website" },
+          "about": { "@id": "https://singingriverai.com/#organization" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://singingriverai.com/og-image.png"
+          }
+        }
+      ]
     })} />
   </head>
   <body class="grain-overlay">

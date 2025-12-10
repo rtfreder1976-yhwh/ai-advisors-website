@@ -6,6 +6,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://singingriverai.com',
+  redirects: {
+    '/sitemap.xml': '/sitemap-index.xml'
+  },
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/404'),

@@ -31,6 +31,39 @@ const services = [
 const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
 </svg>`;
+
+const faqs = [
+  {
+    question: "What is AI consulting?",
+    answer: "AI consulting helps businesses identify opportunities to use artificial intelligence to improve operations, reduce costs, and increase efficiency. It includes analyzing your current processes, finding high-impact AI use cases, and creating a roadmap for implementation."
+  },
+  {
+    question: "How much does AI consulting cost?",
+    answer: "AI consulting costs vary based on project scope. Singing River AI offers affordable solutions for small businesses, starting with a free 30-minute consultation to discuss your needs and provide a custom quote."
+  },
+  {
+    question: "How long does an AI consulting engagement take?",
+    answer: "Initial strategy and assessment typically takes 2-4 weeks. Full implementation timelines depend on the complexity of your project, ranging from a few weeks for simple automations to several months for comprehensive AI systems."
+  }
+];
+
+const relatedServices = [
+  {
+    name: "AI Implementation",
+    href: "/services/ai-implementation/",
+    description: "Turn your AI strategy into reality with our end-to-end implementation services."
+  },
+  {
+    name: "AI Education & Training",
+    href: "/services/ai-training/",
+    description: "Prepare your team for AI adoption with hands-on workshops and training programs."
+  },
+  {
+    name: "Ongoing Support",
+    href: "/services/ongoing-support/",
+    description: "Keep your AI systems optimized with continuous monitoring and improvement."
+  }
+];
 ---
 
 <ServiceLayout
@@ -41,4 +74,6 @@ const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="
   serviceCategory="Consulting Services"
   services={services}
   icon={icon}
+  faqs={faqs}
+  relatedServices={relatedServices}
 />
