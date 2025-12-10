@@ -1,0 +1,418 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "AI for Real Estate Agents | Lead Follow-Up Automation | Singing River AI";
+const description = "AI automation for real estate agents in North Alabama. Instant lead response, automated follow-up, and CRM integration. The first agent to respond wins 78% of the time.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const solutions = [
+  {
+    title: "Instant Lead Response",
+    description: "When a lead comes in at 9pm on Saturday, AI responds in seconds. Studies show the first agent to respond wins 78% of the time. Never lose another lead to slow follow-up.",
+    stat: "78%",
+    statLabel: "win rate for first responder"
+  },
+  {
+    title: "Automated Drip Campaigns",
+    description: "Not every lead is ready to buy today. AI nurtures long-term prospects with personalized follow-up sequences, keeping you top-of-mind until they're ready to move.",
+    stat: "12-16",
+    statLabel: "hours saved per week"
+  },
+  {
+    title: "Past Client Reactivation",
+    description: "Your past clients are your best source of referrals. AI automatically reaches out on anniversaries, birthdays, and market updates to stay connected without manual effort.",
+    stat: "28%",
+    statLabel: "conversion boost with AI follow-up"
+  },
+  {
+    title: "Review Request Automation",
+    description: "After every closing, AI sends perfectly-timed review requests. Build your online reputation automatically while you focus on the next deal.",
+    stat: "5x",
+    statLabel: "more reviews collected"
+  }
+];
+
+const useCases = [
+  {
+    title: "New Lead Follow-Up",
+    items: [
+      "Instant text/email response within seconds",
+      "Lead qualification questions",
+      "Appointment scheduling integration",
+      "Handoff to agent when lead is hot"
+    ]
+  },
+  {
+    title: "Long-Term Nurturing",
+    items: [
+      "Buyer drip campaigns (3-12 months)",
+      "Seller nurture sequences",
+      "Market update automations",
+      "Property alert integrations"
+    ]
+  },
+  {
+    title: "Expired & FSBO Outreach",
+    items: [
+      "Automated expired listing campaigns",
+      "FSBO contact sequences",
+      "Circle prospecting automation",
+      "Just-listed/just-sold notifications"
+    ]
+  },
+  {
+    title: "Client Retention",
+    items: [
+      "Home anniversary messages",
+      "Birthday and holiday greetings",
+      "Referral request campaigns",
+      "Review solicitation sequences"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "How quickly can AI respond to my real estate leads?",
+    answer: "AI can respond to new leads within seconds, 24/7. Whether a lead comes in at 2am or during your showing, they get an immediate, personalized response. This is critical because studies show the first agent to respond wins the client 78% of the time."
+  },
+  {
+    question: "Will AI replace me as the agent?",
+    answer: "Absolutely not. AI handles the repetitive follow-up tasks that consume hours of your week—initial responses, nurture sequences, appointment reminders. You stay in control of relationships, negotiations, and closings. AI just ensures no lead falls through the cracks."
+  },
+  {
+    question: "Does this work with my existing CRM?",
+    answer: "Yes. We integrate with popular real estate CRMs including Follow Up Boss, KVCore, Chime, BoomTown, and others. We also work extensively with GoHighLevel for agents who want an all-in-one solution. Your lead data stays organized in one place."
+  },
+  {
+    question: "How much time will I actually save?",
+    answer: "Most agents save 12-16 hours per week on follow-up tasks. That's time you can spend on showings, listings, or simply having a life outside of real estate. Keller Williams agents using AI follow-up reported a 28% increase in conversions."
+  },
+  {
+    question: "What does AI follow-up cost compared to hiring an ISA?",
+    answer: "An Inside Sales Agent (ISA) costs $3,000-$5,000/month plus benefits. AI automation costs a fraction of that, works 24/7 without breaks, and never calls in sick. For solo agents and small teams, AI is the affordable path to consistent follow-up."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/industries/real-estate/#service",
+      "name": "AI Automation for Real Estate Agents",
+      "description": "AI-powered lead follow-up, nurture sequences, and CRM automation for real estate agents in North Alabama. Instant response, 24/7 availability, measurable ROI.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "Real Estate AI Automation",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Real Estate Agents and Brokers"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/industries/real-estate/#webpage",
+      "url": "https://singingriverai.com/industries/real-estate",
+      "name": "AI for Real Estate Agents | Singing River AI",
+      "description": "AI automation for real estate agents. Instant lead response, automated follow-up, and CRM integration for agents in Huntsville, Florence, and North Alabama.",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/industries/real-estate/#service" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/industries/real-estate/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://singingriverai.com/industries" },
+        { "@type": "ListItem", "position": 3, "name": "Real Estate", "item": "https://singingriverai.com/industries/real-estate" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/industries/real-estate/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Singing River AI" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="AI for real estate agents, real estate lead follow up automation, realtor AI assistant, real estate CRM automation, AI for realtors Huntsville, real estate AI Florence Alabama" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/industries/real-estate" class="hover:text-accent transition-colors">Industries</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Real Estate</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Real Estate AI</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI for <em>Real Estate</em> Agents
+            </h1>
+
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              The first agent to respond wins 78% of the time.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              AI ensures you're always first—responding to leads in seconds, nurturing prospects automatically, and never letting a deal slip through the cracks. Whether you're in Huntsville, Florence, or anywhere in North Alabama, AI gives you the follow-up consistency of a large team without the overhead.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#solutions" class="btn-secondary inline-flex">
+                <span>See How It Works</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Banner -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">78%</div>
+              <div class="text-sm text-stone-light">Win rate for first responder</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">28%</div>
+              <div class="text-sm text-stone-light">Conversion boost with AI</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">12-16</div>
+              <div class="text-sm text-stone-light">Hours saved per week</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">24/7</div>
+              <div class="text-sm text-stone-light">Lead response coverage</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions Section -->
+      <section id="solutions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            How AI Transforms Your <em>Real Estate Business</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Stop losing deals to slow follow-up. AI handles the repetitive tasks so you can focus on showings, listings, and closings.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {solutions.map((solution) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <div class="flex items-start gap-6">
+                  <div class="text-center">
+                    <div class="font-display text-3xl text-accent">{solution.stat}</div>
+                    <div class="text-xs text-stone">{solution.statLabel}</div>
+                  </div>
+                  <div>
+                    <h3 class="font-display text-xl mb-3 text-charcoal">{solution.title}</h3>
+                    <p class="text-stone leading-relaxed">{solution.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            AI Automations for <em>Every Stage</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((useCase) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-lg mb-4 text-charcoal">{useCase.title}</h3>
+                <ul class="space-y-2">
+                  {useCase.items.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CRM Integration Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="heading-display text-3xl md:text-4xl mb-6">
+                Works With Your <em>Existing Tools</em>
+              </h2>
+              <p class="text-lg text-stone leading-relaxed mb-6">
+                We integrate AI automation with the CRMs and tools you already use. No need to change your entire tech stack—we build on top of what's working.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Follow Up Boss, KVCore, Chime, BoomTown</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">GoHighLevel (full implementation available)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Zillow, Realtor.com, and portal lead routing</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Email, SMS, and voicemail drop automation</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-cream rounded-2xl p-8">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Typical Agent Results</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Lead response time</span>
+                  <span class="font-display text-charcoal">Under 60 seconds</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Hours saved weekly</span>
+                  <span class="font-display text-charcoal">12-16 hours</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Lead conversion increase</span>
+                  <span class="font-display text-charcoal">20-30%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-stone">Past client reactivation</span>
+                  <span class="font-display text-charcoal">15-25% response rate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to Never Miss a <em class="text-accent">Lead Again</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-4">
+            Whether you're a solo agent in Florence or running a team in Huntsville, AI automation scales to fit your business.
+          </p>
+          <p class="text-stone-light mb-8">
+            Book a free 30-minute consultation and I'll show you exactly how AI can work for your real estate business.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

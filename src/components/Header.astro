@@ -15,6 +15,12 @@ const locationLinks = [
   { href: '/huntsville-ai-consulting', label: 'Huntsville AI Consulting' },
   { href: '/shoals-ai-consulting', label: 'Shoals AI Consulting' },
 ];
+
+const industryLinks = [
+  { href: '/industries/real-estate', label: 'Real Estate Agents' },
+  { href: '/industries/professional-services', label: 'Law, Accounting & Consulting' },
+  { href: '/industries/home-services', label: 'Contractors & Home Services' },
+];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
@@ -55,6 +61,28 @@ const locationLinks = [
                 View All Services
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industries Dropdown -->
+      <div class="relative group/industries">
+        <button class="text-sm font-medium text-stone hover:text-charcoal transition-colors duration-200 flex items-center gap-1">
+          Industries
+          <svg class="w-4 h-4 transition-transform duration-200 group-hover/industries:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover/industries:opacity-100 group-hover/industries:visible transition-all duration-200">
+          <div class="bg-white rounded-xl shadow-xl border border-stone-light/20 py-2 min-w-[240px]">
+            {industryLinks.map((link) => (
+              <a
+                href={link.href}
+                class="block px-4 py-2 text-sm text-stone hover:text-charcoal hover:bg-cream transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -115,14 +143,14 @@ const locationLinks = [
     class="md:hidden fixed inset-0 bg-cream/98 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300"
     id="mobile-menu"
   >
-    <div class="flex flex-col items-center justify-center h-full gap-6 px-6">
+    <div class="flex flex-col items-center justify-center h-full gap-5 px-6 overflow-y-auto py-20">
       <div class="text-center mobile-link" style="animation-delay: 0s">
-        <p class="text-sm text-stone uppercase tracking-widest mb-3">Services</p>
-        <div class="flex flex-col gap-2">
+        <p class="text-sm text-stone uppercase tracking-widest mb-2">Services</p>
+        <div class="flex flex-col gap-1">
           {serviceLinks.map((link) => (
             <a
               href={link.href}
-              class="text-xl font-display text-charcoal hover:text-accent transition-colors duration-200"
+              class="text-lg font-display text-charcoal hover:text-accent transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -130,12 +158,25 @@ const locationLinks = [
         </div>
       </div>
       <div class="text-center mobile-link" style="animation-delay: 0.1s">
-        <p class="text-sm text-stone uppercase tracking-widest mb-3">Locations</p>
-        <div class="flex flex-col gap-2">
+        <p class="text-sm text-stone uppercase tracking-widest mb-2">Industries</p>
+        <div class="flex flex-col gap-1">
+          {industryLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-lg font-display text-charcoal hover:text-accent transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="text-center mobile-link" style="animation-delay: 0.2s">
+        <p class="text-sm text-stone uppercase tracking-widest mb-2">Locations</p>
+        <div class="flex flex-col gap-1">
           {locationLinks.map((link) => (
             <a
               href={link.href}
-              class="text-xl font-display text-charcoal hover:text-accent transition-colors duration-200"
+              class="text-lg font-display text-charcoal hover:text-accent transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -145,16 +186,16 @@ const locationLinks = [
       {navLinks.map((link, index) => (
         <a
           href={link.href}
-          class="text-3xl font-display text-charcoal hover:text-accent transition-colors duration-200 mobile-link"
-          style={`animation-delay: ${(index + 2) * 0.1}s`}
+          class="text-2xl font-display text-charcoal hover:text-accent transition-colors duration-200 mobile-link"
+          style={`animation-delay: ${(index + 3) * 0.1}s`}
         >
           {link.label}
         </a>
       ))}
       <a
         href="/#contact"
-        class="btn-primary text-lg px-8 py-4 mt-4 mobile-link"
-        style="animation-delay: 0.5s"
+        class="btn-primary text-lg px-8 py-4 mt-2 mobile-link"
+        style="animation-delay: 0.6s"
       >
         <span>Book Consultation</span>
       </a>

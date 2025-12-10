@@ -1,0 +1,401 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "AI for Contractors, HVAC, Plumbers & Home Services | Singing River AI";
+const description = "AI automation for home service businesses in North Alabama. Instant lead response, automated follow-up, review requests, and scheduling for contractors, HVAC, plumbers, and electricians.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const industries = [
+  {
+    title: "HVAC Contractors",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+    description: "Seasonal demand, maintenance reminders, and emergency calls. AI handles it all—from spring tune-up campaigns to 24/7 emergency lead capture."
+  },
+  {
+    title: "Plumbers",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+    description: "Emergency calls need instant response. AI qualifies leads, provides immediate confirmation, and ensures no job request goes unanswered—even at 2am."
+  },
+  {
+    title: "Electricians",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+    description: "From panel upgrades to EV charger installations, AI captures leads, schedules estimates, and follows up until the job is booked."
+  },
+  {
+    title: "Roofing & Exteriors",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+    description: "Storm season means lead surges. AI scales instantly—handling hundreds of inquiries when you're busiest, qualifying and scheduling automatically."
+  },
+  {
+    title: "General Contractors",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`,
+    description: "Multiple projects, multiple leads, constant communication. AI keeps prospects warm while you're on the job site."
+  },
+  {
+    title: "Landscaping & Lawn Care",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
+    description: "Seasonal services need seasonal campaigns. AI sends spring cleanup reminders, fall leaf removal outreach, and keeps your schedule full year-round."
+  }
+];
+
+const solutions = [
+  {
+    title: "Instant Lead Response",
+    description: "When a homeowner's AC breaks at 10pm, they're calling multiple companies. AI responds instantly with confirmation, estimated arrival windows, and next steps—while your competitors' phones ring to voicemail.",
+    stat: "5 min",
+    statLabel: "Average lead response beats 78% of competitors"
+  },
+  {
+    title: "Estimate Follow-Up",
+    description: "You gave the estimate. They said they'd think about it. Without follow-up, that job goes to someone else. AI follows up automatically—day 3, day 7, day 14—until they book or say no.",
+    stat: "40%",
+    statLabel: "of estimates close with proper follow-up"
+  },
+  {
+    title: "Review Generation",
+    description: "5-star reviews win jobs. AI sends perfectly-timed review requests after every completed job, making it easy for happy customers to share their experience on Google.",
+    stat: "3x",
+    statLabel: "more reviews with automation"
+  },
+  {
+    title: "Seasonal Campaigns",
+    description: "Spring HVAC tune-ups. Fall gutter cleaning. Winter pipe protection. AI sends targeted campaigns to your customer list at exactly the right time, filling your schedule before the rush.",
+    stat: "25%",
+    statLabel: "increase in seasonal bookings"
+  }
+];
+
+const automations = [
+  "New lead instant response (text + email)",
+  "Appointment confirmation & reminders",
+  "Estimate follow-up sequences",
+  "Job completion review requests",
+  "Seasonal service reminders",
+  "Past customer reactivation",
+  "Referral request campaigns",
+  "Maintenance plan renewals",
+  "Emergency lead qualification",
+  "After-hours lead capture"
+];
+
+const faqs = [
+  {
+    question: "How fast can AI respond to my leads?",
+    answer: "Instantly—within seconds. When a lead comes in from your website, Google, or Angi, AI sends an immediate text and email confirming their request. For emergency services, this speed is critical. The first contractor to respond books the job most of the time."
+  },
+  {
+    question: "Will AI work when I'm on a job site?",
+    answer: "That's exactly the point. AI handles lead response, appointment scheduling, and follow-up while you're working. You don't have to stop what you're doing to answer the phone. Hot leads get routed to you for a quick call; everything else is handled automatically."
+  },
+  {
+    question: "Can AI handle emergency/after-hours calls?",
+    answer: "Yes. AI qualifies emergency calls 24/7, collecting key information (what's the problem, address, contact info) and alerting you or your on-call technician immediately. Non-emergencies get scheduled for the next business day automatically."
+  },
+  {
+    question: "How does the review request system work?",
+    answer: "After you mark a job complete, AI waits a set period (usually 2-24 hours) then sends a friendly text asking about their experience. Happy customers get a direct link to leave a Google review. Unhappy customers get routed to you privately first."
+  },
+  {
+    question: "What's this cost compared to hiring an office person?",
+    answer: "A full-time office manager costs $35,000-$50,000/year plus benefits. AI automation costs a fraction of that, works 24/7, never calls in sick, and scales instantly during busy periods. For small contractors, it's the affordable path to professional-level customer communication."
+  },
+  {
+    question: "Do I need to change my current systems?",
+    answer: "Usually not. We integrate with your existing tools—ServiceTitan, Housecall Pro, Jobber, or even just your phone and email. We build automation on top of what you're already using, not replace it."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/industries/home-services/#service",
+      "name": "AI Automation for Home Service Businesses",
+      "description": "AI-powered lead response, follow-up automation, and review generation for contractors, HVAC, plumbers, electricians, and home service businesses in North Alabama.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "Home Services AI Automation",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Contractors, HVAC Companies, Plumbers, Electricians, Home Service Businesses"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/industries/home-services/#webpage",
+      "url": "https://singingriverai.com/industries/home-services",
+      "name": "AI for Contractors & Home Services | Singing River AI",
+      "description": "AI automation for contractors and home service businesses. Lead response, follow-up, and review automation for HVAC, plumbing, electrical, and more in North Alabama.",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/industries/home-services/#service" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/industries/home-services/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://singingriverai.com/industries" },
+        { "@type": "ListItem", "position": 3, "name": "Home Services", "item": "https://singingriverai.com/industries/home-services" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/industries/home-services/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Singing River AI" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="AI for contractors, HVAC lead automation, plumber lead follow up, electrician AI marketing, home service AI, contractor automation, home services CRM automation" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/industries/home-services" class="hover:text-accent transition-colors">Industries</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Home Services</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Home Services AI</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI for <em>Contractors</em> & Home Services
+            </h1>
+
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              You're on the job site when leads come in. By the time you call back, they've already booked with someone else. AI changes that—responding instantly, following up automatically, and filling your schedule while you focus on the work that pays.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#trades" class="btn-secondary inline-flex">
+                <span>Find Your Trade</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Banner -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">78%</div>
+              <div class="text-sm text-stone-light">Jobs go to first responder</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">40%</div>
+              <div class="text-sm text-stone-light">Estimates close with follow-up</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">3x</div>
+              <div class="text-sm text-stone-light">More reviews with automation</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">24/7</div>
+              <div class="text-sm text-stone-light">Lead capture coverage</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trades Section -->
+      <section id="trades" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            AI Works for <em>Every Trade</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Whether you're fixing furnaces or building decks, AI handles the customer communication so you can focus on the craft.
+          </p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry) => (
+              <div class="bg-cream rounded-2xl p-6 card-hover">
+                <div class="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-4">
+                  <Fragment set:html={industry.icon} />
+                </div>
+                <h3 class="font-display text-xl mb-3 text-charcoal">{industry.title}</h3>
+                <p class="text-stone text-sm leading-relaxed">{industry.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            How AI Fills Your <em>Schedule</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {solutions.map((solution) => (
+              <div class="bg-white rounded-2xl p-8">
+                <div class="flex items-start gap-6">
+                  <div class="text-center flex-shrink-0">
+                    <div class="font-display text-3xl text-accent">{solution.stat}</div>
+                    <div class="text-xs text-stone max-w-[100px]">{solution.statLabel}</div>
+                  </div>
+                  <div>
+                    <h3 class="font-display text-xl mb-3 text-charcoal">{solution.title}</h3>
+                    <p class="text-stone leading-relaxed">{solution.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Automations List -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="heading-display text-3xl md:text-4xl mb-6">
+                Everything That <em>Runs Automatically</em>
+              </h2>
+              <p class="text-lg text-stone leading-relaxed mb-6">
+                Once we set up your AI system, these tasks happen without you lifting a finger. You get notifications for hot leads and completed actions—but the work is done for you.
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>See It In Action</span>
+              </a>
+            </div>
+            <div class="bg-cream rounded-2xl p-8">
+              <h3 class="font-display text-lg mb-6 text-charcoal">Automated Tasks Include:</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {automations.map((automation) => (
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-stone text-sm">{automation}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Integration Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Works With Your <em>Existing Tools</em>
+          </h2>
+          <p class="text-lg text-stone max-w-2xl mx-auto mb-8">
+            We integrate with the software you already use—no need to change everything.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <span class="bg-white px-4 py-2 rounded-lg text-charcoal font-medium">ServiceTitan</span>
+            <span class="bg-white px-4 py-2 rounded-lg text-charcoal font-medium">Housecall Pro</span>
+            <span class="bg-white px-4 py-2 rounded-lg text-charcoal font-medium">Jobber</span>
+            <span class="bg-white px-4 py-2 rounded-lg text-charcoal font-medium">GoHighLevel</span>
+            <span class="bg-white px-4 py-2 rounded-lg text-charcoal font-medium">Google Calendar</span>
+            <span class="bg-white px-4 py-2 rounded-lg text-charcoal font-medium">QuickBooks</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Stop Losing Jobs to <em class="text-accent">Slow Follow-Up</em>
+          </h2>
+          <p class="text-stone-light text-lg mb-4">
+            Whether you're a one-truck operation in the Shoals or running crews across Huntsville, AI automation scales to fit your business.
+          </p>
+          <p class="text-stone-light mb-8">
+            Book a free 30-minute consultation. I'll show you exactly how AI can capture more leads and book more jobs.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
