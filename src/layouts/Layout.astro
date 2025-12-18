@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -55,6 +56,8 @@ const ogImageURL = new URL(image, Astro.site);
     <meta name="keywords" content="AI consulting, artificial intelligence, business automation, AI implementation, machine learning, AI training, Alabama" />
 
     <title>{title}</title>
+
+    <Analytics />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
