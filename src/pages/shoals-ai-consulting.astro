@@ -79,10 +79,25 @@ const schema = {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Tuscumbia",
         "addressLocality": "Tuscumbia",
         "addressRegion": "AL",
+        "postalCode": "35674",
         "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.7312,
+        "longitude": -87.7025
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
       "areaServed": [
         { "@type": "City", "name": "Florence", "containedInPlace": { "@type": "State", "name": "Alabama" } },
         { "@type": "City", "name": "Muscle Shoals", "containedInPlace": { "@type": "State", "name": "Alabama" } },
@@ -153,6 +168,9 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Consulting in Florence and the Shoals, Alabama - Singing River AI" />
     <meta property="og:site_name" content="Singing River AI" />
     <meta property="og:locale" content="en_US" />
 

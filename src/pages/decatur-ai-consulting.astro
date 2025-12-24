@@ -3,65 +3,73 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = "AI Consultant Huntsville AL | Practical AI for Local Business | Singing River AI";
-const description = "Huntsville AI consultant helping Research Park startups, defense contractors, and local businesses implement practical AI solutions. Affordable rates, real results. Free 30-min consultation.";
+const title = "AI Consultant Decatur AL | Business Automation & AI Training | Singing River AI";
+const description = "Decatur Alabama AI consultant helping local businesses automate operations. AI training, CRM automation, and lead follow-up for contractors, manufacturers, and service businesses. Free consultation.";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL('/og-image.png', Astro.site);
 
 const services = [
   {
     title: "AI Strategy & Consulting",
-    description: "Thorough assessment of your operations. We'll identify which processes consume the most time, map out automation opportunities, calculate realistic ROI, and build a prioritized roadmap."
+    description: "We analyze your Decatur business operations to identify where AI delivers the biggest impact. Whether you're in manufacturing, contracting, or professional services, we'll create a prioritized roadmap with realistic ROI projections."
   },
   {
-    title: "AI Training for Your Team",
-    description: "Hands-on workshops, executive briefings, and ChatGPT training that turns basic users into power users. At your Huntsville office or remotely."
+    title: "AI Training for Decatur Teams",
+    description: "Hands-on AI training and ChatGPT workshops for your Decatur team. We offer sessions at your facility or remotely—teaching practical skills your employees can use immediately. From basic prompting to advanced automation techniques."
   },
   {
-    title: "AI Implementation & Automation",
-    description: "Custom AI automations, CRM integration, email sequences, appointment scheduling, lead scoring, and document processing."
+    title: "Business Automation & CRM Integration",
+    description: "Automated lead follow-up, CRM integration, appointment scheduling, and customer communication sequences. Perfect for Decatur contractors and service businesses who lose leads to slow response times."
   },
   {
     title: "Ongoing AI Support",
-    description: "AI systems need monitoring, adjustment, and expansion. Get an AI expert on call without a full-time salary."
+    description: "AI systems need continuous monitoring and optimization. Our support packages give Decatur businesses an AI expert on call—without the cost of a full-time hire."
   }
 ];
 
 const industries = [
   {
-    title: "Defense Contractors & Aerospace",
-    description: "Streamline proposal development, technical documentation, project reporting, and subcontractor management. Solutions that respect security considerations."
+    title: "Contractors & Home Services",
+    description: "Lead capture, instant follow-up, estimate reminders, review requests, and scheduling automation for Decatur HVAC companies, plumbers, electricians, and general contractors."
   },
   {
-    title: "Research Park Technology Companies",
-    description: "Automate customer onboarding, handle tier-one support, generate documentation, and streamline internal communications."
+    title: "Manufacturing & Industrial",
+    description: "Document processing, inventory management assistance, quality reporting automation, and internal communication tools for Morgan County's manufacturing sector."
+  },
+  {
+    title: "Healthcare Practices",
+    description: "Patient scheduling, appointment reminders, follow-up communications, and staff coordination for medical practices throughout Decatur and Morgan County."
   },
   {
     title: "Professional Services",
-    description: "Automated client intake, document drafting assistance, scheduling, and research compilation for law firms, CPAs, and consultants."
+    description: "Client intake automation, document preparation, billing reminders, and follow-up sequences for Decatur law firms, accountants, insurance agents, and consultants."
   },
   {
-    title: "Healthcare & Medical Practices",
-    description: "Patient scheduling, follow-up communications, insurance verification, and staff optimization. HIPAA-compliant solutions."
-  },
-  {
-    title: "Local Service Businesses",
-    description: "Lead capture, instant follow-up, review automation, appointment booking, and customer reactivation campaigns."
+    title: "Retail & Local Business",
+    description: "Customer loyalty programs, review generation, inventory alerts, and personalized marketing automation for downtown Decatur businesses and beyond."
   }
 ];
 
 const faqs = [
   {
-    question: "Do you provide AI consulting in Huntsville?",
-    answer: "Yes, Singing River AI provides AI consulting services throughout Huntsville, Madison, and the greater North Alabama region. We're based in the Shoals area, just 90 minutes from Huntsville, and offer both on-site and remote consulting."
+    question: "Do you provide AI consulting in Decatur, Alabama?",
+    answer: "Yes! Singing River AI provides comprehensive AI consulting services throughout Decatur, Hartselle, and Morgan County. We're based in the Shoals area and serve all of North Alabama, with Decatur being a key service area for our business automation and AI training services."
   },
   {
-    question: "What industries do you serve in Huntsville?",
-    answer: "We work with a variety of Huntsville businesses including defense contractors, tech startups, professional services firms, and local small businesses. Our AI solutions are tailored to each industry's specific needs and compliance requirements."
+    question: "What types of Decatur businesses do you work with?",
+    answer: "We work with a diverse range of Decatur businesses including contractors (HVAC, plumbing, electrical), manufacturing companies, healthcare practices, professional services firms, and retail businesses. Our AI solutions are customized for each industry's specific needs and challenges."
   },
   {
-    question: "How much does AI consulting cost in Huntsville?",
-    answer: "Our AI consulting is priced affordably for small and medium businesses—not enterprise rates. We offer a free 30-minute consultation to discuss your needs and provide a custom quote based on your specific project."
+    question: "How much does AI consulting cost for Decatur businesses?",
+    answer: "Our pricing is designed for small and medium businesses in North Alabama—not enterprise rates. AI consulting projects typically range from $1,500 for simple automations to $10,000+ for comprehensive implementations. We offer a free 30-minute consultation to discuss your specific needs and provide a custom quote."
+  },
+  {
+    question: "Can you help Decatur contractors with lead follow-up automation?",
+    answer: "Absolutely. Lead follow-up automation is one of our most popular services for Decatur contractors. We build systems that respond to leads within 60 seconds via text and email, qualify prospects automatically, and book appointments—even at 10pm on a Saturday. Most contractors see significant improvement in lead conversion rates."
+  },
+  {
+    question: "Do you offer on-site AI training in Decatur?",
+    answer: "Yes, we provide on-site AI training at your Decatur location. We can train your entire team on ChatGPT and AI tools, conduct executive briefings, or provide one-on-one coaching. Training sessions are hands-on and practical—focused on skills your team can use immediately."
   }
 ];
 
@@ -70,10 +78,10 @@ const schema = {
   "@graph": [
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#localbusiness",
-      "name": "Singing River AI - Huntsville",
-      "description": "AI consulting services for Huntsville businesses. Practical AI strategy, training, and implementation for companies in Huntsville, Madison, and the Research Park area.",
-      "url": "https://singingriverai.com/huntsville-ai-consulting",
+      "@id": "https://singingriverai.com/decatur-ai-consulting/#localbusiness",
+      "name": "Singing River AI - Decatur",
+      "description": "AI consulting and business automation services for Decatur, Alabama businesses. Practical AI strategy, training, and implementation for companies in Decatur, Hartselle, and Morgan County.",
+      "url": "https://singingriverai.com/decatur-ai-consulting",
       "telephone": "(256) 740-3195",
       "email": "info@singingriverai.com",
       "priceRange": "$$",
@@ -86,8 +94,8 @@ const schema = {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 34.7304,
-        "longitude": -86.5861
+        "latitude": 34.6059,
+        "longitude": -86.9833
       },
       "openingHoursSpecification": [
         {
@@ -100,55 +108,56 @@ const schema = {
       "areaServed": [
         {
           "@type": "City",
-          "name": "Huntsville",
+          "name": "Decatur",
           "containedInPlace": { "@type": "State", "name": "Alabama" }
         },
         {
           "@type": "City",
-          "name": "Madison",
+          "name": "Hartselle",
           "containedInPlace": { "@type": "State", "name": "Alabama" }
         },
         {
-          "@type": "Place",
-          "name": "Cummings Research Park"
+          "@type": "AdministrativeArea",
+          "name": "Morgan County",
+          "containedInPlace": { "@type": "State", "name": "Alabama" }
         }
       ],
-      "serviceType": ["AI Consulting", "AI Training", "AI Implementation", "Business Automation"],
+      "serviceType": ["AI Consulting", "AI Training", "Business Automation", "CRM Integration"],
       "parentOrganization": { "@id": "https://singingriverai.com/#organization" }
     },
     {
       "@type": "Service",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#service",
-      "name": "AI Consulting in Huntsville, Alabama",
-      "description": "Practical AI consulting for Huntsville businesses. From defense contractors to tech startups, we help companies implement AI solutions that deliver measurable ROI.",
+      "@id": "https://singingriverai.com/decatur-ai-consulting/#service",
+      "name": "AI Consulting in Decatur, Alabama",
+      "description": "Practical AI consulting and business automation for Decatur businesses. From contractors to manufacturers, we help companies implement AI solutions that deliver measurable ROI.",
       "provider": { "@id": "https://singingriverai.com/#organization" },
       "areaServed": {
         "@type": "City",
-        "name": "Huntsville",
+        "name": "Decatur",
         "containedInPlace": { "@type": "State", "name": "Alabama" }
       },
       "serviceType": "AI Consulting"
     },
     {
       "@type": "WebPage",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#webpage",
-      "url": "https://singingriverai.com/huntsville-ai-consulting",
-      "name": "AI Consulting in Huntsville, AL | Singing River AI",
-      "description": "Huntsville AI consultant serving Research Park, Madison, and North Alabama. Affordable AI strategy, training, and implementation for local businesses.",
+      "@id": "https://singingriverai.com/decatur-ai-consulting/#webpage",
+      "url": "https://singingriverai.com/decatur-ai-consulting",
+      "name": "AI Consulting in Decatur, AL | Singing River AI",
+      "description": "Decatur Alabama AI consultant providing business automation, AI training, and consulting services for Morgan County businesses.",
       "isPartOf": { "@id": "https://singingriverai.com/#website" },
-      "about": { "@id": "https://singingriverai.com/huntsville-ai-consulting/#service" }
+      "about": { "@id": "https://singingriverai.com/decatur-ai-consulting/#service" }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#breadcrumb",
+      "@id": "https://singingriverai.com/decatur-ai-consulting/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
-        { "@type": "ListItem", "position": 2, "name": "Huntsville AI Consulting", "item": "https://singingriverai.com/huntsville-ai-consulting" }
+        { "@type": "ListItem", "position": 2, "name": "Decatur AI Consulting", "item": "https://singingriverai.com/decatur-ai-consulting" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#faq",
+      "@id": "https://singingriverai.com/decatur-ai-consulting/#faq",
       "mainEntity": faqs.map(faq => ({
         "@type": "Question",
         "name": faq.question,
@@ -180,7 +189,7 @@ const schema = {
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="AI Consulting in Huntsville, Alabama - Singing River AI" />
+    <meta property="og:image:alt" content="AI Consulting in Decatur, Alabama - Singing River AI" />
     <meta property="og:site_name" content="Singing River AI" />
     <meta property="og:locale" content="en_US" />
 
@@ -192,7 +201,7 @@ const schema = {
 
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Singing River AI" />
-    <meta name="keywords" content="AI consultant Huntsville, AI consulting Huntsville AL, Huntsville AI services, Research Park AI consultant, Madison AL AI consultant" />
+    <meta name="keywords" content="AI consultant Decatur AL, AI consulting Decatur Alabama, business automation Decatur, AI training Decatur, Morgan County AI consultant, Hartselle AI services" />
 
     <title>{title}</title>
 
@@ -213,22 +222,22 @@ const schema = {
             <ol class="flex items-center gap-2 text-sm text-stone">
               <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
               <li><span class="mx-2">/</span></li>
-              <li class="text-charcoal font-medium">Huntsville AI Consulting</li>
+              <li class="text-charcoal font-medium">Decatur AI Consulting</li>
             </ol>
           </nav>
 
           <div class="max-w-3xl">
             <div class="flex items-center gap-3 mb-6">
               <div class="w-12 h-px bg-accent"></div>
-              <span class="text-sm font-medium text-stone uppercase tracking-widest">Huntsville, Alabama</span>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Decatur, Alabama</span>
             </div>
 
             <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
-              AI Consultant in <em>Huntsville</em>, Alabama
+              AI Consultant in <em>Decatur</em>, Alabama
             </h1>
 
             <p class="text-lg text-stone leading-relaxed mb-8">
-              Huntsville has transformed from the Rocket City into one of America's fastest-growing tech corridors. Cummings Research Park alone houses over 300 companies and 27,000 employees. I help local businesses—from two-person professional firms to growing tech companies—implement AI solutions that save real time and real money.
+              Decatur sits at the crossroads of North Alabama—a city of manufacturers, contractors, and service businesses that keep the region running. I help Decatur businesses implement AI automation that saves real time, captures more leads, and lets your team focus on what they do best. No hype, no buzzwords—just practical solutions that work.
             </p>
 
             <a href="/#contact" class="btn-primary inline-flex">
@@ -242,30 +251,30 @@ const schema = {
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            Why Huntsville Businesses Need <em>AI Now</em>
+            Why <em>Decatur</em> Businesses Need AI Now
           </h2>
 
           <div class="max-w-3xl mx-auto prose prose-lg text-stone">
             <p>
-              The Huntsville metro added over 9,000 jobs last year. Madison County's population has grown 20% in a decade. That growth is exciting, but it creates pressure. Your competitors are moving faster. Clients expect instant responses. And hiring qualified people gets harder every quarter.
+              Morgan County's economy is diversified—manufacturing, healthcare, construction, professional services. That diversity is a strength, but it also means competition comes from every direction. Your competitors are already exploring AI. The question isn't whether AI will transform local business—it's whether you'll be ahead of the curve or playing catch-up.
             </p>
             <p class="font-medium text-charcoal">
-              AI doesn't replace your team—it multiplies what they can accomplish.
+              AI doesn't replace the relationships and expertise that make Decatur businesses successful. It handles the tedious tasks that steal time from that high-value work.
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-8 mt-12">
             <div class="bg-cream rounded-2xl p-8">
-              <h3 class="font-display text-xl mb-3 text-charcoal">Eliminating Repetitive Work</h3>
-              <p class="text-stone leading-relaxed">Following up with leads. Scheduling appointments. Data entry between systems. AI handles these automatically while your team tackles work that requires expertise.</p>
+              <h3 class="font-display text-xl mb-3 text-charcoal">Never Miss Another Lead</h3>
+              <p class="text-stone leading-relaxed">The first business to respond gets the job 78% of the time. AI-powered lead follow-up means instant response—even at midnight, even on weekends. Perfect for Decatur contractors who can't be glued to their phone.</p>
             </div>
             <div class="bg-cream rounded-2xl p-8">
-              <h3 class="font-display text-xl mb-3 text-charcoal">Responding Faster</h3>
-              <p class="text-stone leading-relaxed">The first company to respond books the meeting 78% of the time. AI-powered follow-up means your leads hear back in minutes—even at 11pm on Saturday.</p>
+              <h3 class="font-display text-xl mb-3 text-charcoal">Eliminate Administrative Overhead</h3>
+              <p class="text-stone leading-relaxed">Scheduling, data entry, follow-up reminders, invoice chasing—AI handles the repetitive work that consumes hours every week. Your team focuses on billable work, not busywork.</p>
             </div>
             <div class="bg-cream rounded-2xl p-8">
-              <h3 class="font-display text-xl mb-3 text-charcoal">Expert Work for Experts</h3>
-              <p class="text-stone leading-relaxed">Your engineers didn't earn degrees to format PowerPoints. AI handles administrative overhead so specialists focus on high-value work.</p>
+              <h3 class="font-display text-xl mb-3 text-charcoal">Scale Without More Hiring</h3>
+              <p class="text-stone leading-relaxed">Hiring is expensive and finding good people is hard. AI lets you handle more customers, more complexity, and more volume without proportionally increasing headcount.</p>
             </div>
           </div>
         </div>
@@ -275,7 +284,7 @@ const schema = {
       <section class="py-20 bg-cream">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            AI Services for <em>Huntsville</em> Companies
+            AI Services for <em>Decatur</em> Businesses
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8">
@@ -296,7 +305,7 @@ const schema = {
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            Industries We Serve in <em>Huntsville</em>
+            Industries We Serve in <em>Decatur</em>
           </h2>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -315,13 +324,13 @@ const schema = {
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <div class="max-w-3xl mx-auto text-center">
             <h2 class="heading-display text-3xl md:text-4xl mb-8">
-              Why Choose a <em>Local</em> AI Consultant?
+              A North Alabama AI Consultant Who <em>Gets It</em>
             </h2>
             <p class="text-lg text-stone leading-relaxed mb-6">
-              I'm based in the Shoals—about 90 minutes west of Huntsville on Highway 72. Close enough for in-person meetings at your Research Park office. Close enough to understand how business works in the Tennessee Valley. And priced for North Alabama, not the coasts.
+              I'm based in the Shoals, about 45 minutes west of Decatur on Highway 72. Close enough for in-person meetings at your Morgan County office. Close enough to understand how business works in North Alabama. And priced for local businesses, not coastal rates.
             </p>
             <p class="text-lg text-stone leading-relaxed">
-              When implementation needs hands-on attention, I can be in Huntsville the same day. When you have questions six months later, I'm still here. That's the value of working with a regional AI consultant who's building relationships, not just billing hours.
+              When you need hands-on help, I can be in Decatur the same day. When you have questions next year, I'm still here. That's the difference between a regional consultant building relationships and a remote agency billing hours.
             </p>
           </div>
         </div>
@@ -331,29 +340,29 @@ const schema = {
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            What Working Together <em>Looks Like</em>
+            How We Work with <em>Decatur</em> Businesses
           </h2>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">1</div>
               <h3 class="font-display text-lg mb-2 text-charcoal">Free Consultation</h3>
-              <p class="text-stone text-sm">30-minute call to discuss your business and whether AI makes sense for your situation.</p>
+              <p class="text-stone text-sm">30-minute call to understand your business, challenges, and goals. No sales pitch—just an honest assessment of whether AI makes sense for your situation.</p>
             </div>
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">2</div>
-              <h3 class="font-display text-lg mb-2 text-charcoal">Assessment</h3>
-              <p class="text-stone text-sm">Deeper analysis of your operations with a prioritized plan and realistic ROI projections.</p>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Assessment & Strategy</h3>
+              <p class="text-stone text-sm">Deep dive into your operations with a prioritized roadmap and realistic ROI projections. You'll know exactly what to expect before committing.</p>
             </div>
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">3</div>
               <h3 class="font-display text-lg mb-2 text-charcoal">Implementation</h3>
-              <p class="text-stone text-sm">Build and deploy your AI solutions with thorough testing and training.</p>
+              <p class="text-stone text-sm">We build, test, and deploy your AI solutions. Thorough training ensures your team knows how to use and manage the new systems.</p>
             </div>
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">4</div>
-              <h3 class="font-display text-lg mb-2 text-charcoal">Optimization</h3>
-              <p class="text-stone text-sm">Monitor performance, make adjustments, and expand into new use cases.</p>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Optimization & Growth</h3>
+              <p class="text-stone text-sm">Monitor performance, make improvements, and expand into new use cases as you see results. Your AI grows with your business.</p>
             </div>
           </div>
         </div>
@@ -380,10 +389,10 @@ const schema = {
       <section class="py-20 bg-charcoal text-cream">
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 class="heading-display text-3xl md:text-4xl mb-6">
-            Ready to Explore AI for Your <em class="text-accent">Huntsville Business</em>?
+            Ready to Explore AI for Your <em class="text-accent">Decatur Business</em>?
           </h2>
           <p class="text-stone-light text-lg mb-4">
-            Whether you're in Research Park, downtown Huntsville, Madison, or anywhere in the metro area, I'd welcome a conversation about how AI might help your business.
+            Whether you're in downtown Decatur, Hartselle, or anywhere in Morgan County, I'd welcome a conversation about how AI might help your business work smarter.
           </p>
           <p class="text-stone-light mb-8">
             <strong class="text-cream">Phone:</strong> (256) 740-3195 &nbsp;|&nbsp; <strong class="text-cream">Email:</strong> info@singingriverai.com

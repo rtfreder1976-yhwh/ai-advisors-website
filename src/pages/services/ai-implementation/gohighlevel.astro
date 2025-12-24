@@ -1,0 +1,283 @@
+---
+import '../../../styles/global.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const title = "GoHighLevel Setup & Automation | CRM Implementation | Singing River AI";
+const description = "Expert GoHighLevel setup and automation for small businesses in Huntsville, Florence, and North Alabama. Lead follow-up, appointment booking, review requests, and full CRM implementation.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const features = [
+  {
+    title: "Lead Follow-Up Automation",
+    description: "Instant response to new leads via text, email, and voicemail drops. Never lose a lead to slow follow-up again.",
+    icon: "bolt"
+  },
+  {
+    title: "Appointment Booking",
+    description: "Automated scheduling with calendar integration, reminders, and no-show follow-up sequences.",
+    icon: "calendar"
+  },
+  {
+    title: "Review Request Campaigns",
+    description: "Automatically request Google reviews after positive interactions. Build your online reputation on autopilot.",
+    icon: "star"
+  },
+  {
+    title: "Pipeline Management",
+    description: "Visual sales pipeline with automated stage transitions, task assignments, and follow-up triggers.",
+    icon: "chart"
+  },
+  {
+    title: "Two-Way SMS & Email",
+    description: "Unified inbox for all customer communications. Reply to texts and emails from one dashboard.",
+    icon: "chat"
+  },
+  {
+    title: "Reporting & Analytics",
+    description: "Track lead sources, conversion rates, and ROI. Know exactly what's working in your business.",
+    icon: "analytics"
+  }
+];
+
+const packages = [
+  {
+    name: "Quick Start",
+    description: "Get up and running fast with essential automations",
+    includes: [
+      "GoHighLevel account setup",
+      "Lead capture form integration",
+      "Basic lead follow-up sequence",
+      "Appointment booking calendar",
+      "Google review request automation",
+      "1 hour training session"
+    ]
+  },
+  {
+    name: "Full Implementation",
+    description: "Complete CRM buildout with advanced automations",
+    includes: [
+      "Everything in Quick Start",
+      "Custom pipeline setup",
+      "Multi-step nurture sequences",
+      "Missed call text-back",
+      "Website chat widget",
+      "Reputation management dashboard",
+      "Email/SMS templates library",
+      "3 hours training + documentation"
+    ]
+  },
+  {
+    name: "Enterprise",
+    description: "Multi-location or complex business needs",
+    includes: [
+      "Everything in Full Implementation",
+      "Multi-location setup",
+      "Custom integrations",
+      "Advanced reporting",
+      "Team permissions & workflows",
+      "Ongoing optimization support",
+      "Priority support access"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "What is GoHighLevel?",
+    answer: "GoHighLevel (GHL) is an all-in-one CRM and marketing automation platform designed for small businesses and agencies. It combines lead capture, email/SMS marketing, appointment scheduling, pipeline management, and reputation management into one system—replacing multiple expensive tools."
+  },
+  {
+    question: "Do you offer GoHighLevel setup in Huntsville?",
+    answer: "Yes! We provide GoHighLevel implementation for businesses throughout Huntsville, Madison, and the Research Park area. We can work remotely or meet in person for training sessions."
+  },
+  {
+    question: "What about GoHighLevel setup in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and work with businesses in Florence, Muscle Shoals, Tuscumbia, and Sheffield. Local businesses get the advantage of in-person setup and training."
+  },
+  {
+    question: "How long does GoHighLevel setup take?",
+    answer: "Quick Start implementations typically take 3-5 days. Full implementations take 1-2 weeks depending on complexity. We work efficiently while ensuring everything is set up correctly and your team is trained."
+  },
+  {
+    question: "Can you migrate data from my existing CRM?",
+    answer: "Yes. We can migrate contacts, deals, and historical data from most CRMs including HubSpot, Salesforce, Pipedrive, and others. We ensure a clean transition without losing your valuable customer data."
+  },
+  {
+    question: "Do you provide ongoing GoHighLevel support?",
+    answer: "Yes. We offer monthly support packages for ongoing optimization, new automation builds, and troubleshooting. Many clients start with implementation and continue with monthly support to maximize their ROI."
+  },
+  {
+    question: "What's the ROI of GoHighLevel automation?",
+    answer: "Most businesses see ROI within 30-60 days. Between faster lead response (which increases conversions 20-30%), time saved on manual follow-up (10-15 hours/week), and increased reviews (boosting local SEO), the platform typically pays for itself many times over."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/services/ai-implementation/gohighlevel/#service",
+      "name": "GoHighLevel Setup & Automation",
+      "description": "Expert GoHighLevel CRM implementation and automation for small businesses. Lead follow-up, appointment booking, and reputation management.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "CRM Implementation"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/gohighlevel/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="GoHighLevel setup, GoHighLevel consultant Alabama, GHL implementation Huntsville, GoHighLevel automation Florence, CRM setup North Alabama" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-implementation" class="hover:text-accent transition-colors">AI Implementation</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">GoHighLevel</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">CRM Implementation</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              GoHighLevel <em>Setup & Automation</em>
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              The all-in-one CRM that replaces your marketing stack.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              GoHighLevel combines CRM, email marketing, SMS, appointment booking, and reputation management in one platform. We'll set it up, build your automations, and train your team—so you can focus on running your business.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            What We <em>Build For You</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Every GoHighLevel implementation is customized to your business. Here's what most clients need:
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-xl mb-3 text-charcoal">{feature.title}</h3>
+                <p class="text-stone">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Implementation <em>Packages</em>
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg) => (
+              <div class="bg-white rounded-2xl p-8">
+                <h3 class="font-display text-2xl mb-2 text-charcoal">{pkg.name}</h3>
+                <p class="text-stone mb-6">{pkg.description}</p>
+                <ul class="space-y-2">
+                  {pkg.includes.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p class="text-center text-stone mt-8">
+            Contact us for pricing tailored to your specific needs.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to Automate Your <em class="text-accent">Business</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Book a free consultation and we'll show you exactly how GoHighLevel can work for your business.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

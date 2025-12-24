@@ -3,28 +3,34 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 
 const services = [
   {
+    name: "ChatGPT Power User Training",
+    description: "Master ChatGPT and generative AI tools with hands-on training. Learn advanced prompt engineering, custom GPT creation, and practical business applications. Our ChatGPT training in Huntsville and Florence helps teams 10x their productivity with AI assistants.",
+    href: "/services/ai-training/chatgpt-workshop"
+  },
+  {
+    name: "Claude Code Workshop",
+    description: "Learn AI-assisted development with Claude Code. Hands-on training for developers and teams wanting to accelerate their coding workflow. Build features faster, debug smarter, and ship more with Anthropic's powerful CLI tool.",
+    href: "/services/ai-training/claude-code-workshop"
+  },
+  {
     name: "AI Team Workshops",
-    description: "Hands-on training sessions to educate your team on AI fundamentals, practical applications, and best practices for implementation."
+    description: "Interactive half-day and full-day AI workshops designed for teams of all skill levels. Cover AI fundamentals, hands-on tool practice, and department-specific applications. Available on-site throughout North Alabama including Huntsville, Decatur, Florence, and Athens."
   },
   {
     name: "Executive AI Briefings",
-    description: "Strategic sessions for leadership teams covering AI opportunities, risk assessment, and implementation roadmaps tailored to your industry."
+    description: "Strategic 2-hour sessions for leadership teams covering the AI landscape, competitive implications, risk assessment, and implementation roadmaps. Help executives make informed decisions about AI investments and organizational readiness."
   },
   {
     name: "Custom Training Programs",
-    description: "Tailored educational programs designed for your team's specific needs, skill levels, and industry requirements."
+    description: "Tailored multi-session educational programs designed for your team's specific needs, industry requirements, and current skill levels. Programs range from 4-week fundamentals courses to ongoing quarterly training partnerships."
   },
   {
     name: "AI Tools Certification",
-    description: "Structured certification programs to ensure your team masters the AI tools and platforms relevant to your business."
-  },
-  {
-    name: "Ongoing Learning Support",
-    description: "Continuous access to updated materials, Q&A sessions, and resources as AI technology evolves."
+    description: "Structured certification programs ensuring your team masters the specific AI tools relevant to your business—from ChatGPT and Claude to industry-specific AI platforms. Includes assessments, practice exercises, and completion certificates."
   },
   {
     name: "Train-the-Trainer Programs",
-    description: "Empower internal champions to lead AI education initiatives within your organization."
+    description: "Empower internal AI champions to lead ongoing education within your organization. We train your selected team members to deliver AI training, answer questions, and drive adoption across departments."
   }
 ];
 
@@ -35,15 +41,31 @@ const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="
 const faqs = [
   {
     question: "What does AI training for employees include?",
-    answer: "AI training includes hands-on workshops covering tools like ChatGPT, practical business applications, prompt engineering, and best practices for using AI safely and effectively in the workplace."
+    answer: "Our AI employee training covers practical skills your team can use immediately: ChatGPT and generative AI fundamentals, prompt engineering techniques, AI-powered writing and analysis, workflow automation basics, and responsible AI use policies. Every session includes hands-on exercises using your actual business scenarios, not generic examples."
+  },
+  {
+    question: "Do you offer ChatGPT training in Huntsville?",
+    answer: "Yes! We provide on-site ChatGPT training throughout Huntsville, Madison, and the Research Park area. Our Huntsville AI training workshops are popular with defense contractors, tech companies, and professional services firms. We can train teams at your office or arrange a local venue for larger groups."
+  },
+  {
+    question: "What about AI training in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and offer AI training workshops in Florence, Muscle Shoals, Tuscumbia, and Sheffield. Local businesses benefit from same-day availability and no travel fees. We also serve Decatur, Athens, and surrounding North Alabama communities."
   },
   {
     question: "How long is a typical AI training workshop?",
-    answer: "Workshops range from half-day introductory sessions to multi-day comprehensive programs, depending on your team's needs and current AI literacy level."
+    answer: "Workshop lengths vary by depth: Intro sessions run 2-3 hours and cover AI basics plus hands-on ChatGPT practice. Half-day workshops (4 hours) dive deeper into prompt engineering and specific use cases. Full-day intensives cover comprehensive AI literacy, multiple tools, and department-specific applications. Multi-week programs provide the deepest training with ongoing practice and support."
   },
   {
-    question: "Do you offer AI training in Huntsville?",
-    answer: "Yes, we provide on-site AI training throughout North Alabama including Huntsville, Florence, the Shoals area, Decatur, and Athens. Remote training is also available."
+    question: "Can you train our team on specific AI tools we already use?",
+    answer: "Yes, we customize training around your existing tech stack. Whether you're using ChatGPT, Claude, Microsoft Copilot, Jasper, or industry-specific AI tools, we'll tailor the curriculum to maximize your team's proficiency with the platforms you've already invested in."
+  },
+  {
+    question: "What's the ROI of AI training for small businesses?",
+    answer: "Most businesses see immediate productivity gains: teams trained on ChatGPT typically save 5-10 hours per week on writing, research, and analysis tasks. One Florence law firm reduced document drafting time by 60% after our training. A Huntsville marketing agency cut content creation time in half. The training typically pays for itself within the first month through time savings alone."
+  },
+  {
+    question: "Do you offer remote AI training options?",
+    answer: "Yes, we offer both on-site and remote training. Remote sessions work well for distributed teams or businesses outside our immediate service area. However, we find on-site training in Huntsville, Decatur, Florence, and Athens produces better results due to hands-on interaction and real-time problem-solving with your actual workflows."
   }
 ];
 
@@ -56,21 +78,21 @@ const relatedServices = [
   {
     name: "AI Implementation",
     href: "/services/ai-implementation/",
-    description: "Put your team's new skills to work with custom AI solutions."
+    description: "Put your team's new skills to work with custom AI solutions and automations."
   },
   {
     name: "Ongoing Support",
     href: "/services/ongoing-support/",
-    description: "Continue learning with ongoing access to resources and Q&A sessions."
+    description: "Continue learning with ongoing access to resources, updates, and Q&A sessions."
   }
 ];
 ---
 
 <ServiceLayout
-  title="AI Education & Training | Singing River AI"
-  description="Comprehensive AI training programs for your team. From introductory workshops to advanced implementation courses, we help your organization build AI expertise."
+  title="AI Training & ChatGPT Workshops | Huntsville, Florence, North Alabama | Singing River AI"
+  description="AI training workshops and ChatGPT training for businesses in Huntsville, Florence, Decatur, and North Alabama. Hands-on AI education that helps your team work smarter."
   serviceName="AI Education & Training"
-  serviceDescription="Comprehensive GenAI training programs tailored to your team. From introductory workshops to advanced implementation courses, we build the AI expertise your organization needs to thrive."
+  serviceDescription="Hands-on AI training programs that transform how your team works. From ChatGPT fundamentals to advanced prompt engineering, we deliver practical AI education throughout Huntsville, Florence, Decatur, Athens, and North Alabama. Your team leaves every session with skills they can use immediately."
   serviceCategory="Training Services"
   services={services}
   icon={icon}

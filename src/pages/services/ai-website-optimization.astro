@@ -1,0 +1,302 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "AI Website Optimization | Outrank Your Competitors | Singing River AI";
+const description = "Use AI to optimize your website for better search rankings, faster performance, and higher conversions. Serving businesses in Huntsville, Florence, and North Alabama.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const services = [
+  {
+    title: "AI-Powered SEO Optimization",
+    description: "Use AI to identify keyword opportunities, optimize content, and build topical authority faster than your competitors.",
+    features: [
+      "Keyword research and gap analysis",
+      "Content optimization recommendations",
+      "Schema markup implementation",
+      "Internal linking strategy",
+      "Competitive analysis"
+    ]
+  },
+  {
+    title: "Content Strategy & Creation",
+    description: "AI-assisted content development that ranks. We combine AI efficiency with human expertise to create authoritative content.",
+    features: [
+      "Content calendar development",
+      "Blog post creation (AI-assisted)",
+      "Landing page optimization",
+      "FAQ sections for featured snippets",
+      "Location-specific content"
+    ]
+  },
+  {
+    title: "Technical SEO & Performance",
+    description: "Fast sites rank better. We optimize your website's technical foundation for speed, mobile-friendliness, and crawlability.",
+    features: [
+      "Core Web Vitals optimization",
+      "Mobile responsiveness",
+      "Page speed improvements",
+      "Structured data implementation",
+      "XML sitemap optimization"
+    ]
+  },
+  {
+    title: "Local SEO Domination",
+    description: "Dominate local search results in your service area. Especially effective for businesses in smaller markets with less competition.",
+    features: [
+      "Google Business Profile optimization",
+      "Local citation building",
+      "Location page development",
+      "Review generation strategy",
+      "Local link building"
+    ]
+  }
+];
+
+const process = [
+  {
+    step: "1",
+    title: "Audit & Analysis",
+    description: "We analyze your current website, competitors, and market to identify the biggest opportunities for improvement."
+  },
+  {
+    step: "2",
+    title: "Strategy Development",
+    description: "Based on the audit, we create a prioritized action plan targeting quick wins and long-term growth."
+  },
+  {
+    step: "3",
+    title: "Implementation",
+    description: "We execute the strategy—optimizing existing content, creating new pages, and improving technical factors."
+  },
+  {
+    step: "4",
+    title: "Monitor & Optimize",
+    description: "We track rankings, traffic, and conversions, continuously refining the strategy based on results."
+  }
+];
+
+const faqs = [
+  {
+    question: "How does AI help with website optimization?",
+    answer: "AI accelerates every aspect of SEO: keyword research, content creation, competitive analysis, and technical audits. Tasks that take hours manually can be done in minutes, allowing us to be more thorough and responsive to opportunities."
+  },
+  {
+    question: "Do you offer website optimization in Huntsville?",
+    answer: "Yes! We work with businesses throughout Huntsville, Madison, and the Research Park area. Huntsville's competitive market makes SEO optimization particularly valuable—we help you stand out against local competitors."
+  },
+  {
+    question: "What about SEO services in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and understand the local market dynamics. Many Shoals-area searches have very low competition, meaning businesses can rank quickly with the right strategy. It's often low-hanging fruit."
+  },
+  {
+    question: "How long until I see results?",
+    answer: "SEO is a long-term investment, but you'll typically see movement within 2-3 months. Low-competition keywords and local searches often show results faster. We focus on quick wins early while building toward larger goals."
+  },
+  {
+    question: "Is AI-generated content bad for SEO?",
+    answer: "Pure AI-generated content without human oversight can hurt rankings. We use AI to accelerate research, generate outlines, and assist drafting—but all content is reviewed, edited, and enhanced with human expertise. Google rewards helpful content regardless of how it was created."
+  },
+  {
+    question: "How do you measure success?",
+    answer: "We track keyword rankings, organic traffic, and most importantly—conversions. Rankings are meaningless if they don't generate leads and customers. We provide monthly reports showing progress toward business goals."
+  },
+  {
+    question: "What makes you different from other SEO agencies?",
+    answer: "We combine AI efficiency with local expertise. Being based in North Alabama, we understand the local market and can move faster than distant agencies. We're also transparent about what we do and why—no black-box tactics."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/services/ai-website-optimization/#service",
+      "name": "AI Website Optimization",
+      "description": "AI-powered website optimization for better search rankings, performance, and conversions.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "SEO and Website Optimization"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-website-optimization/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="AI SEO optimization, website optimization Huntsville, SEO services Florence Alabama, local SEO North Alabama, AI content optimization" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-implementation" class="hover:text-accent transition-colors">Services</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">AI Website Optimization</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">SEO & Optimization</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI-Powered <em>Website Optimization</em>
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Outrank your competitors with AI-accelerated SEO.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Your competitors are either ignoring SEO or doing it slowly. We use AI to move faster—identifying opportunities, creating optimized content, and improving your site's technical foundation while they're still planning.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Site Audit</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">75%</div>
+              <div class="text-sm text-stone-light">Users never scroll past page 1</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">53%</div>
+              <div class="text-sm text-stone-light">Traffic goes to position #1</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">5x</div>
+              <div class="text-sm text-stone-light">Faster with AI assistance</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">ROI</div>
+              <div class="text-sm text-stone-light">Measurable results</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            What We <em>Optimize</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Comprehensive website optimization covering every factor that affects your rankings and conversions.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            {services.map((service) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <h3 class="font-display text-xl mb-3 text-charcoal">{service.title}</h3>
+                <p class="text-stone mb-4">{service.description}</p>
+                <ul class="space-y-2">
+                  {service.features.map((feature) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Our <em>Process</em>
+          </h2>
+          <div class="grid md:grid-cols-4 gap-8">
+            {process.map((step) => (
+              <div class="text-center">
+                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span class="font-display text-xl text-cream">{step.step}</span>
+                </div>
+                <h3 class="font-display text-lg mb-2 text-charcoal">{step.title}</h3>
+                <p class="text-stone text-sm">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to <em class="text-accent">Outrank</em> Your Competition?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Get a free website audit and discover your biggest opportunities for improvement.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Get Free Audit</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

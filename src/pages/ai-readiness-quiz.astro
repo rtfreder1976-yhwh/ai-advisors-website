@@ -1,0 +1,762 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "AI Readiness Quiz | Is Your Business Ready for AI? | Singing River AI";
+const description = "Take our free 2-minute AI readiness assessment to discover how prepared your business is for AI automation. Get personalized recommendations for your North Alabama business.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://singingriverai.com/ai-readiness-quiz/#webpage",
+  "url": "https://singingriverai.com/ai-readiness-quiz",
+  "name": "AI Readiness Quiz | Singing River AI",
+  "description": "Free AI readiness assessment for small businesses. Discover how prepared your business is for AI automation.",
+  "isPartOf": { "@id": "https://singingriverai.com/#website" }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Singing River AI" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="robots" content="index, follow" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-12 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="w-12 h-px bg-accent"></div>
+            <span class="text-sm font-medium text-stone uppercase tracking-widest">Free Assessment</span>
+            <div class="w-12 h-px bg-accent"></div>
+          </div>
+
+          <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+            Is Your Business <em>Ready for AI</em>?
+          </h1>
+
+          <p class="text-lg text-stone leading-relaxed mb-4">
+            Take this 2-minute quiz to discover your AI readiness score and get personalized recommendations for your business.
+          </p>
+        </div>
+      </section>
+
+      <!-- Quiz Section -->
+      <section class="py-12 bg-white">
+        <div class="max-w-2xl mx-auto px-6 lg:px-8">
+
+          <!-- Progress Bar -->
+          <div class="mb-8" id="progress-container">
+            <div class="flex justify-between text-sm text-stone mb-2">
+              <span>Progress</span>
+              <span id="progress-text">Question 1 of 7</span>
+            </div>
+            <div class="w-full bg-stone-light/20 rounded-full h-2">
+              <div id="progress-bar" class="bg-accent h-2 rounded-full transition-all duration-300" style="width: 14.28%"></div>
+            </div>
+          </div>
+
+          <!-- Quiz Container -->
+          <div id="quiz-container" class="bg-cream rounded-2xl p-8 lg:p-10 shadow-lg">
+
+            <!-- Question 1 -->
+            <div class="quiz-question" data-question="1">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">How do you currently handle lead follow-up?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="1" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>We respond manually when we have time (often delayed)</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="2" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>We have some email templates but still manual</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="3" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>We use basic automation (auto-responders)</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="4" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>We have automated sequences but want to improve</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question hidden" data-question="2">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">How much time does your team spend on repetitive tasks weekly?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="4" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>20+ hours (it's overwhelming)</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="3" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>10-20 hours (significant chunk of time)</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="2" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>5-10 hours (noticeable but manageable)</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="1" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Less than 5 hours (pretty efficient already)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question hidden" data-question="3">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">Do you use a CRM or business management software?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="1" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>No, we use spreadsheets or paper</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="2" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>We have one but barely use it</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="3" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Yes, we use it regularly for basic tasks</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="4" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Yes, it's central to our operations</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question hidden" data-question="4">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">How comfortable is your team with learning new technology?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="1" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Not comfortable - we resist change</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="2" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Somewhat hesitant but willing with training</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="3" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Generally open to new tools</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="4" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>We embrace technology and adapt quickly</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question hidden" data-question="5">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">What's your biggest business challenge right now?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="leads" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Following up with leads fast enough</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="time" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Not enough time in the day</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="scaling" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Scaling without hiring more staff</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="customer" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Keeping up with customer communication</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="quiz-question hidden" data-question="6">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">Have you experimented with AI tools like ChatGPT?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="1" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>No, haven't tried any AI tools</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="2" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Tried it once or twice personally</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="3" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Use it occasionally for work tasks</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="4" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Use AI tools regularly in our business</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz-question hidden" data-question="7">
+              <h2 class="font-display text-2xl mb-6 text-charcoal">What's your timeline for improving business operations?</h2>
+              <div class="space-y-3">
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="4" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>ASAP - we need help now</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="3" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Next 1-3 months</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="2" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Next 3-6 months</span>
+                  </div>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="1" class="sr-only" />
+                  <div class="option-box">
+                    <span class="option-indicator"></span>
+                    <span>Just exploring for now</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Contact Form (after questions) -->
+            <div class="quiz-question hidden" data-question="contact">
+              <h2 class="font-display text-2xl mb-2 text-charcoal">Almost done! Get your personalized results.</h2>
+              <p class="text-stone mb-6">Enter your details below to see your AI readiness score and recommendations.</p>
+
+              <div class="space-y-4">
+                <div>
+                  <label for="quiz-name" class="block text-sm font-medium text-charcoal mb-2">Name</label>
+                  <input type="text" id="quiz-name" name="name" required class="w-full px-4 py-3 bg-white border border-stone-light/30 rounded-xl text-charcoal placeholder-stone" placeholder="Your name" />
+                </div>
+                <div>
+                  <label for="quiz-email" class="block text-sm font-medium text-charcoal mb-2">Email</label>
+                  <input type="email" id="quiz-email" name="email" required class="w-full px-4 py-3 bg-white border border-stone-light/30 rounded-xl text-charcoal placeholder-stone" placeholder="your@email.com" />
+                </div>
+                <div>
+                  <label for="quiz-phone" class="block text-sm font-medium text-charcoal mb-2">Phone</label>
+                  <input type="tel" id="quiz-phone" name="phone" required class="w-full px-4 py-3 bg-white border border-stone-light/30 rounded-xl text-charcoal placeholder-stone" placeholder="(555) 123-4567" />
+                </div>
+                <div>
+                  <label for="quiz-company" class="block text-sm font-medium text-charcoal mb-2">Company (Optional)</label>
+                  <input type="text" id="quiz-company" name="company" class="w-full px-4 py-3 bg-white border border-stone-light/30 rounded-xl text-charcoal placeholder-stone" placeholder="Your company" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="hidden">
+              <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-accent/10 mb-4">
+                  <span id="score-display" class="font-display text-4xl text-accent">0</span>
+                </div>
+                <h2 class="font-display text-2xl mb-2 text-charcoal">Your AI Readiness Score</h2>
+                <p id="score-label" class="text-lg text-stone"></p>
+              </div>
+
+              <div id="results-content" class="space-y-6">
+                <!-- Dynamic content inserted here -->
+              </div>
+
+              <div class="mt-8 pt-8 border-t border-stone-light/20 text-center">
+                <p class="text-stone mb-4">Want to discuss your results and explore AI opportunities?</p>
+                <a href="/#contact" class="btn-primary inline-flex">
+                  <span>Book a Free Consultation</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div id="quiz-nav" class="flex justify-between mt-8">
+              <button id="prev-btn" class="btn-secondary opacity-50 cursor-not-allowed" disabled>
+                <span>Previous</span>
+              </button>
+              <button id="next-btn" class="btn-primary opacity-50 cursor-not-allowed" disabled>
+                <span>Next</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <Footer />
+
+    <style>
+      .quiz-option {
+        display: block;
+        cursor: pointer;
+      }
+
+      .option-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        background: white;
+        border: 2px solid #e5e5e5;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+      }
+
+      .option-box:hover {
+        border-color: #c4a052;
+        background: #faf9f6;
+      }
+
+      .quiz-option input:checked + .option-box {
+        border-color: #c4a052;
+        background: #faf9f6;
+      }
+
+      .option-indicator {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #a8a29e;
+        border-radius: 50%;
+        flex-shrink: 0;
+        position: relative;
+        transition: all 0.2s ease;
+      }
+
+      .quiz-option input:checked + .option-box .option-indicator {
+        border-color: #c4a052;
+        background: #c4a052;
+      }
+
+      .quiz-option input:checked + .option-box .option-indicator::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+
+    <script>
+      const questions = document.querySelectorAll('.quiz-question');
+      const progressBar = document.getElementById('progress-bar') as HTMLElement;
+      const progressText = document.getElementById('progress-text') as HTMLElement;
+      const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+      const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+      const quizNav = document.getElementById('quiz-nav') as HTMLElement;
+      const resultsSection = document.getElementById('results-section') as HTMLElement;
+      const progressContainer = document.getElementById('progress-container') as HTMLElement;
+
+      let currentQuestion = 1;
+      const totalQuestions = 7;
+      const answers: Record<string, string> = {};
+
+      function updateProgress() {
+        const progress = (currentQuestion / (totalQuestions + 1)) * 100;
+        progressBar.style.width = `${progress}%`;
+
+        if (currentQuestion <= totalQuestions) {
+          progressText.textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+        } else {
+          progressText.textContent = 'Final Step';
+        }
+      }
+
+      function showQuestion(num: number | string) {
+        questions.forEach(q => q.classList.add('hidden'));
+        const target = document.querySelector(`[data-question="${num}"]`);
+        if (target) target.classList.remove('hidden');
+
+        // Update prev button
+        if (num === 1) {
+          prevBtn.disabled = true;
+          prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+          prevBtn.disabled = false;
+          prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        // Update next button text
+        if (num === 'contact') {
+          nextBtn.querySelector('span')!.textContent = 'See My Results';
+        } else {
+          nextBtn.querySelector('span')!.textContent = 'Next';
+        }
+
+        checkNextButton();
+      }
+
+      function checkNextButton() {
+        let canProceed = false;
+
+        if (currentQuestion <= totalQuestions) {
+          const selected = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+          canProceed = !!selected;
+        } else {
+          // Contact form validation
+          const name = (document.getElementById('quiz-name') as HTMLInputElement).value;
+          const email = (document.getElementById('quiz-email') as HTMLInputElement).value;
+          const phone = (document.getElementById('quiz-phone') as HTMLInputElement).value;
+          canProceed = name.length > 0 && email.length > 0 && phone.length > 0;
+        }
+
+        if (canProceed) {
+          nextBtn.disabled = false;
+          nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+      }
+
+      function calculateScore(): number {
+        let score = 0;
+        for (let i = 1; i <= 4; i++) {
+          score += parseInt(answers[`q${i}`] || '0');
+        }
+        // Q5 doesn't add to score, just captures challenge
+        score += parseInt(answers['q6'] || '0');
+        score += parseInt(answers['q7'] || '0');
+        return score;
+      }
+
+      function getScoreLabel(score: number): string {
+        if (score >= 20) return 'AI Ready';
+        if (score >= 15) return 'Almost Ready';
+        if (score >= 10) return 'Building Foundation';
+        return 'Getting Started';
+      }
+
+      function getResultsContent(score: number): string {
+        const challenge = answers['q5'] || 'time';
+
+        let insights = '';
+        let recommendations = '';
+
+        if (score >= 20) {
+          insights = `
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 class="font-display text-lg text-green-800 mb-2">Great News!</h3>
+              <p class="text-green-700">Your business is well-positioned for AI implementation. You have the systems and mindset in place to see immediate ROI from AI automation.</p>
+            </div>
+          `;
+          recommendations = `
+            <h3 class="font-display text-lg text-charcoal mb-3">Recommended Next Steps:</h3>
+            <ul class="space-y-2 text-stone">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Start with high-impact automation (lead follow-up, customer communication)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Consider advanced AI tools for your specific industry</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Explore AI integration with your existing CRM</span>
+              </li>
+            </ul>
+          `;
+        } else if (score >= 15) {
+          insights = `
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <h3 class="font-display text-lg text-blue-800 mb-2">You're Almost There!</h3>
+              <p class="text-blue-700">Your business has a solid foundation for AI. With some targeted improvements, you'll be ready to implement AI solutions that can save significant time and money.</p>
+            </div>
+          `;
+          recommendations = `
+            <h3 class="font-display text-lg text-charcoal mb-3">Recommended Next Steps:</h3>
+            <ul class="space-y-2 text-stone">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Strengthen your CRM usage to prepare for AI integration</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Start with simple automations to build team confidence</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Consider AI training for your team</span>
+              </li>
+            </ul>
+          `;
+        } else if (score >= 10) {
+          insights = `
+            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+              <h3 class="font-display text-lg text-yellow-800 mb-2">Building Your Foundation</h3>
+              <p class="text-yellow-700">You have the potential to benefit greatly from AI, but some foundational work will help ensure success. The good news? Even basic AI automations can start saving you time right away.</p>
+            </div>
+          `;
+          recommendations = `
+            <h3 class="font-display text-lg text-charcoal mb-3">Recommended Next Steps:</h3>
+            <ul class="space-y-2 text-stone">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Get a proper CRM in place (we can help with setup)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Start with one simple automation to prove value</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Consider a ChatGPT training session for your team</span>
+              </li>
+            </ul>
+          `;
+        } else {
+          insights = `
+            <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
+              <h3 class="font-display text-lg text-purple-800 mb-2">Great Time to Get Started!</h3>
+              <p class="text-purple-700">You're at the beginning of your AI journey—and that's okay! Many successful businesses started exactly where you are. The key is starting with the right foundation.</p>
+            </div>
+          `;
+          recommendations = `
+            <h3 class="font-display text-lg text-charcoal mb-3">Recommended Next Steps:</h3>
+            <ul class="space-y-2 text-stone">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Schedule a consultation to understand your options</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Let us set up a simple CRM with basic automation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Experience quick wins that build confidence</span>
+              </li>
+            </ul>
+          `;
+        }
+
+        // Add challenge-specific insight
+        let challengeInsight = '';
+        switch(challenge) {
+          case 'leads':
+            challengeInsight = `<p class="text-stone mt-4"><strong>About your lead follow-up challenge:</strong> AI can respond to leads within seconds, 24/7. Most businesses see a 20-30% increase in conversions just by responding faster.</p>`;
+            break;
+          case 'time':
+            challengeInsight = `<p class="text-stone mt-4"><strong>About your time challenge:</strong> AI automation typically saves 10-20 hours per week on repetitive tasks. That's time you can reinvest in growing your business.</p>`;
+            break;
+          case 'scaling':
+            challengeInsight = `<p class="text-stone mt-4"><strong>About scaling without hiring:</strong> AI lets you handle 2-3x the workload without adding staff. It's like having a tireless assistant that never calls in sick.</p>`;
+            break;
+          case 'customer':
+            challengeInsight = `<p class="text-stone mt-4"><strong>About customer communication:</strong> AI can handle routine inquiries, send follow-ups, and keep customers engaged—automatically. Your customers get faster responses, and you get more time.</p>`;
+            break;
+        }
+
+        return `${insights}${challengeInsight}<div class="mt-6">${recommendations}</div>`;
+      }
+
+      async function showResults() {
+        const score = calculateScore();
+        const scoreDisplay = document.getElementById('score-display')!;
+        const scoreLabel = document.getElementById('score-label')!;
+        const resultsContent = document.getElementById('results-content')!;
+
+        // Hide quiz elements
+        questions.forEach(q => q.classList.add('hidden'));
+        quizNav.classList.add('hidden');
+        progressContainer.classList.add('hidden');
+
+        // Show results
+        resultsSection.classList.remove('hidden');
+        scoreDisplay.textContent = score.toString();
+        scoreLabel.textContent = getScoreLabel(score);
+        resultsContent.innerHTML = getResultsContent(score);
+
+        // Send to webhook
+        const name = (document.getElementById('quiz-name') as HTMLInputElement).value;
+        const email = (document.getElementById('quiz-email') as HTMLInputElement).value;
+        const phone = (document.getElementById('quiz-phone') as HTMLInputElement).value;
+        const company = (document.getElementById('quiz-company') as HTMLInputElement).value;
+
+        try {
+          await fetch('https://services.leadconnectorhq.com/hooks/rUGlMZiYXaprhVgsYQFV/webhook-trigger/d1136504-4e08-4762-9fda-68d61a79f887', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name,
+              email,
+              phone,
+              company,
+              message: `AI Readiness Quiz Results:\n- Score: ${score}/24 (${getScoreLabel(score)})\n- Biggest Challenge: ${answers['q5']}\n- Lead Follow-up: Q1=${answers['q1']}\n- Time on Repetitive Tasks: Q2=${answers['q2']}\n- CRM Usage: Q3=${answers['q3']}\n- Tech Comfort: Q4=${answers['q4']}\n- AI Experience: Q6=${answers['q6']}\n- Timeline: Q7=${answers['q7']}`,
+              source: 'AI Readiness Quiz'
+            })
+          });
+        } catch (e) {
+          console.error('Failed to submit quiz results', e);
+        }
+      }
+
+      // Event listeners
+      document.querySelectorAll('.quiz-option input').forEach(input => {
+        input.addEventListener('change', (e) => {
+          const target = e.target as HTMLInputElement;
+          answers[target.name] = target.value;
+          checkNextButton();
+        });
+      });
+
+      // Contact form validation
+      ['quiz-name', 'quiz-email', 'quiz-phone'].forEach(id => {
+        document.getElementById(id)?.addEventListener('input', checkNextButton);
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentQuestion > 1) {
+          currentQuestion--;
+          showQuestion(currentQuestion);
+          updateProgress();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentQuestion < totalQuestions) {
+          currentQuestion++;
+          showQuestion(currentQuestion);
+          updateProgress();
+        } else if (currentQuestion === totalQuestions) {
+          currentQuestion++;
+          showQuestion('contact');
+          updateProgress();
+        } else {
+          showResults();
+        }
+      });
+
+      // Initialize
+      updateProgress();
+      showQuestion(1);
+    </script>
+  </body>
+</html>

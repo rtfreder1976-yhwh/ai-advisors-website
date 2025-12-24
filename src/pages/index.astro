@@ -7,9 +7,12 @@ import Services from '../components/Services.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+const title = "Singing River AI | AI Consulting for Small Business in North Alabama";
+const description = "Practical AI consulting for small businesses in North Alabama. Affordable AI strategy, training, and implementation for Huntsville, Florence, and the Shoals. Free 30-minute consultation.";
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <Header />
   <main>
     <Hero />

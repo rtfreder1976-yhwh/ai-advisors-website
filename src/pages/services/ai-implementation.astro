@@ -3,28 +3,29 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 
 const services = [
   {
+    name: "Lead Follow-Up Automation",
+    description: "Never lose another lead to slow response times. We build automated systems that respond to inquiries instantly—via text, email, or both—24/7. Our lead follow-up automation in Huntsville and Florence has helped businesses respond in under 60 seconds instead of hours or days. Includes intelligent qualification and routing."
+  },
+  {
+    name: "CRM Integration & Automation",
+    description: "Seamless AI integration with your existing CRM—GoHighLevel, HubSpot, Salesforce, or others. We automate data entry, follow-up sequences, task creation, and reporting. Our CRM automation for Huntsville businesses eliminates hours of manual work while ensuring nothing falls through the cracks."
+  },
+  {
+    name: "AI Chatbot Development",
+    description: "Custom conversational AI solutions for customer service, lead qualification, appointment booking, and internal support. Our AI chatbot development creates assistants trained on your business that handle common questions 24/7. Integrates with your website, Facebook, SMS, and more."
+  },
+  {
+    name: "Workflow Automation",
+    description: "Intelligent automation that connects your tools and eliminates repetitive tasks. From document processing to approval workflows to data synchronization, we build custom automations that save 10-20 hours per week. Popular with professional services firms and contractors throughout North Alabama."
+  },
+  {
+    name: "GoHighLevel Setup & Automation",
+    description: "Complete GoHighLevel implementation and automation for businesses wanting an all-in-one CRM, marketing, and automation platform. We handle setup, migration, workflow building, and training. Our GoHighLevel setup in Huntsville has helped dozens of local businesses consolidate their tech stack and automate their marketing.",
+    href: "/services/ai-implementation/gohighlevel"
+  },
+  {
     name: "Custom AI Solutions",
-    description: "End-to-end development and deployment of AI solutions tailored specifically to your business requirements and workflows."
-  },
-  {
-    name: "AI Integration Services",
-    description: "Seamless integration of AI tools and capabilities with your existing systems, software, and business processes."
-  },
-  {
-    name: "Process Automation",
-    description: "Intelligent automation solutions that streamline operations, reduce manual work, and improve efficiency across your organization."
-  },
-  {
-    name: "Chatbot & Virtual Assistant Development",
-    description: "Custom conversational AI solutions for customer service, internal support, and business process automation."
-  },
-  {
-    name: "Data Pipeline Setup",
-    description: "Design and implementation of data infrastructure needed to power your AI initiatives effectively."
-  },
-  {
-    name: "Testing & Quality Assurance",
-    description: "Rigorous testing protocols to ensure your AI solutions perform reliably and meet your business requirements."
+    description: "End-to-end development of AI solutions tailored to your unique business requirements. From custom GPTs and AI assistants to complex multi-system integrations, we build what you need when off-the-shelf solutions don't fit. Includes thorough testing, documentation, and team training."
   }
 ];
 
@@ -36,15 +37,35 @@ const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="
 const faqs = [
   {
     question: "What does AI implementation include?",
-    answer: "AI implementation includes custom development of AI solutions, integration with your existing systems (CRM, email, scheduling tools), thorough testing, deployment, and training your team to use the new systems effectively."
+    answer: "AI implementation includes everything needed to get your AI solution live and working: requirements analysis, solution design, development/configuration, integration with your existing systems (CRM, email, calendar, etc.), thorough testing, deployment, and training your team to use and manage the new systems. We handle the technical complexity so you can focus on results."
   },
   {
     question: "Can you integrate AI with my existing CRM?",
-    answer: "Yes, we specialize in integrating AI automation with popular CRMs and business tools. This includes automated lead follow-up, customer communication workflows, and intelligent task automation."
+    answer: "Yes, CRM integration is one of our specialties. We work with GoHighLevel, HubSpot, Salesforce, Zoho, Pipedrive, and many others. Our CRM automation in Huntsville and throughout North Alabama includes automated lead follow-up, intelligent task creation, data synchronization, and custom workflows that eliminate manual data entry."
+  },
+  {
+    question: "Do you offer GoHighLevel setup in Huntsville?",
+    answer: "Absolutely. We're experienced GoHighLevel partners and offer complete setup, migration, and automation services throughout Huntsville, Madison, Florence, and North Alabama. This includes account configuration, workflow building, pipeline setup, automation sequences, and training your team to manage the platform effectively."
   },
   {
     question: "How long does AI implementation take?",
-    answer: "Simple automations can be implemented in 1-2 weeks. More complex AI systems with multiple integrations typically take 4-8 weeks. We'll provide a detailed timeline during your free consultation."
+    answer: "Timeline depends on complexity: Simple automations (lead response, basic workflows) can be live in 1-2 weeks. CRM integrations and chatbots typically take 2-4 weeks. Complex custom solutions with multiple integrations may take 4-8 weeks. We'll provide a detailed timeline during your free consultation and keep you updated throughout the project."
+  },
+  {
+    question: "What's involved in lead follow-up automation?",
+    answer: "Lead follow-up automation typically includes: instant response triggers (text/email within seconds of inquiry), intelligent qualification questions, automated appointment booking, follow-up sequences for leads who don't respond immediately, CRM integration for tracking, and notification alerts for your team. The goal is instant response + persistent follow-up without manual effort."
+  },
+  {
+    question: "Do you build AI chatbots for websites?",
+    answer: "Yes, we develop custom AI chatbots that can be embedded on your website, integrated with Facebook Messenger, deployed via SMS, or all of the above. Our chatbots are trained on your specific business information—services, pricing, FAQs, policies—so they give accurate, helpful responses that match your brand voice."
+  },
+  {
+    question: "What areas do you serve for AI implementation?",
+    answer: "We provide AI implementation services throughout North Alabama including Huntsville, Madison, Decatur, Athens, Florence, Muscle Shoals, Tuscumbia, and Sheffield. For complex implementations, we work on-site as needed. We also serve clients remotely throughout Alabama and the Southeast."
+  },
+  {
+    question: "How much does AI implementation cost?",
+    answer: "Implementation costs vary based on scope. Simple automations start around $1,500-3,000. CRM integrations and chatbots typically range from $3,000-8,000. Complex custom solutions may be $10,000+. We always provide detailed quotes before starting work, and our pricing is designed for small business budgets—not enterprise rates."
   }
 ];
 
@@ -52,26 +73,26 @@ const relatedServices = [
   {
     name: "AI Strategy & Consulting",
     href: "/services/ai-consulting/",
-    description: "Start with a strategic assessment to identify the right AI opportunities."
+    description: "Start with a strategic assessment to identify the right AI opportunities before implementation."
   },
   {
     name: "AI Education & Training",
     href: "/services/ai-training/",
-    description: "Train your team to effectively use and manage new AI systems."
+    description: "Train your team to effectively use and manage new AI systems we implement."
   },
   {
     name: "Ongoing Support",
     href: "/services/ongoing-support/",
-    description: "Keep your AI solutions running optimally with continuous support."
+    description: "Keep your AI solutions running optimally with continuous monitoring and support."
   }
 ];
 ---
 
 <ServiceLayout
-  title="AI Implementation | Singing River AI"
-  description="End-to-end AI implementation services. We build and deploy custom AI solutions integrated seamlessly with your existing infrastructure."
+  title="AI Implementation & Automation | Huntsville, Florence, North Alabama | Singing River AI"
+  description="AI implementation, CRM automation, and workflow automation for businesses in Huntsville, Florence, Decatur, and North Alabama. Lead follow-up automation, GoHighLevel setup, and custom AI solutions."
   serviceName="AI Implementation"
-  serviceDescription="End-to-end development and deployment of custom AI solutions integrated seamlessly with your existing infrastructure. From concept to launch, we handle the technical complexity so you can focus on results."
+  serviceDescription="End-to-end AI implementation that turns strategy into working solutions. From lead follow-up automation to CRM integration to custom AI chatbots, we build and deploy the systems that transform how your business operates. Serving Huntsville, Florence, Decatur, Athens, and all of North Alabama with practical AI solutions that deliver immediate ROI."
   serviceCategory="Implementation Services"
   services={services}
   icon={icon}

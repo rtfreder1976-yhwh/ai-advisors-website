@@ -1,0 +1,221 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "The Modern Dev Stack: GitHub, Vercel, and Cursor Explained | Singing River AI";
+const description = "A beginner-friendly guide to modern web development tools. Learn how GitHub, Vercel, and Cursor work together to build and deploy websites faster.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDate = "2024-12-20";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Modern Dev Stack: GitHub, Vercel, and Cursor Explained",
+  "description": description,
+  "datePublished": publishDate,
+  "author": { "@type": "Person", "name": "Todd Frederickson" },
+  "publisher": { "@id": "https://singingriverai.com/#organization" }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Header -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Modern Web Development Stack</li>
+            </ol>
+          </nav>
+
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">Development</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              The Modern Dev Stack: GitHub, Vercel, and <em>Cursor Explained</em>
+            </h1>
+            <p class="text-stone">December 20, 2024 · 7 min read</p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-stone leading-relaxed">
+              If you've worked with a web developer recently, you've probably heard terms like GitHub, Vercel, and maybe even Cursor. Here's what these tools actually do and why they matter for your business website.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">GitHub: Your Code's Home Base</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>What it is:</strong> GitHub is where your website's code lives. Think of it as a sophisticated Google Drive for code—but with superpowers.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Why it matters:</strong>
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Version history:</strong> Every change is saved. If something breaks, you can instantly roll back to a working version</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Collaboration:</strong> Multiple developers can work on the same project without stepping on each other's toes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Ownership:</strong> You own your code. If you change developers, your project transfers cleanly</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Business takeaway:</strong> Always ask developers to use GitHub (or similar) for your projects. You should have access to the repository. This protects your investment.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Vercel: From Code to Live Website</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>What it is:</strong> Vercel is a hosting platform that automatically turns your code into a live website. When you push changes to GitHub, Vercel detects them and deploys your updated site within seconds.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Why it matters:</strong>
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Speed:</strong> Vercel's global network serves your site from locations closest to your visitors. Fast sites rank better on Google</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Preview deployments:</strong> See changes on a test URL before they go live. Perfect for approving updates</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Instant rollbacks:</strong> If something goes wrong, one click reverts to the previous version</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>SSL included:</strong> Free security certificates, so your site shows as secure (https://)</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Business takeaway:</strong> Vercel (and similar platforms like Netlify) give you professional-grade hosting without managing servers. Updates are instant and rollbacks are painless.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Cursor: The AI-Powered Code Editor</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>What it is:</strong> Cursor is a code editor with AI built-in. It's like having an experienced developer looking over your shoulder, ready to help write code, explain things, and catch errors.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Why it matters:</strong>
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Faster development:</strong> AI helps write boilerplate code, suggests completions, and catches bugs early</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Built-in chat:</strong> Ask questions about your code, get explanations, request changes in natural language</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Multi-model support:</strong> Use Claude, GPT-4, or other AI models depending on the task</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Business takeaway:</strong> Developers using AI-powered tools like Cursor can work faster, which means lower costs and faster turnaround for your projects.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">How They Work Together</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Here's the typical workflow for a modern website:
+            </p>
+            <ol class="space-y-4 text-stone mb-6">
+              <li class="flex items-start gap-4">
+                <span class="font-display text-accent text-xl">1.</span>
+                <div>
+                  <strong>Code in Cursor:</strong> Developer writes and edits code with AI assistance
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="font-display text-accent text-xl">2.</span>
+                <div>
+                  <strong>Push to GitHub:</strong> Changes are saved with a description of what changed
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="font-display text-accent text-xl">3.</span>
+                <div>
+                  <strong>Vercel deploys:</strong> Automatically builds and publishes the updated site
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="font-display text-accent text-xl">4.</span>
+                <div>
+                  <strong>Preview and approve:</strong> Client reviews on a preview URL before going live
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="font-display text-accent text-xl">5.</span>
+                <div>
+                  <strong>Live in seconds:</strong> Once approved, the production site updates instantly
+                </div>
+              </li>
+            </ol>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">What This Means for Your Business</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              This modern stack offers several advantages over traditional website development:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Faster updates:</strong> Changes can go live in minutes, not days</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Lower risk:</strong> Version control and instant rollbacks mean mistakes are easily fixed</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Better performance:</strong> Global CDN hosting makes your site fast for all visitors</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Transparency:</strong> You can see every change, when it was made, and by whom</span>
+              </li>
+            </ul>
+
+            <div class="bg-cream rounded-2xl p-8 mt-12">
+              <h3 class="font-display text-xl mb-4">Questions About Modern Web Development?</h3>
+              <p class="text-stone mb-4">
+                Whether you're building a new website or modernizing an existing one, we can help you understand your options and make the right technology choices.
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Let's Talk</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

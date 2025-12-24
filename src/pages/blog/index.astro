@@ -1,0 +1,144 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "AI Blog | Tips, Guides & Insights for Small Business | Singing River AI";
+const description = "Practical AI guides for small business owners. Learn about ChatGPT, Claude, automation tools, and how to use AI to grow your business.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const posts = [
+  {
+    slug: "chatgpt-for-small-business",
+    title: "ChatGPT for Small Business: A Practical Guide",
+    excerpt: "Everything you need to know about using ChatGPT to save time and grow your business—without the hype.",
+    date: "December 20, 2024",
+    category: "AI Tools"
+  },
+  {
+    slug: "claude-ai-vs-chatgpt",
+    title: "Claude AI vs ChatGPT: Which Should Your Business Use?",
+    excerpt: "An honest comparison of Claude and ChatGPT for business use cases. When to use each and why it matters.",
+    date: "December 20, 2024",
+    category: "AI Tools"
+  },
+  {
+    slug: "claude-code-for-developers",
+    title: "Claude Code: AI-Powered Development for Modern Teams",
+    excerpt: "How Claude Code and Cursor are changing the way developers build software—and what it means for your business.",
+    date: "December 20, 2024",
+    category: "Development"
+  },
+  {
+    slug: "modern-web-development-stack",
+    title: "The Modern Dev Stack: GitHub, Vercel, and Cursor Explained",
+    excerpt: "A beginner-friendly guide to the tools powering modern web development and why they matter for your website.",
+    date: "December 20, 2024",
+    category: "Development"
+  },
+  {
+    slug: "ai-for-seo-rankings",
+    title: "How AI Can Improve Your Website's SEO Rankings",
+    excerpt: "Practical ways to use AI for keyword research, content creation, and technical SEO—without gaming the system.",
+    date: "December 20, 2024",
+    category: "SEO"
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://singingriverai.com/blog/#blog",
+  "name": "Singing River AI Blog",
+  "description": "Practical AI guides and insights for small business owners",
+  "url": "https://singingriverai.com/blog",
+  "publisher": { "@id": "https://singingriverai.com/#organization" }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-12 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Blog</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI Insights for <em>Small Business</em>
+            </h1>
+            <p class="text-lg text-stone leading-relaxed">
+              Practical guides on using AI to save time, grow your business, and stay competitive—written in plain English.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Posts -->
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <article class="bg-cream rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <a href={`/blog/${post.slug}`} class="block p-6">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="text-xs font-medium text-accent uppercase tracking-wider">{post.category}</span>
+                    <span class="text-xs text-stone">{post.date}</span>
+                  </div>
+                  <h2 class="font-display text-xl mb-3 text-charcoal hover:text-accent transition-colors">
+                    {post.title}
+                  </h2>
+                  <p class="text-stone text-sm leading-relaxed mb-4">
+                    {post.excerpt}
+                  </p>
+                  <span class="text-accent text-sm font-medium inline-flex items-center gap-1">
+                    Read more
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-16 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl mb-6">
+            Want Personalized <em>AI Advice</em>?
+          </h2>
+          <p class="text-stone text-lg mb-8">
+            Book a free consultation to discuss how AI can help your specific business.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

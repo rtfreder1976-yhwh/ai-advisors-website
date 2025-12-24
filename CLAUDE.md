@@ -1,0 +1,1 @@
+- Remember that we usually work on one of two businesses. The Valley Clean Team (Cleaning Company) or Singing River AI (An AI business consulting company)

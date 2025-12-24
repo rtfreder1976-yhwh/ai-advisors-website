@@ -4,27 +4,27 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 const services = [
   {
     name: "AI Readiness Assessment",
-    description: "Comprehensive evaluation of your business processes, data infrastructure, and team capabilities to identify AI opportunities."
+    description: "Comprehensive evaluation of your business processes, data infrastructure, team capabilities, and technology stack. We identify where AI can deliver the biggest impact and flag potential obstacles before you invest. Most Huntsville and Florence businesses discover 3-5 high-value AI opportunities they hadn't considered."
   },
   {
-    name: "Use Case Identification",
-    description: "Strategic analysis to find high-impact AI opportunities with the best ROI potential for your specific business context."
+    name: "Use Case Identification & Prioritization",
+    description: "Strategic analysis to find and rank AI opportunities by ROI potential, implementation complexity, and business impact. We don't just list possibilities—we prioritize them based on your specific goals, budget, and timeline. Typical engagement identifies 10-15 use cases and prioritizes the top 3-5 for immediate action."
   },
   {
     name: "AI Implementation Roadmap",
-    description: "Detailed planning and prioritization for your AI transformation journey, including timelines, resources, and milestones."
+    description: "Detailed planning document with timelines, resource requirements, technology recommendations, and milestones for your AI transformation. Includes phased approach so you can start seeing results quickly while building toward larger goals. Most roadmaps cover 6-12 months of prioritized initiatives."
   },
   {
     name: "Technology Stack Advisory",
-    description: "Expert guidance on selecting the right AI tools, platforms, and vendors for your specific needs and budget."
+    description: "Expert guidance on selecting the right AI tools, platforms, and vendors for your specific needs and budget. We're platform-agnostic—we recommend ChatGPT, Claude, GoHighLevel, or custom solutions based on what's best for you, not vendor relationships. Includes cost comparisons and integration considerations."
   },
   {
-    name: "ROI Analysis & Business Case",
-    description: "Data-driven analysis to build compelling business cases for AI investments and measure expected returns."
+    name: "ROI Analysis & Business Case Development",
+    description: "Data-driven analysis to build compelling business cases for AI investments. We help you calculate expected time savings, cost reductions, and revenue opportunities. Essential for getting leadership buy-in or justifying budget allocation. Includes industry benchmarks and realistic projections."
   },
   {
     name: "Change Management Planning",
-    description: "Strategies for managing organizational change, ensuring smooth adoption, and maximizing team buy-in."
+    description: "Strategies for managing organizational change and ensuring smooth AI adoption. Covers team communication, training needs, process documentation, and success metrics. The best AI strategy fails without proper change management—we help you get your team on board from day one."
   }
 ];
 
@@ -34,16 +34,32 @@ const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="
 
 const faqs = [
   {
-    question: "What is AI consulting?",
-    answer: "AI consulting helps businesses identify opportunities to use artificial intelligence to improve operations, reduce costs, and increase efficiency. It includes analyzing your current processes, finding high-impact AI use cases, and creating a roadmap for implementation."
+    question: "What is AI consulting for small business?",
+    answer: "AI consulting helps small businesses identify opportunities to use artificial intelligence to improve operations, reduce costs, and increase efficiency. It includes analyzing your current processes, finding high-impact AI use cases, and creating a practical roadmap for implementation. Unlike enterprise consultants, we focus on affordable, practical solutions that small businesses in Huntsville, Florence, and North Alabama can actually implement."
   },
   {
-    question: "How much does AI consulting cost?",
-    answer: "AI consulting costs vary based on project scope. Singing River AI offers affordable solutions for small businesses, starting with a free 30-minute consultation to discuss your needs and provide a custom quote."
+    question: "How much does AI consulting cost in Huntsville?",
+    answer: "AI consulting costs vary based on project scope, but Singing River AI is specifically designed to be affordable for small businesses—not enterprise pricing. Initial strategy assessments typically range from $1,500-$5,000 depending on complexity. We always start with a free 30-minute consultation to understand your needs and provide a custom quote. Many North Alabama businesses find our rates 50-70% lower than larger consulting firms."
+  },
+  {
+    question: "What makes you the best AI consultant in Florence and the Shoals?",
+    answer: "We're local, affordable, and practical. Unlike national firms or remote consultants, we're based right here in the Shoals. We understand the local business landscape, can meet in person, and focus on solutions that work for Alabama small businesses—not Fortune 500 companies. Our 24+ years of technology experience combined with deep AI expertise means you get enterprise-quality consulting at small business prices."
   },
   {
     question: "How long does an AI consulting engagement take?",
-    answer: "Initial strategy and assessment typically takes 2-4 weeks. Full implementation timelines depend on the complexity of your project, ranging from a few weeks for simple automations to several months for comprehensive AI systems."
+    answer: "Initial strategy and assessment typically takes 2-4 weeks, including stakeholder interviews, process analysis, and deliverable development. Simple assessments for smaller businesses can be completed in 1-2 weeks. Comprehensive AI transformation roadmaps for larger organizations may take 4-6 weeks. We'll provide a clear timeline during your free consultation based on your specific situation."
+  },
+  {
+    question: "Do I need AI consulting before implementing AI?",
+    answer: "Not always, but it often saves money and prevents mistakes. If you have a clear, simple AI use case (like automating email responses), you might go straight to implementation. But if you're unsure where to start, have multiple potential applications, or want to ensure you're investing wisely, consulting first typically delivers 3-5x ROI by avoiding wrong turns and identifying the highest-impact opportunities."
+  },
+  {
+    question: "What industries do you provide AI consulting for in North Alabama?",
+    answer: "We serve all industries but have deep experience with real estate, professional services (law firms, CPAs, consultants), home services contractors (HVAC, plumbing, electrical), healthcare practices, and defense/aerospace companies in the Huntsville area. Our strategies are customized to your industry's specific challenges, compliance requirements, and competitive landscape."
+  },
+  {
+    question: "Can you help with AI strategy for defense contractors in Huntsville?",
+    answer: "Yes. We understand the unique requirements of defense contractors and aerospace companies in Huntsville and the Research Park area. Our AI consulting addresses compliance considerations, security requirements, and the specific workflow challenges these organizations face. We help identify AI opportunities that improve efficiency while maintaining the documentation and process controls your contracts require."
   }
 ];
 
@@ -61,16 +77,16 @@ const relatedServices = [
   {
     name: "Ongoing Support",
     href: "/services/ongoing-support/",
-    description: "Keep your AI systems optimized with continuous monitoring and improvement."
+    description: "Keep your AI systems optimized with continuous monitoring and quarterly strategy reviews."
   }
 ];
 ---
 
 <ServiceLayout
-  title="AI Strategy & Consulting | Singing River AI"
-  description="Strategic AI consulting to identify opportunities and plan implementation. We help you find the highest-impact AI use cases for your business."
+  title="AI Strategy & Consulting | Huntsville, Florence, North Alabama | Singing River AI"
+  description="Affordable AI consulting for small businesses in Huntsville, Florence, Decatur, and North Alabama. Find high-impact AI opportunities and create a practical implementation roadmap."
   serviceName="AI Strategy & Consulting"
-  serviceDescription="Strategic analysis of your business processes to identify high-impact AI opportunities. We help you navigate the AI landscape and create actionable plans that deliver real business value."
+  serviceDescription="Strategic AI consulting that identifies your highest-impact opportunities and creates a practical path forward. We help small businesses throughout Huntsville, Florence, Decatur, and North Alabama cut through the AI hype and focus on solutions that actually deliver ROI. No enterprise pricing, no generic advice—just practical AI strategy for your specific business."
   serviceCategory="Consulting Services"
   services={services}
   icon={icon}

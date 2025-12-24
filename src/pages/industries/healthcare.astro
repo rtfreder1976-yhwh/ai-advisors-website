@@ -1,0 +1,516 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "HIPAA-Compliant AI for Medical Practices in Huntsville & North Alabama | Healthcare AI Automation | Singing River AI";
+const description = "HIPAA-compliant AI automation for medical practices, clinics, and healthcare providers in Huntsville, Florence, and North Alabama. Patient scheduling, insurance verification, and staff optimization without compromising compliance.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const solutions = [
+  {
+    title: "Patient Scheduling Automation",
+    description: "AI handles appointment requests 24/7, reducing no-shows with automated reminders and making rebooking seamless. Patients can schedule, reschedule, or cancel without calling during office hours.",
+    stat: "30%",
+    statLabel: "reduction in no-shows"
+  },
+  {
+    title: "Insurance Verification",
+    description: "Automate eligibility checks before appointments. AI verifies coverage, identifies co-pays, and flags issues before patients arrive—reducing claim denials and front-desk headaches.",
+    stat: "15+",
+    statLabel: "hours saved weekly"
+  },
+  {
+    title: "Patient Communication",
+    description: "Automated appointment reminders, follow-up care instructions, and prescription refill notifications. Keep patients engaged and informed without adding staff workload.",
+    stat: "40%",
+    statLabel: "fewer phone calls"
+  },
+  {
+    title: "Staff Scheduling & Optimization",
+    description: "AI analyzes patient flow patterns to optimize staff schedules, reduce overtime, and ensure coverage during peak hours. Better utilization without burnout.",
+    stat: "20%",
+    statLabel: "improved staff efficiency"
+  }
+];
+
+const useCases = [
+  {
+    title: "Front Desk Automation",
+    items: [
+      "24/7 appointment scheduling",
+      "Automated appointment reminders",
+      "Patient intake form collection",
+      "Insurance card capture"
+    ]
+  },
+  {
+    title: "Patient Engagement",
+    items: [
+      "Post-visit follow-up messages",
+      "Prescription refill reminders",
+      "Preventive care notifications",
+      "Patient satisfaction surveys"
+    ]
+  },
+  {
+    title: "Revenue Cycle",
+    items: [
+      "Insurance eligibility verification",
+      "Prior authorization tracking",
+      "Payment reminder automation",
+      "Claim status notifications"
+    ]
+  },
+  {
+    title: "Operations",
+    items: [
+      "Staff schedule optimization",
+      "Patient flow analysis",
+      "Wait time management",
+      "Capacity forecasting"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "Is your AI automation HIPAA compliant?",
+    answer: "Absolutely. HIPAA compliance is non-negotiable in healthcare. We only implement AI solutions using HIPAA-compliant platforms with proper BAAs (Business Associate Agreements), encryption, and access controls. Your patient data stays protected while you gain efficiency."
+  },
+  {
+    question: "Do you work with medical practices in Huntsville?",
+    answer: "Yes! We work with medical practices, clinics, and healthcare providers throughout Huntsville, Madison, and the greater North Alabama area. From solo practices to multi-provider clinics near Huntsville Hospital and Crestwood Medical Center, we help healthcare providers implement AI that saves time without compromising care."
+  },
+  {
+    question: "What about healthcare practices in Florence and the Shoals?",
+    answer: "We're based in the Shoals and understand local healthcare needs. We work with practices throughout Florence, Muscle Shoals, and Tuscumbia, including those affiliated with North Alabama Medical Center and Helen Keller Hospital. Local support means faster implementation and in-person training when needed."
+  },
+  {
+    question: "Will AI replace my front desk staff?",
+    answer: "No—AI augments your staff, not replaces them. It handles repetitive tasks like appointment reminders, basic scheduling, and routine patient inquiries. This frees your team to focus on complex patient needs, insurance issues, and the human touch that healthcare requires."
+  },
+  {
+    question: "How does AI help with patient no-shows?",
+    answer: "AI sends automated appointment reminders via text, email, or voice at optimal times. It makes rescheduling easy for patients who can't make it, and can automatically fill cancelled slots from a waitlist. Most practices see a 20-30% reduction in no-shows."
+  },
+  {
+    question: "Can AI handle insurance verification?",
+    answer: "Yes. AI can automate eligibility verification before appointments, checking coverage status, co-pays, and deductibles. This reduces surprises at check-in, decreases claim denials, and improves revenue cycle efficiency."
+  },
+  {
+    question: "What's the ROI for healthcare AI automation?",
+    answer: "Most practices see ROI within 2-3 months. Between reduced no-shows (recovered revenue), fewer claim denials (better collections), and staff time savings (reduced overtime), AI typically delivers 3-5x return on investment. We can calculate projected ROI for your specific practice."
+  },
+  {
+    question: "How long does implementation take?",
+    answer: "Basic automation (scheduling, reminders) can be live in 1-2 weeks. More complex implementations like insurance verification integration typically take 3-4 weeks. We handle the technical work and train your staff, minimizing disruption to patient care."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/industries/healthcare/#service",
+      "name": "HIPAA-Compliant AI for Healthcare",
+      "description": "AI automation for medical practices and healthcare providers. Patient scheduling, insurance verification, and operational optimization—all HIPAA compliant.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "Healthcare AI Automation",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Medical Practices and Healthcare Providers"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/industries/healthcare/#webpage",
+      "url": "https://singingriverai.com/industries/healthcare",
+      "name": "HIPAA-Compliant AI for Healthcare | Singing River AI",
+      "description": "AI automation for medical practices in North Alabama. Patient scheduling, insurance verification, and HIPAA-compliant solutions for healthcare providers.",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/industries/healthcare/#service" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/industries/healthcare/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "Healthcare AI", "item": "https://singingriverai.com/industries/healthcare" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/industries/healthcare/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="HIPAA-Compliant AI for Healthcare - Singing River AI" />
+    <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="HIPAA compliant AI consultant, AI for medical practice Alabama, healthcare AI automation, medical practice AI scheduling, HIPAA AI tools for clinics, healthcare AI Huntsville, medical practice automation Florence Alabama" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Healthcare AI</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Healthcare AI</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              HIPAA-Compliant AI for <em>Medical Practices</em>
+            </h1>
+
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Efficiency without compromising compliance.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              AI automation helps medical practices reduce no-shows, streamline insurance verification, and free staff from repetitive tasks—all while maintaining strict HIPAA compliance. Whether you're a solo practice in Florence or a multi-provider clinic in Huntsville, AI can transform your operations.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#solutions" class="btn-secondary inline-flex">
+                <span>See How It Works</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Banner -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">30%</div>
+              <div class="text-sm text-stone-light">Reduction in no-shows</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">15+</div>
+              <div class="text-sm text-stone-light">Hours saved weekly</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">40%</div>
+              <div class="text-sm text-stone-light">Fewer routine phone calls</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">100%</div>
+              <div class="text-sm text-stone-light">HIPAA compliant</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions Section -->
+      <section id="solutions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            How AI Transforms Your <em>Medical Practice</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Reduce administrative burden, improve patient experience, and protect your bottom line—without adding staff or compromising on compliance.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {solutions.map((solution) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <div class="flex items-start gap-6">
+                  <div class="text-center">
+                    <div class="font-display text-3xl text-accent">{solution.stat}</div>
+                    <div class="text-xs text-stone">{solution.statLabel}</div>
+                  </div>
+                  <div>
+                    <h3 class="font-display text-xl mb-3 text-charcoal">{solution.title}</h3>
+                    <p class="text-stone leading-relaxed">{solution.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            AI Automations for <em>Every Department</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((useCase) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-lg mb-4 text-charcoal">{useCase.title}</h3>
+                <ul class="space-y-2">
+                  {useCase.items.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Compliance Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="heading-display text-3xl md:text-4xl mb-6">
+                HIPAA Compliance <em>Built In</em>
+              </h2>
+              <p class="text-lg text-stone leading-relaxed mb-6">
+                We understand that compliance isn't optional in healthcare. Every AI solution we implement uses HIPAA-compliant platforms with proper security controls, encryption, and audit trails.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Business Associate Agreements (BAAs) in place</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">End-to-end encryption for patient data</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Role-based access controls</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Complete audit trails for compliance</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-cream rounded-2xl p-8">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Typical Practice Results</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">No-show rate reduction</span>
+                  <span class="font-display text-charcoal">20-30%</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Staff time saved weekly</span>
+                  <span class="font-display text-charcoal">15-20 hours</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Claim denial reduction</span>
+                  <span class="font-display text-charcoal">15-25%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-stone">Patient satisfaction increase</span>
+                  <span class="font-display text-charcoal">20-30%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Practice Types Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            AI Solutions for <em>All Practice Types</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            We work with healthcare providers across North Alabama, from solo practitioners to multi-location clinics.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-6">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Primary Care</h3>
+              <ul class="space-y-2 text-stone">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Appointment scheduling & reminders</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Preventive care notifications</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Chronic care follow-up automation</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-2xl p-6">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Specialty Practices</h3>
+              <ul class="space-y-2 text-stone">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Complex scheduling workflows</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Prior authorization tracking</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Referral management automation</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-2xl p-6">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Dental Practices</h3>
+              <ul class="space-y-2 text-stone">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Recall & hygiene reminders</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Treatment plan follow-up</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Review request automation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6 shadow-sm">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to Modernize Your <em class="text-accent">Practice</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-4">
+            Whether you're a solo practice in the Shoals or a multi-provider clinic in Huntsville, AI automation can transform your operations—without compromising HIPAA compliance.
+          </p>
+          <p class="text-stone-light mb-8">
+            Book a free 30-minute consultation and I'll show you exactly how AI can work for your practice.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

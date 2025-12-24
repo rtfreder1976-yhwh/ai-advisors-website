@@ -602,5 +602,5 @@ Search engines favor fresh content. Implement:
 
 ---
 
-*Document created: December 2024*
+*Document created: December 2025*
 *Review quarterly and update based on ranking progress*

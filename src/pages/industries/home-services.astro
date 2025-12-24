@@ -3,8 +3,8 @@ import '../../styles/global.css';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-const title = "AI for Contractors, HVAC, Plumbers & Home Services | Singing River AI";
-const description = "AI automation for home service businesses in North Alabama. Instant lead response, automated follow-up, review requests, and scheduling for contractors, HVAC, plumbers, and electricians.";
+const title = "AI for Contractors, HVAC, Plumbers in Huntsville, Decatur & North Alabama | Singing River AI";
+const description = "AI automation for contractors and home service businesses in Huntsville, Decatur, Florence, and North Alabama. Instant lead response, automated follow-up, and scheduling for HVAC, plumbers, and electricians.";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL('/og-image.png', Astro.site);
 
@@ -83,6 +83,14 @@ const automations = [
 
 const faqs = [
   {
+    question: "Do you help contractors in Huntsville with AI automation?",
+    answer: "Yes! We work with HVAC companies, plumbers, electricians, and general contractors throughout Huntsville, Madison, and the Tennessee Valley. The fast-growing Huntsville market means more service calls—AI automation ensures you capture every lead while you're busy on job sites."
+  },
+  {
+    question: "What about AI for contractors in Decatur?",
+    answer: "Absolutely. We serve contractors throughout Decatur, Athens, and the surrounding area. Whether you're an HVAC company handling seasonal demand or a plumber managing emergency calls, our AI automation keeps your phone ringing with booked jobs, not missed opportunities."
+  },
+  {
     question: "How fast can AI respond to my leads?",
     answer: "Instantly—within seconds. When a lead comes in from your website, Google, or Angi, AI sends an immediate text and email confirming their request. For emergency services, this speed is critical. The first contractor to respond books the job most of the time."
   },
@@ -95,12 +103,12 @@ const faqs = [
     answer: "Yes. AI qualifies emergency calls 24/7, collecting key information (what's the problem, address, contact info) and alerting you or your on-call technician immediately. Non-emergencies get scheduled for the next business day automatically."
   },
   {
-    question: "How does the review request system work?",
-    answer: "After you mark a job complete, AI waits a set period (usually 2-24 hours) then sends a friendly text asking about their experience. Happy customers get a direct link to leave a Google review. Unhappy customers get routed to you privately first."
+    question: "How does HVAC lead follow-up automation work?",
+    answer: "When a lead requests a quote or service, AI immediately confirms receipt and asks qualifying questions (AC not cooling? Heating issue? Maintenance needed?). It schedules the service call, sends appointment reminders, and follows up after the job with a review request. HVAC contractors in Huntsville and North Alabama save 10-15 hours weekly with this automation."
   },
   {
     question: "What's this cost compared to hiring an office person?",
-    answer: "A full-time office manager costs $35,000-$50,000/year plus benefits. AI automation costs a fraction of that, works 24/7, never calls in sick, and scales instantly during busy periods. For small contractors, it's the affordable path to professional-level customer communication."
+    answer: "A full-time office manager costs $35,000-$50,000/year plus benefits. AI automation costs a fraction of that, works 24/7, never calls in sick, and scales instantly during busy periods. For small contractors in North Alabama, it's the affordable path to professional-level customer communication."
   },
   {
     question: "Do I need to change my current systems?",
@@ -138,8 +146,7 @@ const schema = {
       "@id": "https://singingriverai.com/industries/home-services/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
-        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://singingriverai.com/industries" },
-        { "@type": "ListItem", "position": 3, "name": "Home Services", "item": "https://singingriverai.com/industries/home-services" }
+        { "@type": "ListItem", "position": 2, "name": "Home Services AI", "item": "https://singingriverai.com/industries/home-services" }
       ]
     },
     {
@@ -174,9 +181,14 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI for Contractors and Home Services - Singing River AI" />
     <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
@@ -199,13 +211,11 @@ const schema = {
         </div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <nav class="mb-8">
+          <nav class="mb-8" aria-label="Breadcrumb">
             <ol class="flex items-center gap-2 text-sm text-stone">
               <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
               <li><span class="mx-2">/</span></li>
-              <li><a href="/industries/home-services" class="hover:text-accent transition-colors">Industries</a></li>
-              <li><span class="mx-2">/</span></li>
-              <li class="text-charcoal font-medium">Home Services</li>
+              <li class="text-charcoal font-medium">Home Services AI</li>
             </ol>
           </nav>
 

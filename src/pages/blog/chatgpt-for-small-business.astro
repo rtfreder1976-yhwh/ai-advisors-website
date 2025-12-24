@@ -1,0 +1,172 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "ChatGPT for Small Business: A Practical Guide | Singing River AI";
+const description = "Learn how to use ChatGPT effectively for your small business. Practical tips for emails, content, customer service, and more—without the hype.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDate = "2024-12-20";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ChatGPT for Small Business: A Practical Guide",
+  "description": description,
+  "datePublished": publishDate,
+  "author": { "@type": "Person", "name": "Todd Frederickson" },
+  "publisher": { "@id": "https://singingriverai.com/#organization" }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Header -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">ChatGPT for Small Business</li>
+            </ol>
+          </nav>
+
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">AI Tools</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              ChatGPT for Small Business: A <em>Practical Guide</em>
+            </h1>
+            <p class="text-stone">December 20, 2024 · 8 min read</p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-stone leading-relaxed">
+              ChatGPT has become one of the most talked-about tools in business. But beyond the hype, how can small business owners actually use it to save time and grow their business? This guide cuts through the noise.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">What is ChatGPT, Really?</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              ChatGPT is an AI assistant created by OpenAI that can understand and generate human-like text. Think of it as a very knowledgeable assistant that can help with writing, research, brainstorming, and analysis—available 24/7.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              Unlike traditional software that follows rigid rules, ChatGPT understands context and can adapt to different tasks. You communicate with it in plain English, and it responds intelligently.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">How Small Businesses Are Using ChatGPT</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Email and Communication</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              One of the most immediate time-savers is email drafting. ChatGPT can help you write professional responses, follow-up emails, and customer communications in seconds. Instead of staring at a blank screen, give it the context and let it draft a starting point.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Example prompt:</strong> "Write a professional email following up with a potential client who requested a quote last week but hasn't responded. Tone should be friendly but encourage a decision."
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Content Creation</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Need blog posts, social media content, or marketing copy? ChatGPT can generate first drafts that you then refine with your expertise and voice. It's not about replacing your creativity—it's about speeding up the process.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Customer Service Templates</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Create response templates for common customer questions. ChatGPT can help you develop a library of professional, consistent responses that your team can personalize for each situation.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Research and Summarization</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Need to understand a complex topic quickly? ChatGPT can explain concepts in simple terms, summarize long documents, and help you prepare for meetings or presentations.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Getting Better Results: Prompt Engineering Basics</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              The quality of ChatGPT's output depends heavily on how you ask. Here are key principles:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Be specific:</strong> Instead of "write an email," say "write a follow-up email to a contractor who submitted a late bid, professional but firm"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Provide context:</strong> Tell ChatGPT who you are, who you're writing to, and what outcome you want</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Give examples:</strong> Show it the format or style you want by including an example</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Iterate:</strong> Ask it to revise, expand, or adjust. "Make it shorter" or "more casual" works well</span>
+              </li>
+            </ul>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">What ChatGPT Can't Do</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Being honest about limitations is important:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span>It can produce outdated information (training data has a cutoff date)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span>It can "hallucinate"—confidently stating incorrect information</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span>It doesn't know your specific business without you telling it</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span>It can't replace human judgment, relationships, or expertise</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              Always review and verify important outputs. Use it as a starting point, not a final answer.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Getting Started Today</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Start simple. Pick one repetitive task—maybe drafting follow-up emails or creating social media posts—and try using ChatGPT for it this week. Once you see the time savings, you'll naturally find more applications.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              The free version of ChatGPT is powerful enough for most small business needs. ChatGPT Plus ($20/month) gives you access to the latest model and faster responses during peak times.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-8 mt-12">
+              <h3 class="font-display text-xl mb-4">Want Hands-On Training?</h3>
+              <p class="text-stone mb-4">
+                Our ChatGPT workshops teach your team prompt engineering techniques that get consistent, high-quality results. Customized for your specific business and industry.
+              </p>
+              <a href="/services/ai-training/chatgpt-workshop" class="btn-primary inline-flex">
+                <span>Learn About Our Workshops</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

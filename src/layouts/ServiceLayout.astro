@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 interface ServiceItem {
   name: string;
   description: string;
+  href?: string;
 }
 
 interface FAQItem {
@@ -58,6 +59,9 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${serviceName} - Singing River AI`} />
     <meta property="og:site_name" content="Singing River AI" />
     <meta property="og:locale" content="en_US" />
 
@@ -71,6 +75,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Singing River AI" />
+    <meta name="keywords" content={`${serviceName}, AI consulting, ${serviceCategory}, business automation, North Alabama, Huntsville, Florence`} />
 
     <title>{title}</title>
 
@@ -193,15 +198,34 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
           </h2>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div class="bg-cream rounded-2xl p-8 card-hover">
-                <div class="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-6">
-                  <span class="font-display text-xl">{String(index + 1).padStart(2, '0')}</span>
+            {services.map((service, index) => {
+              const CardContent = (
+                <>
+                  <div class="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-6">
+                    <span class="font-display text-xl">{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+                  <h3 class={`font-display text-xl mb-3 text-charcoal ${service.href ? 'group-hover:text-accent transition-colors' : ''}`}>{service.name}</h3>
+                  <p class="text-stone leading-relaxed">{service.description}</p>
+                  {service.href && (
+                    <span class="text-accent font-medium inline-flex items-center gap-2 mt-4">
+                      Learn more
+                      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  )}
+                </>
+              );
+              return service.href ? (
+                <a href={service.href} class="bg-cream rounded-2xl p-8 card-hover block group">
+                  {CardContent}
+                </a>
+              ) : (
+                <div class="bg-cream rounded-2xl p-8 card-hover">
+                  {CardContent}
                 </div>
-                <h3 class="font-display text-xl mb-3 text-charcoal">{service.name}</h3>
-                <p class="text-stone leading-relaxed">{service.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

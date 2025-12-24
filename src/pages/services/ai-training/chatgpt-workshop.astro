@@ -1,0 +1,286 @@
+---
+import '../../../styles/global.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const title = "ChatGPT Workshop for Business Teams | AI Training | Singing River AI";
+const description = "Hands-on ChatGPT training workshops for businesses in Huntsville, Florence, and North Alabama. Learn prompt engineering, practical AI applications, and how to 10x your team's productivity.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const workshopModules = [
+  {
+    title: "ChatGPT Fundamentals",
+    duration: "45 min",
+    topics: [
+      "How ChatGPT actually works (without the jargon)",
+      "ChatGPT vs Claude vs other AI models",
+      "When to use AI (and when not to)",
+      "Setting up accounts and best practices"
+    ]
+  },
+  {
+    title: "Prompt Engineering Mastery",
+    duration: "60 min",
+    topics: [
+      "The anatomy of an effective prompt",
+      "Role prompting and persona techniques",
+      "Chain-of-thought prompting",
+      "Getting consistent, reliable outputs"
+    ]
+  },
+  {
+    title: "Practical Business Applications",
+    duration: "60 min",
+    topics: [
+      "Email drafting and customer communication",
+      "Content creation and marketing copy",
+      "Data analysis and summarization",
+      "Research and competitive intelligence"
+    ]
+  },
+  {
+    title: "Hands-On Practice",
+    duration: "45 min",
+    topics: [
+      "Work on YOUR real business tasks",
+      "Build prompts for your specific use cases",
+      "Troubleshoot common issues",
+      "Create a prompt library for your team"
+    ]
+  }
+];
+
+const formats = [
+  {
+    name: "Half-Day Workshop",
+    duration: "4 hours",
+    description: "Intensive training covering fundamentals through hands-on practice",
+    ideal: "Teams wanting comprehensive training in one session",
+    includes: ["All 4 modules", "Workbook & resources", "30-day email support", "Recording access"]
+  },
+  {
+    name: "Lunch & Learn Series",
+    duration: "4 x 1-hour sessions",
+    description: "Spread learning over multiple sessions for better retention",
+    ideal: "Busy teams who prefer shorter sessions",
+    includes: ["Weekly 1-hour sessions", "Homework assignments", "Q&A each session", "Ongoing support"]
+  },
+  {
+    name: "Executive Briefing",
+    duration: "2 hours",
+    description: "Strategic overview for leadership teams",
+    ideal: "Executives and decision-makers",
+    includes: ["AI landscape overview", "ROI opportunities", "Risk considerations", "Implementation roadmap"]
+  }
+];
+
+const faqs = [
+  {
+    question: "What will my team learn in the ChatGPT workshop?",
+    answer: "Your team will learn how to write effective prompts, use ChatGPT for common business tasks (emails, content, analysis), avoid common mistakes, and build a library of reusable prompts specific to your business. Everyone leaves with practical skills they can use immediately."
+  },
+  {
+    question: "Do you offer ChatGPT training in Huntsville?",
+    answer: "Yes! We provide on-site ChatGPT workshops throughout Huntsville, Madison, and the Research Park area. We can also deliver training virtually if preferred. Huntsville businesses benefit from our understanding of defense, tech, and professional services industries."
+  },
+  {
+    question: "What about AI training in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and regularly conduct workshops in Florence, Muscle Shoals, and Tuscumbia. Local businesses get the advantage of in-person training with ongoing local support."
+  },
+  {
+    question: "Is this training suitable for non-technical staff?",
+    answer: "Yes! Our workshops are designed for business users, not developers. We focus on practical applications that anyone can use—no coding or technical background required. We've trained everyone from administrative assistants to CEOs."
+  },
+  {
+    question: "How is this different from free YouTube tutorials?",
+    answer: "Three key differences: (1) We customize content for YOUR industry and use cases, (2) You get hands-on practice with your actual business tasks, not generic examples, and (3) You have an expert there to answer questions and troubleshoot in real-time."
+  },
+  {
+    question: "Do you cover other AI tools besides ChatGPT?",
+    answer: "Yes. While ChatGPT is our primary focus, we also cover Claude (great for longer documents), Microsoft Copilot (for Office integration), and other relevant tools based on your tech stack. We help you understand which tool is best for which task."
+  },
+  {
+    question: "What's the ideal group size for training?",
+    answer: "We recommend 5-15 participants for optimal engagement. Smaller groups allow for more personalized attention, while larger groups benefit from diverse questions and use cases. We can accommodate larger teams with adjusted formats."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://singingriverai.com/services/ai-training/chatgpt-workshop/#course",
+      "name": "ChatGPT Workshop for Business Teams",
+      "description": "Hands-on ChatGPT training for business teams. Learn prompt engineering and practical AI applications.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "courseMode": "onsite",
+      "educationalLevel": "Beginner to Intermediate"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-training/chatgpt-workshop/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="ChatGPT training, ChatGPT workshop Huntsville, AI training for business, prompt engineering training, ChatGPT workshop Florence Alabama" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-training" class="hover:text-accent transition-colors">AI Training</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">ChatGPT Workshop</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">AI Training</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              ChatGPT <em>Workshop</em> for Business Teams
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Stop getting mediocre results from AI. Learn to use it like a power user.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Most people use ChatGPT wrong—getting generic outputs that require heavy editing. Our hands-on workshop teaches your team prompt engineering techniques that get consistent, high-quality results every time.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Schedule a Workshop</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What You'll Learn -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            What Your Team <em>Will Learn</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            A complete curriculum designed for business professionals—no technical background required.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            {workshopModules.map((module) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="font-display text-xl text-charcoal">{module.title}</h3>
+                  <span class="text-sm text-stone bg-white px-3 py-1 rounded-full">{module.duration}</span>
+                </div>
+                <ul class="space-y-2">
+                  {module.topics.map((topic) => (
+                    <li class="flex items-start gap-2 text-stone">
+                      <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Formats -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Training <em>Formats</em>
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {formats.map((format) => (
+              <div class="bg-white rounded-2xl p-8">
+                <h3 class="font-display text-2xl mb-1 text-charcoal">{format.name}</h3>
+                <p class="text-accent font-medium mb-3">{format.duration}</p>
+                <p class="text-stone mb-4">{format.description}</p>
+                <p class="text-sm text-stone mb-4"><strong>Ideal for:</strong> {format.ideal}</p>
+                <ul class="space-y-2">
+                  {format.includes.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to <em class="text-accent">Upskill</em> Your Team?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Book a free consultation to discuss your training needs and customize a workshop for your team.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Schedule a Workshop</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

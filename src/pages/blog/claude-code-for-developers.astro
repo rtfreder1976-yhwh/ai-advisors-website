@@ -1,0 +1,189 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Claude Code: AI-Powered Development for Modern Teams | Singing River AI";
+const description = "How Claude Code is changing software development. Learn what it is, how it works, and why businesses should care about AI-assisted coding.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDate = "2024-12-20";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude Code: AI-Powered Development for Modern Teams",
+  "description": description,
+  "datePublished": publishDate,
+  "author": { "@type": "Person", "name": "Todd Frederickson" },
+  "publisher": { "@id": "https://singingriverai.com/#organization" }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Header -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Claude Code for Developers</li>
+            </ol>
+          </nav>
+
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">Development</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              Claude Code: AI-Powered Development for <em>Modern Teams</em>
+            </h1>
+            <p class="text-stone">December 20, 2024 · 8 min read</p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-stone leading-relaxed">
+              Claude Code represents a new approach to AI-assisted development—one where AI doesn't just suggest code snippets but understands entire projects and can make coordinated changes across multiple files. Here's what business owners and developers need to know.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">What is Claude Code?</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Claude Code is Anthropic's command-line tool that brings Claude's AI capabilities directly into the development workflow. Unlike chat-based coding assistants, Claude Code can:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Read and understand your entire codebase</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Make changes across multiple files simultaneously</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Run commands, tests, and builds</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Iterate based on errors and feedback</span>
+              </li>
+            </ul>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">How It Works in Practice</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Instead of copying code between a chat window and your editor, you give Claude Code natural language instructions from your terminal:
+            </p>
+            <div class="bg-charcoal text-cream rounded-xl p-6 mb-6 font-mono text-sm overflow-x-auto">
+              <p class="text-stone-light mb-2"># Example: Adding a feature</p>
+              <p>claude "Add a contact form to the homepage that submits to our API endpoint"</p>
+            </div>
+            <p class="text-stone leading-relaxed mb-6">
+              Claude Code then explores your project structure, understands your existing patterns, and implements the feature—creating or modifying multiple files as needed. It can even run your tests to verify the changes work.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Why This Matters for Businesses</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Faster Development</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Tasks that might take a developer hours can be completed in minutes. This doesn't replace developers—it amplifies their productivity. A small team can now tackle projects that would previously require more resources.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Lower Development Costs</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              By accelerating development and reducing the time spent on boilerplate code, businesses can get more value from their development budget. Website changes, new features, and bug fixes happen faster.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Consistent Code Quality</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Claude Code follows your existing patterns and best practices. It produces code that looks like it belongs in your project, not generic snippets that need heavy modification.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Claude Code vs Cursor vs GitHub Copilot</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              These tools complement each other:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="font-medium text-charcoal w-36">GitHub Copilot:</span>
+                <span>Best for autocomplete and inline suggestions while typing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="font-medium text-charcoal w-36">Cursor:</span>
+                <span>AI-native editor with chat, excellent for interactive coding sessions</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="font-medium text-charcoal w-36">Claude Code:</span>
+                <span>Best for larger changes that span multiple files and require understanding project context</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              Many developers use all three—Copilot for quick completions, Cursor for focused work, and Claude Code for substantial features or refactoring.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Real-World Applications</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Here's how we use Claude Code in our own work:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Building new pages:</strong> "Create a healthcare industry page following the same structure as real-estate.astro"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Adding features:</strong> "Add phone number field to the contact form and send it to the webhook"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Bug fixes:</strong> "The form isn't submitting correctly, investigate and fix"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Refactoring:</strong> "Extract the FAQ section into a reusable component"</span>
+              </li>
+            </ul>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Getting Started</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Claude Code requires a Claude API subscription. For businesses interested in leveraging AI-assisted development:
+            </p>
+            <ol class="space-y-3 text-stone mb-6 list-decimal list-inside">
+              <li>Sign up for Claude Pro or an API account at anthropic.com</li>
+              <li>Install Claude Code via npm: <code class="bg-cream px-2 py-1 rounded">npm install -g @anthropic-ai/claude-code</code></li>
+              <li>Configure your API key and start using it in your projects</li>
+            </ol>
+
+            <div class="bg-cream rounded-2xl p-8 mt-12">
+              <h3 class="font-display text-xl mb-4">Want to See Claude Code in Action?</h3>
+              <p class="text-stone mb-4">
+                We use Claude Code daily to build and maintain client websites faster. Want to see how AI-assisted development could benefit your projects?
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Let's Talk</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

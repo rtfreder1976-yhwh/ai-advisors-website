@@ -1,0 +1,289 @@
+---
+import '../../../styles/global.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const title = "Claude Code Workshop | AI-Assisted Development Training | Singing River AI";
+const description = "Learn to use Claude Code for faster software development. Hands-on training for developers and teams in Huntsville, Florence, and North Alabama.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const workshopModules = [
+  {
+    title: "Claude Code Fundamentals",
+    duration: "45 min",
+    topics: [
+      "What is Claude Code and how it differs from Copilot",
+      "Installation and configuration",
+      "Understanding context and file access",
+      "Basic commands and workflows"
+    ]
+  },
+  {
+    title: "Effective Prompting for Code",
+    duration: "60 min",
+    topics: [
+      "Writing clear, actionable instructions",
+      "Providing context and constraints",
+      "Multi-file operations",
+      "Handling errors and iteration"
+    ]
+  },
+  {
+    title: "Real-World Development Workflows",
+    duration: "60 min",
+    topics: [
+      "Building new features from scratch",
+      "Debugging and fixing issues",
+      "Refactoring and code improvements",
+      "Working with existing codebases"
+    ]
+  },
+  {
+    title: "Advanced Techniques",
+    duration: "45 min",
+    topics: [
+      "Combining Claude Code with Cursor",
+      "Custom instructions and project context",
+      "Code review and security considerations",
+      "Building prompt libraries for your team"
+    ]
+  }
+];
+
+const useCases = [
+  {
+    title: "Frontend Development",
+    examples: [
+      "Create React components following project patterns",
+      "Add responsive styling with Tailwind",
+      "Build interactive forms with validation",
+      "Implement state management"
+    ]
+  },
+  {
+    title: "Backend Development",
+    examples: [
+      "Create API endpoints",
+      "Add database queries and migrations",
+      "Implement authentication flows",
+      "Write integration tests"
+    ]
+  },
+  {
+    title: "DevOps & Tooling",
+    examples: [
+      "Configure CI/CD pipelines",
+      "Write deployment scripts",
+      "Set up monitoring and logging",
+      "Create documentation"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "What is Claude Code?",
+    answer: "Claude Code is Anthropic's command-line tool for AI-assisted development. Unlike chat-based assistants, it can read your entire codebase, understand project context, and make coordinated changes across multiple files. It's like having an expert developer available 24/7."
+  },
+  {
+    question: "Who is this workshop for?",
+    answer: "This workshop is designed for developers who want to accelerate their workflow with AI. Whether you're a junior developer looking to learn faster or a senior developer wanting to automate repetitive tasks, you'll get practical skills you can use immediately."
+  },
+  {
+    question: "Do you offer Claude Code training in Huntsville?",
+    answer: "Yes! We provide on-site Claude Code workshops throughout Huntsville, Madison, and the Research Park area. We also offer remote training for distributed teams."
+  },
+  {
+    question: "What about developer training in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and work with development teams throughout the region. Local teams benefit from in-person training and ongoing support."
+  },
+  {
+    question: "What skill level is required?",
+    answer: "You should be comfortable writing code in at least one programming language. The workshop covers various languages and frameworks, but the principles apply regardless of your tech stack."
+  },
+  {
+    question: "How is this different from using ChatGPT for coding?",
+    answer: "Claude Code operates directly in your development environment with full project context. It can read all your files, run commands, execute tests, and make changes across multiple files at once. ChatGPT is limited to the code you paste into it."
+  },
+  {
+    question: "What do attendees leave with?",
+    answer: "Every attendee leaves with: practical experience using Claude Code on real tasks, a library of effective prompts, best practices for AI-assisted development, and 30 days of email support for questions that come up as you use the tool."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://singingriverai.com/services/ai-training/claude-code-workshop/#course",
+      "name": "Claude Code Workshop for Developers",
+      "description": "Hands-on Claude Code training for development teams. Learn AI-assisted coding techniques.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "courseMode": "onsite",
+      "educationalLevel": "Intermediate"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-training/claude-code-workshop/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Claude Code training, AI coding workshop, Claude Code Huntsville, developer AI training, AI-assisted development" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-training" class="hover:text-accent transition-colors">AI Training</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Claude Code Workshop</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Developer Training</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              Claude Code <em>Workshop</em> for Developers
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Build faster. Write better code. Ship more.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Claude Code isn't just another AI coding assistant—it's a paradigm shift. Learn to leverage its full power to write features in minutes, debug faster, and tackle refactoring projects that used to take days.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Schedule a Workshop</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What You'll Learn -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            What You'll <em>Learn</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            A hands-on curriculum designed for working developers. You'll use Claude Code on real code, not toy examples.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            {workshopModules.map((module) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="font-display text-xl text-charcoal">{module.title}</h3>
+                  <span class="text-sm text-stone bg-white px-3 py-1 rounded-full">{module.duration}</span>
+                </div>
+                <ul class="space-y-2">
+                  {module.topics.map((topic) => (
+                    <li class="flex items-start gap-2 text-stone">
+                      <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Real-World <em>Use Cases</em>
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {useCases.map((useCase) => (
+              <div class="bg-white rounded-2xl p-8">
+                <h3 class="font-display text-xl mb-4 text-charcoal">{useCase.title}</h3>
+                <ul class="space-y-2">
+                  {useCase.examples.map((example) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {example}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to <em class="text-accent">Level Up</em> Your Development?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Book a workshop for your team and start shipping faster with AI-assisted development.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Schedule a Workshop</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

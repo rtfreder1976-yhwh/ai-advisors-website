@@ -3,65 +3,73 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = "AI Consultant Huntsville AL | Practical AI for Local Business | Singing River AI";
-const description = "Huntsville AI consultant helping Research Park startups, defense contractors, and local businesses implement practical AI solutions. Affordable rates, real results. Free 30-min consultation.";
+const title = "AI Consultant Madison AL | AI Implementation & Automation | Singing River AI";
+const description = "Madison Alabama AI consultant serving Madison City and Madison County. AI implementation, business automation, and ChatGPT training for tech companies and local businesses. Free consultation.";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL('/og-image.png', Astro.site);
 
 const services = [
   {
     title: "AI Strategy & Consulting",
-    description: "Thorough assessment of your operations. We'll identify which processes consume the most time, map out automation opportunities, calculate realistic ROI, and build a prioritized roadmap."
+    description: "Strategic assessment of your Madison business to identify high-impact AI opportunities. We analyze workflows, map automation potential, calculate realistic ROI, and build a prioritized implementation roadmap tailored to your goals."
   },
   {
-    title: "AI Training for Your Team",
-    description: "Hands-on workshops, executive briefings, and ChatGPT training that turns basic users into power users. At your Huntsville office or remotely."
+    title: "AI Implementation & Integration",
+    description: "End-to-end AI implementation for Madison County businesses. From CRM integration and lead automation to custom AI solutions, we build systems that integrate seamlessly with your existing tools and workflows."
   },
   {
-    title: "AI Implementation & Automation",
-    description: "Custom AI automations, CRM integration, email sequences, appointment scheduling, lead scoring, and document processing."
+    title: "AI Training & Workshops",
+    description: "Hands-on AI training for Madison teams—from ChatGPT fundamentals to advanced prompt engineering. We offer executive briefings, team workshops, and one-on-one coaching at your Madison location or remotely."
   },
   {
     title: "Ongoing AI Support",
-    description: "AI systems need monitoring, adjustment, and expansion. Get an AI expert on call without a full-time salary."
+    description: "Continuous monitoring, optimization, and support for your AI systems. Madison businesses get an AI expert on call without the overhead of a full-time hire. We keep your automations running smoothly as your business evolves."
   }
 ];
 
 const industries = [
   {
-    title: "Defense Contractors & Aerospace",
-    description: "Streamline proposal development, technical documentation, project reporting, and subcontractor management. Solutions that respect security considerations."
+    title: "Technology Companies",
+    description: "AI-powered documentation, automated customer onboarding, intelligent support routing, and internal workflow automation for Madison's growing tech sector."
   },
   {
-    title: "Research Park Technology Companies",
-    description: "Automate customer onboarding, handle tier-one support, generate documentation, and streamline internal communications."
+    title: "Defense & Aerospace",
+    description: "Proposal development assistance, technical documentation automation, project reporting, and compliance-aware solutions for Madison County's defense industry."
   },
   {
     title: "Professional Services",
-    description: "Automated client intake, document drafting assistance, scheduling, and research compilation for law firms, CPAs, and consultants."
+    description: "Client intake automation, document preparation, scheduling, billing reminders, and follow-up sequences for law firms, CPAs, consultants, and financial advisors."
   },
   {
-    title: "Healthcare & Medical Practices",
-    description: "Patient scheduling, follow-up communications, insurance verification, and staff optimization. HIPAA-compliant solutions."
+    title: "Healthcare Practices",
+    description: "Patient scheduling, appointment reminders, follow-up communications, and staff coordination for medical practices throughout Madison and Madison County."
   },
   {
     title: "Local Service Businesses",
-    description: "Lead capture, instant follow-up, review automation, appointment booking, and customer reactivation campaigns."
+    description: "Lead capture, instant follow-up, review automation, appointment booking, and customer reactivation for contractors, home services, and retail businesses."
   }
 ];
 
 const faqs = [
   {
-    question: "Do you provide AI consulting in Huntsville?",
-    answer: "Yes, Singing River AI provides AI consulting services throughout Huntsville, Madison, and the greater North Alabama region. We're based in the Shoals area, just 90 minutes from Huntsville, and offer both on-site and remote consulting."
+    question: "Do you provide AI consulting services in Madison, Alabama?",
+    answer: "Yes! Singing River AI provides comprehensive AI consulting and implementation services throughout Madison, Madison County, and the greater Huntsville metro area. We work with Madison's growing tech community as well as established local businesses across all industries."
   },
   {
-    question: "What industries do you serve in Huntsville?",
-    answer: "We work with a variety of Huntsville businesses including defense contractors, tech startups, professional services firms, and local small businesses. Our AI solutions are tailored to each industry's specific needs and compliance requirements."
+    question: "What makes Madison businesses good candidates for AI?",
+    answer: "Madison has a unique mix of tech-savvy companies and traditional businesses—both are excellent candidates for AI. Tech companies often need help integrating AI into products or streamlining operations. Traditional businesses benefit from automation that handles leads, scheduling, and customer communication while they focus on core work."
   },
   {
-    question: "How much does AI consulting cost in Huntsville?",
-    answer: "Our AI consulting is priced affordably for small and medium businesses—not enterprise rates. We offer a free 30-minute consultation to discuss your needs and provide a custom quote based on your specific project."
+    question: "How much does AI implementation cost for Madison businesses?",
+    answer: "Our pricing is designed for small and medium businesses—not enterprise budgets. Simple automations start around $1,500-3,000, CRM integrations and chatbots typically range $3,000-8,000, and comprehensive custom solutions may be $10,000+. We always provide detailed quotes upfront during your free consultation."
+  },
+  {
+    question: "Can you help Madison tech companies with AI integration?",
+    answer: "Absolutely. We work with Madison tech companies on AI integration projects—from implementing AI features in products to automating internal operations. Whether you need custom GPT solutions, API integrations, or workflow automation, we have the technical expertise to deliver."
+  },
+  {
+    question: "Do you offer AI training workshops in Madison?",
+    answer: "Yes, we provide on-site AI training at your Madison office. Options include executive briefings on AI strategy, team workshops on ChatGPT and AI tools, and one-on-one coaching for key staff. Training is hands-on and practical—focused on skills your team can apply immediately."
   }
 ];
 
@@ -70,10 +78,10 @@ const schema = {
   "@graph": [
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#localbusiness",
-      "name": "Singing River AI - Huntsville",
-      "description": "AI consulting services for Huntsville businesses. Practical AI strategy, training, and implementation for companies in Huntsville, Madison, and the Research Park area.",
-      "url": "https://singingriverai.com/huntsville-ai-consulting",
+      "@id": "https://singingriverai.com/madison-ai-consulting/#localbusiness",
+      "name": "Singing River AI - Madison",
+      "description": "AI consulting and implementation services for Madison, Alabama businesses. AI strategy, training, and automation for tech companies and local businesses in Madison City and Madison County.",
+      "url": "https://singingriverai.com/madison-ai-consulting",
       "telephone": "(256) 740-3195",
       "email": "info@singingriverai.com",
       "priceRange": "$$",
@@ -86,8 +94,8 @@ const schema = {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 34.7304,
-        "longitude": -86.5861
+        "latitude": 34.6993,
+        "longitude": -86.7483
       },
       "openingHoursSpecification": [
         {
@@ -100,55 +108,51 @@ const schema = {
       "areaServed": [
         {
           "@type": "City",
-          "name": "Huntsville",
-          "containedInPlace": { "@type": "State", "name": "Alabama" }
-        },
-        {
-          "@type": "City",
           "name": "Madison",
           "containedInPlace": { "@type": "State", "name": "Alabama" }
         },
         {
-          "@type": "Place",
-          "name": "Cummings Research Park"
+          "@type": "AdministrativeArea",
+          "name": "Madison County",
+          "containedInPlace": { "@type": "State", "name": "Alabama" }
         }
       ],
-      "serviceType": ["AI Consulting", "AI Training", "AI Implementation", "Business Automation"],
+      "serviceType": ["AI Consulting", "AI Implementation", "AI Training", "Business Automation"],
       "parentOrganization": { "@id": "https://singingriverai.com/#organization" }
     },
     {
       "@type": "Service",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#service",
-      "name": "AI Consulting in Huntsville, Alabama",
-      "description": "Practical AI consulting for Huntsville businesses. From defense contractors to tech startups, we help companies implement AI solutions that deliver measurable ROI.",
+      "@id": "https://singingriverai.com/madison-ai-consulting/#service",
+      "name": "AI Consulting in Madison, Alabama",
+      "description": "AI consulting and implementation for Madison businesses. From tech companies to local service businesses, we help Madison County companies implement practical AI solutions.",
       "provider": { "@id": "https://singingriverai.com/#organization" },
       "areaServed": {
         "@type": "City",
-        "name": "Huntsville",
+        "name": "Madison",
         "containedInPlace": { "@type": "State", "name": "Alabama" }
       },
       "serviceType": "AI Consulting"
     },
     {
       "@type": "WebPage",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#webpage",
-      "url": "https://singingriverai.com/huntsville-ai-consulting",
-      "name": "AI Consulting in Huntsville, AL | Singing River AI",
-      "description": "Huntsville AI consultant serving Research Park, Madison, and North Alabama. Affordable AI strategy, training, and implementation for local businesses.",
+      "@id": "https://singingriverai.com/madison-ai-consulting/#webpage",
+      "url": "https://singingriverai.com/madison-ai-consulting",
+      "name": "AI Consulting in Madison, AL | Singing River AI",
+      "description": "Madison Alabama AI consultant providing implementation, automation, and training services for Madison City and Madison County businesses.",
       "isPartOf": { "@id": "https://singingriverai.com/#website" },
-      "about": { "@id": "https://singingriverai.com/huntsville-ai-consulting/#service" }
+      "about": { "@id": "https://singingriverai.com/madison-ai-consulting/#service" }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#breadcrumb",
+      "@id": "https://singingriverai.com/madison-ai-consulting/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
-        { "@type": "ListItem", "position": 2, "name": "Huntsville AI Consulting", "item": "https://singingriverai.com/huntsville-ai-consulting" }
+        { "@type": "ListItem", "position": 2, "name": "Madison AI Consulting", "item": "https://singingriverai.com/madison-ai-consulting" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://singingriverai.com/huntsville-ai-consulting/#faq",
+      "@id": "https://singingriverai.com/madison-ai-consulting/#faq",
       "mainEntity": faqs.map(faq => ({
         "@type": "Question",
         "name": faq.question,
@@ -180,7 +184,7 @@ const schema = {
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="AI Consulting in Huntsville, Alabama - Singing River AI" />
+    <meta property="og:image:alt" content="AI Consulting in Madison, Alabama - Singing River AI" />
     <meta property="og:site_name" content="Singing River AI" />
     <meta property="og:locale" content="en_US" />
 
@@ -192,7 +196,7 @@ const schema = {
 
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Singing River AI" />
-    <meta name="keywords" content="AI consultant Huntsville, AI consulting Huntsville AL, Huntsville AI services, Research Park AI consultant, Madison AL AI consultant" />
+    <meta name="keywords" content="AI consultant Madison AL, AI consulting Madison Alabama, AI implementation Madison County, AI training Madison, Madison AL business automation" />
 
     <title>{title}</title>
 
@@ -213,22 +217,22 @@ const schema = {
             <ol class="flex items-center gap-2 text-sm text-stone">
               <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
               <li><span class="mx-2">/</span></li>
-              <li class="text-charcoal font-medium">Huntsville AI Consulting</li>
+              <li class="text-charcoal font-medium">Madison AI Consulting</li>
             </ol>
           </nav>
 
           <div class="max-w-3xl">
             <div class="flex items-center gap-3 mb-6">
               <div class="w-12 h-px bg-accent"></div>
-              <span class="text-sm font-medium text-stone uppercase tracking-widest">Huntsville, Alabama</span>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Madison, Alabama</span>
             </div>
 
             <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
-              AI Consultant in <em>Huntsville</em>, Alabama
+              AI Consultant in <em>Madison</em>, Alabama
             </h1>
 
             <p class="text-lg text-stone leading-relaxed mb-8">
-              Huntsville has transformed from the Rocket City into one of America's fastest-growing tech corridors. Cummings Research Park alone houses over 300 companies and 27,000 employees. I help local businesses—from two-person professional firms to growing tech companies—implement AI solutions that save real time and real money.
+              Madison is one of Alabama's fastest-growing cities—a blend of tech companies, established businesses, and families who've chosen quality of life over big-city chaos. I help Madison businesses implement AI that matches their ambition: practical automation that saves time, captures leads, and lets your team do their best work.
             </p>
 
             <a href="/#contact" class="btn-primary inline-flex">
@@ -238,34 +242,34 @@ const schema = {
         </div>
       </section>
 
-      <!-- Why AI Now Section -->
+      <!-- Why AI Section -->
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            Why Huntsville Businesses Need <em>AI Now</em>
+            Why <em>Madison</em> Businesses Are Embracing AI
           </h2>
 
           <div class="max-w-3xl mx-auto prose prose-lg text-stone">
             <p>
-              The Huntsville metro added over 9,000 jobs last year. Madison County's population has grown 20% in a decade. That growth is exciting, but it creates pressure. Your competitors are moving faster. Clients expect instant responses. And hiring qualified people gets harder every quarter.
+              Madison's growth is remarkable—consistently ranked among Alabama's best places to live, with a population that's doubled in 20 years. That growth brings opportunity and competition. The businesses thriving in Madison are the ones working smarter, not just harder.
             </p>
             <p class="font-medium text-charcoal">
-              AI doesn't replace your team—it multiplies what they can accomplish.
+              AI isn't about replacing people. It's about eliminating the busywork that prevents your team from doing what they're actually good at.
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-8 mt-12">
             <div class="bg-cream rounded-2xl p-8">
-              <h3 class="font-display text-xl mb-3 text-charcoal">Eliminating Repetitive Work</h3>
-              <p class="text-stone leading-relaxed">Following up with leads. Scheduling appointments. Data entry between systems. AI handles these automatically while your team tackles work that requires expertise.</p>
+              <h3 class="font-display text-xl mb-3 text-charcoal">Instant Lead Response</h3>
+              <p class="text-stone leading-relaxed">Madison homeowners and businesses expect fast service. AI responds to inquiries in seconds—qualifying leads, answering questions, and booking appointments while you focus on current customers.</p>
             </div>
             <div class="bg-cream rounded-2xl p-8">
-              <h3 class="font-display text-xl mb-3 text-charcoal">Responding Faster</h3>
-              <p class="text-stone leading-relaxed">The first company to respond books the meeting 78% of the time. AI-powered follow-up means your leads hear back in minutes—even at 11pm on Saturday.</p>
+              <h3 class="font-display text-xl mb-3 text-charcoal">Streamlined Operations</h3>
+              <p class="text-stone leading-relaxed">From scheduling to invoicing to customer follow-up, AI handles the repetitive tasks that consume hours every week. Your team focuses on billable work and customer relationships.</p>
             </div>
             <div class="bg-cream rounded-2xl p-8">
-              <h3 class="font-display text-xl mb-3 text-charcoal">Expert Work for Experts</h3>
-              <p class="text-stone leading-relaxed">Your engineers didn't earn degrees to format PowerPoints. AI handles administrative overhead so specialists focus on high-value work.</p>
+              <h3 class="font-display text-xl mb-3 text-charcoal">Competitive Advantage</h3>
+              <p class="text-stone leading-relaxed">Madison's market is sophisticated. AI helps you deliver the responsiveness, consistency, and professionalism that win business in a competitive market.</p>
             </div>
           </div>
         </div>
@@ -275,7 +279,7 @@ const schema = {
       <section class="py-20 bg-cream">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            AI Services for <em>Huntsville</em> Companies
+            AI Services for <em>Madison</em> Businesses
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8">
@@ -296,7 +300,7 @@ const schema = {
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            Industries We Serve in <em>Huntsville</em>
+            Industries We Serve in <em>Madison</em>
           </h2>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -315,13 +319,13 @@ const schema = {
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <div class="max-w-3xl mx-auto text-center">
             <h2 class="heading-display text-3xl md:text-4xl mb-8">
-              Why Choose a <em>Local</em> AI Consultant?
+              Why Choose a <em>Regional</em> AI Consultant?
             </h2>
             <p class="text-lg text-stone leading-relaxed mb-6">
-              I'm based in the Shoals—about 90 minutes west of Huntsville on Highway 72. Close enough for in-person meetings at your Research Park office. Close enough to understand how business works in the Tennessee Valley. And priced for North Alabama, not the coasts.
+              I'm based in the Shoals—about 90 minutes from Madison along the 72 corridor. Close enough for in-person meetings at your Madison office. Close enough to understand North Alabama business culture. And priced for regional markets, not Silicon Valley budgets.
             </p>
             <p class="text-lg text-stone leading-relaxed">
-              When implementation needs hands-on attention, I can be in Huntsville the same day. When you have questions six months later, I'm still here. That's the value of working with a regional AI consultant who's building relationships, not just billing hours.
+              When implementation needs hands-on attention, I'm there. When you have questions next quarter, I'm still local. That accessibility and continuity is the difference between a consultant relationship and a one-time transaction.
             </p>
           </div>
         </div>
@@ -331,29 +335,29 @@ const schema = {
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
-            What Working Together <em>Looks Like</em>
+            Getting Started is <em>Simple</em>
           </h2>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">1</div>
               <h3 class="font-display text-lg mb-2 text-charcoal">Free Consultation</h3>
-              <p class="text-stone text-sm">30-minute call to discuss your business and whether AI makes sense for your situation.</p>
+              <p class="text-stone text-sm">30 minutes to discuss your business, challenges, and goals. Honest assessment of whether AI fits your situation.</p>
             </div>
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">2</div>
-              <h3 class="font-display text-lg mb-2 text-charcoal">Assessment</h3>
-              <p class="text-stone text-sm">Deeper analysis of your operations with a prioritized plan and realistic ROI projections.</p>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Strategy & Planning</h3>
+              <p class="text-stone text-sm">Detailed analysis with prioritized opportunities and realistic ROI projections. Clear scope before any commitment.</p>
             </div>
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">3</div>
               <h3 class="font-display text-lg mb-2 text-charcoal">Implementation</h3>
-              <p class="text-stone text-sm">Build and deploy your AI solutions with thorough testing and training.</p>
+              <p class="text-stone text-sm">Build, test, and deploy your AI solutions. Comprehensive training ensures your team can use and manage the systems.</p>
             </div>
             <div class="text-center">
               <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">4</div>
-              <h3 class="font-display text-lg mb-2 text-charcoal">Optimization</h3>
-              <p class="text-stone text-sm">Monitor performance, make adjustments, and expand into new use cases.</p>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Optimize & Grow</h3>
+              <p class="text-stone text-sm">Monitor results, refine performance, and expand capabilities as your business evolves.</p>
             </div>
           </div>
         </div>
@@ -380,10 +384,10 @@ const schema = {
       <section class="py-20 bg-charcoal text-cream">
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 class="heading-display text-3xl md:text-4xl mb-6">
-            Ready to Explore AI for Your <em class="text-accent">Huntsville Business</em>?
+            Ready to Explore AI for Your <em class="text-accent">Madison Business</em>?
           </h2>
           <p class="text-stone-light text-lg mb-4">
-            Whether you're in Research Park, downtown Huntsville, Madison, or anywhere in the metro area, I'd welcome a conversation about how AI might help your business.
+            Whether you're a tech startup or an established Madison business, I'd welcome a conversation about how AI can help you work smarter and grow faster.
           </p>
           <p class="text-stone-light mb-8">
             <strong class="text-cream">Phone:</strong> (256) 740-3195 &nbsp;|&nbsp; <strong class="text-cream">Email:</strong> info@singingriverai.com

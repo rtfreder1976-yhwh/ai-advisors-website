@@ -3,28 +3,28 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 
 const services = [
   {
-    name: "AI System Optimization",
-    description: "Continuous monitoring and improvement of your AI systems to ensure peak performance and evolving business alignment."
+    name: "AI System Monitoring",
+    description: "Proactive monitoring of your AI automations, chatbots, and integrations to catch issues before they impact your business. We track response times, success rates, error logs, and system health. You get monthly reports showing exactly how your AI is performing."
+  },
+  {
+    name: "Performance Optimization",
+    description: "Continuous improvement of your AI systems based on real-world data. We analyze conversation logs, automation outcomes, and user feedback to refine prompts, improve response quality, and increase conversion rates. Most clients see 20-40% performance improvements in the first 90 days of optimization."
   },
   {
     name: "Maintenance & Updates",
-    description: "Regular updates, patches, and maintenance to keep your AI solutions running smoothly and securely."
+    description: "Regular updates, patches, and maintenance to keep your AI solutions running smoothly. This includes adapting to API changes, updating integrations, refreshing training data, and ensuring compatibility as your other business tools evolve."
   },
   {
-    name: "Performance Monitoring",
-    description: "Proactive monitoring dashboards and alerts to track AI system health, accuracy, and business impact."
-  },
-  {
-    name: "Model Retraining",
-    description: "Periodic retraining of AI models with new data to maintain accuracy and adapt to changing business conditions."
-  },
-  {
-    name: "Technical Support",
-    description: "Responsive support for troubleshooting, questions, and technical assistance when you need it."
+    name: "Priority Technical Support",
+    description: "Responsive support when you need it. Priority clients get same-day response for issues and direct access to your implementation team. Whether it's a broken workflow, integration issue, or urgent change request, we're here to help."
   },
   {
     name: "Quarterly Strategy Reviews",
-    description: "Regular check-ins to assess AI performance, identify new opportunities, and plan future enhancements."
+    description: "Scheduled check-ins to assess AI performance, review business impact, identify new opportunities, and plan future enhancements. These sessions keep your AI strategy aligned with evolving business goals and ensure you're getting maximum value from your investment."
+  },
+  {
+    name: "Expansion & Enhancement",
+    description: "As your needs grow, we help you expand AI capabilities to new departments, use cases, and workflows. Support clients get preferred rates on new implementations and priority scheduling. Your AI grows with your business."
   }
 ];
 
@@ -35,11 +35,31 @@ const icon = `<svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="
 const faqs = [
   {
     question: "Why do AI systems need ongoing support?",
-    answer: "AI systems require maintenance as your business evolves, tools update, and new opportunities emerge. Ongoing support ensures your automations continue working smoothly and can be optimized based on real-world performance data."
+    answer: "AI systems require maintenance for several reasons: business processes evolve, tools and APIs update, training data needs refreshing, and optimization opportunities emerge from real-world usage data. Without ongoing attention, AI performance degrades over time. Support ensures your automations keep working smoothly and continue improving based on actual results."
   },
   {
-    question: "What's included in AI optimization?",
-    answer: "AI optimization includes monitoring system performance, updating prompts and workflows based on results, expanding automations to new use cases, and regular strategy reviews to identify new opportunities."
+    question: "What's included in AI system optimization?",
+    answer: "Optimization includes analyzing performance data (conversation logs, completion rates, response times), refining prompts and responses based on real interactions, A/B testing different approaches, updating training data, and implementing improvements. We look at what's working, what's not, and systematically improve your AI's effectiveness."
+  },
+  {
+    question: "How often do you review AI system performance?",
+    answer: "We monitor systems continuously and provide monthly performance reports. Quarterly strategy reviews offer deeper analysis and planning sessions. For clients with high-volume AI usage, we can provide weekly optimization cycles. The right frequency depends on your usage volume and how critical AI is to your operations."
+  },
+  {
+    question: "What happens if my AI automation breaks?",
+    answer: "Support clients get priority response times—typically same-business-day for critical issues. We diagnose the problem, implement fixes, test thoroughly, and restore functionality. We also conduct root cause analysis to prevent similar issues. For non-support clients, we offer break-fix services at hourly rates."
+  },
+  {
+    question: "Do you offer support for AI systems you didn't build?",
+    answer: "Yes, we can take over support for AI implementations done by other providers. We'll start with an assessment to understand your current setup, identify any immediate issues, and establish monitoring. This is common for businesses whose original consultant is no longer available or wasn't providing adequate support."
+  },
+  {
+    question: "What do quarterly strategy reviews cover?",
+    answer: "Quarterly reviews include: performance analysis of all AI systems, ROI assessment (time saved, leads generated, etc.), identification of new AI opportunities, technology updates and recommendations, roadmap planning for the next quarter, and alignment with your evolving business goals. It's your chance to ensure AI continues delivering value as your business grows."
+  },
+  {
+    question: "How much does ongoing AI support cost?",
+    answer: "Support packages are typically structured as monthly retainers ranging from $300-1,500/month depending on the complexity and volume of your AI systems. This includes monitoring, maintenance, optimization, and support hours. Most clients find the cost pays for itself through improved AI performance and avoided downtime. We'll recommend an appropriate package during your consultation."
   }
 ];
 
@@ -52,21 +72,21 @@ const relatedServices = [
   {
     name: "AI Implementation",
     href: "/services/ai-implementation/",
-    description: "Expand your AI capabilities with new custom solutions."
+    description: "Expand your AI capabilities with new custom solutions and integrations."
   },
   {
     name: "AI Education & Training",
     href: "/services/ai-training/",
-    description: "Keep your team's AI skills current with ongoing training."
+    description: "Keep your team's AI skills current as tools and best practices evolve."
   }
 ];
 ---
 
 <ServiceLayout
-  title="Ongoing Support & Optimization | Singing River AI"
-  description="Continuous AI support and optimization services. We ensure your AI systems perform optimally and evolve with your business needs."
+  title="Ongoing AI Support & Optimization | Singing River AI"
+  description="Continuous AI support, monitoring, and optimization services. Keep your AI systems performing at their best with proactive maintenance and quarterly strategy reviews."
   serviceName="Ongoing Support & Optimization"
-  serviceDescription="Continuous monitoring, improvement, and support to ensure your AI systems perform optimally and evolve with your business. We're your long-term partner in AI success."
+  serviceDescription="Your AI systems are an investment—ongoing support protects that investment and maximizes returns. We provide continuous monitoring, proactive optimization, priority support, and strategic guidance to ensure your AI keeps delivering results as your business evolves. Think of us as your long-term AI partner, not just a one-time implementer."
   serviceCategory="Support Services"
   services={services}
   icon={icon}

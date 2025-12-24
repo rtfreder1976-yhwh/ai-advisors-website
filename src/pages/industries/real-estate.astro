@@ -3,8 +3,8 @@ import '../../styles/global.css';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-const title = "AI for Real Estate Agents | Lead Follow-Up Automation | Singing River AI";
-const description = "AI automation for real estate agents in North Alabama. Instant lead response, automated follow-up, and CRM integration. The first agent to respond wins 78% of the time.";
+const title = "AI for Real Estate Agents in Huntsville & North Alabama | Lead Follow-Up Automation | Singing River AI";
+const description = "AI automation for real estate agents in Huntsville, Florence, Madison, and North Alabama. Instant lead response, automated follow-up, and CRM integration. The first agent to respond wins 78% of the time.";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL('/og-image.png', Astro.site);
 
@@ -80,6 +80,14 @@ const faqs = [
     answer: "AI can respond to new leads within seconds, 24/7. Whether a lead comes in at 2am or during your showing, they get an immediate, personalized response. This is critical because studies show the first agent to respond wins the client 78% of the time."
   },
   {
+    question: "Do you help real estate agents in Huntsville with AI automation?",
+    answer: "Yes! We work with real estate agents throughout Huntsville, Madison, and the Research Park area. The fast-growing Huntsville market means more leads to manage—AI automation helps you respond instantly to every Zillow, Realtor.com, and social media inquiry without being glued to your phone 24/7."
+  },
+  {
+    question: "What about real estate lead automation in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and understand the local market dynamics. Whether you're working the Florence, Muscle Shoals, Tuscumbia, or Sheffield market, our lead automation ensures you never miss an opportunity. Local agents benefit from same-day setup and in-person training."
+  },
+  {
     question: "Will AI replace me as the agent?",
     answer: "Absolutely not. AI handles the repetitive follow-up tasks that consume hours of your week—initial responses, nurture sequences, appointment reminders. You stay in control of relationships, negotiations, and closings. AI just ensures no lead falls through the cracks."
   },
@@ -93,7 +101,7 @@ const faqs = [
   },
   {
     question: "What does AI follow-up cost compared to hiring an ISA?",
-    answer: "An Inside Sales Agent (ISA) costs $3,000-$5,000/month plus benefits. AI automation costs a fraction of that, works 24/7 without breaks, and never calls in sick. For solo agents and small teams, AI is the affordable path to consistent follow-up."
+    answer: "An Inside Sales Agent (ISA) costs $3,000-$5,000/month plus benefits. AI automation costs a fraction of that, works 24/7 without breaks, and never calls in sick. For solo agents and small teams in North Alabama, AI is the affordable path to consistent follow-up."
   }
 ];
 
@@ -127,8 +135,7 @@ const schema = {
       "@id": "https://singingriverai.com/industries/real-estate/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
-        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://singingriverai.com/industries" },
-        { "@type": "ListItem", "position": 3, "name": "Real Estate", "item": "https://singingriverai.com/industries/real-estate" }
+        { "@type": "ListItem", "position": 2, "name": "Real Estate AI", "item": "https://singingriverai.com/industries/real-estate" }
       ]
     },
     {
@@ -163,9 +170,14 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Automation for Real Estate Agents - Singing River AI" />
     <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
@@ -188,13 +200,11 @@ const schema = {
         </div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <nav class="mb-8">
+          <nav class="mb-8" aria-label="Breadcrumb">
             <ol class="flex items-center gap-2 text-sm text-stone">
               <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
               <li><span class="mx-2">/</span></li>
-              <li><a href="/industries/real-estate" class="hover:text-accent transition-colors">Industries</a></li>
-              <li><span class="mx-2">/</span></li>
-              <li class="text-charcoal font-medium">Real Estate</li>
+              <li class="text-charcoal font-medium">Real Estate AI</li>
             </ol>
           </nav>
 
