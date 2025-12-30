@@ -1,0 +1,390 @@
+---
+import '../../../styles/global.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const title = "AI Chatbot Development | Customer Service Automation | Singing River AI";
+const description = "Custom AI chatbot development for small businesses in Huntsville, Florence, and North Alabama. 24/7 customer service, lead qualification, and appointment booking automation.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const benefits = [
+  {
+    title: "24/7 Availability",
+    description: "Your chatbot never sleeps. Capture leads and answer questions at 2 AM when you can't.",
+    stat: "24/7",
+    statLabel: "availability"
+  },
+  {
+    title: "Instant Response",
+    description: "Respond to inquiries in seconds, not hours. Speed-to-lead is the #1 factor in conversion.",
+    stat: "<5s",
+    statLabel: "response time"
+  },
+  {
+    title: "Lead Qualification",
+    description: "Automatically qualify leads by asking the right questions before they reach your team.",
+    stat: "40%",
+    statLabel: "time saved on unqualified leads"
+  },
+  {
+    title: "Appointment Booking",
+    description: "Let visitors book meetings directly through chat without back-and-forth emails.",
+    stat: "3x",
+    statLabel: "more bookings"
+  }
+];
+
+const chatbotTypes = [
+  {
+    name: "Website Chat Widget",
+    description: "Embedded chat on your website that greets visitors, answers FAQs, captures leads, and books appointments.",
+    useCases: [
+      "Lead capture and qualification",
+      "FAQ automation",
+      "Appointment scheduling",
+      "After-hours support"
+    ]
+  },
+  {
+    name: "SMS/Text Chatbot",
+    description: "Automated text message conversations for lead follow-up, appointment reminders, and customer support.",
+    useCases: [
+      "Lead follow-up sequences",
+      "Appointment confirmations",
+      "Review requests",
+      "Two-way customer support"
+    ]
+  },
+  {
+    name: "Facebook Messenger Bot",
+    description: "Automated responses on your Facebook page to handle inquiries and generate leads from social media.",
+    useCases: [
+      "Social media lead capture",
+      "Event registrations",
+      "Product inquiries",
+      "Customer support"
+    ]
+  },
+  {
+    name: "AI-Powered Assistant",
+    description: "Advanced chatbots using GPT/Claude that can handle complex conversations and provide nuanced responses.",
+    useCases: [
+      "Complex customer inquiries",
+      "Product recommendations",
+      "Technical support",
+      "Personalized interactions"
+    ]
+  }
+];
+
+const industries = [
+  {
+    name: "Real Estate",
+    examples: "Property inquiry bots, showing schedulers, buyer qualification, listing alerts"
+  },
+  {
+    name: "Home Services",
+    examples: "Service request intake, quote generation, appointment booking, emergency routing"
+  },
+  {
+    name: "Healthcare",
+    examples: "Appointment scheduling, symptom pre-screening, insurance verification, prescription refills"
+  },
+  {
+    name: "Professional Services",
+    examples: "Consultation booking, case intake, document collection, FAQ handling"
+  },
+  {
+    name: "E-commerce",
+    examples: "Product recommendations, order tracking, returns processing, size guides"
+  },
+  {
+    name: "Restaurants",
+    examples: "Reservation booking, menu questions, order taking, waitlist management"
+  }
+];
+
+const faqs = [
+  {
+    question: "What's the difference between a basic chatbot and an AI chatbot?",
+    answer: "Basic chatbots follow pre-written scripts and can only respond to specific keywords or button clicks. AI chatbots (powered by GPT, Claude, etc.) understand natural language and can handle unexpected questions, have nuanced conversations, and learn from interactions. We build both types depending on your needs and budget."
+  },
+  {
+    question: "Do you build chatbots for Huntsville businesses?",
+    answer: "Yes! We develop custom chatbots for businesses throughout Huntsville, Madison, and the Research Park area. Whether you need a simple lead capture bot or an advanced AI-powered assistant, we handle design, development, and integration with your existing systems."
+  },
+  {
+    question: "Can you build chatbots for businesses in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and work with businesses in Florence, Muscle Shoals, Tuscumbia, and Sheffield. Local businesses benefit from in-person consultations and training when needed."
+  },
+  {
+    question: "How long does it take to build a chatbot?",
+    answer: "Simple FAQ and lead capture bots can be deployed in 1-2 weeks. More complex AI-powered chatbots with integrations typically take 2-4 weeks. We'll provide a timeline during your consultation based on your specific requirements."
+  },
+  {
+    question: "Will the chatbot integrate with my CRM?",
+    answer: "Yes. We integrate chatbots with most CRMs including HubSpot, GoHighLevel, Salesforce, and others. Lead information captured by the chatbot flows directly into your CRM, and conversations can be logged for your team to review."
+  },
+  {
+    question: "Can the chatbot book appointments on my calendar?",
+    answer: "Absolutely. We integrate with Google Calendar, Calendly, Acuity, and most scheduling tools. The chatbot can check availability, offer time slots, and confirm bookings—all without human intervention."
+  },
+  {
+    question: "What happens when the chatbot can't answer a question?",
+    answer: "We design chatbots with graceful handoffs. When a conversation exceeds the bot's capabilities, it can collect contact info and notify your team, transfer to live chat, or offer to schedule a callback. No customer gets stuck in a frustrating loop."
+  },
+  {
+    question: "How much does a custom chatbot cost?",
+    answer: "Pricing depends on complexity. Simple FAQ bots start around $1,500-2,500. Full-featured bots with AI, integrations, and custom logic typically range from $3,000-7,500. We provide detailed quotes after understanding your specific needs."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/services/ai-implementation/chatbots/#service",
+      "name": "AI Chatbot Development",
+      "description": "Custom chatbot development for small businesses. Website chat, SMS bots, and AI-powered assistants for lead capture, customer service, and appointment booking.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "Chatbot Development"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/chatbots/#webpage",
+      "url": "https://singingriverai.com/services/ai-implementation/chatbots",
+      "name": "AI Chatbot Development | Singing River AI",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "AI Implementation", "item": "https://singingriverai.com/services/ai-implementation" },
+        { "@type": "ListItem", "position": 3, "name": "Chatbots" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/chatbots/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="AI chatbot development Alabama, chatbot for small business Huntsville, customer service bot Florence, lead capture chatbot, appointment booking bot, AI chatbot North Alabama" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-implementation" class="hover:text-accent transition-colors">AI Implementation</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Chatbots</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">AI Implementation</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI Chatbot <em>Development</em>
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Your 24/7 employee that never calls in sick.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Custom chatbots that capture leads, answer questions, and book appointments while you sleep. From simple FAQ bots to advanced AI assistants, we build conversational experiences that convert visitors into customers.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#types" class="btn-secondary inline-flex">
+                <span>See Chatbot Types</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Stats -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {benefits.map((benefit) => (
+              <div class="text-center">
+                <div class="font-display text-4xl md:text-5xl text-accent mb-2">{benefit.stat}</div>
+                <div class="text-sm text-stone-light mb-2">{benefit.statLabel}</div>
+                <p class="text-xs text-stone-light/70 hidden md:block">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Chatbot Types -->
+      <section id="types" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Types of <em>Chatbots</em> We Build
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            From simple to sophisticated—we match the solution to your needs:
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            {chatbotTypes.map((type) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <h3 class="font-display text-2xl mb-3 text-charcoal">{type.name}</h3>
+                <p class="text-stone leading-relaxed mb-4">{type.description}</p>
+                <h4 class="font-display text-sm mb-2 text-charcoal">Common Use Cases:</h4>
+                <ul class="grid grid-cols-2 gap-2">
+                  {type.useCases.map((useCase) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {useCase}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Industry Examples -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Chatbots for <em>Every Industry</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            We customize chatbots for your specific industry and use case:
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-xl mb-3 text-charcoal">{industry.name}</h3>
+                <p class="text-stone text-sm">{industry.examples}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            How We Build Your <em>Chatbot</em>
+          </h2>
+          <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center text-cream mx-auto mb-4">
+                <span class="font-display text-2xl">01</span>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Discovery</h3>
+              <p class="text-stone text-sm">We learn your business, common questions, and goals for the chatbot.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center text-cream mx-auto mb-4">
+                <span class="font-display text-2xl">02</span>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Design</h3>
+              <p class="text-stone text-sm">We map conversation flows, write scripts, and design the user experience.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center text-cream mx-auto mb-4">
+                <span class="font-display text-2xl">03</span>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Build & Test</h3>
+              <p class="text-stone text-sm">We develop the chatbot, integrate with your systems, and test thoroughly.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center text-cream mx-auto mb-4">
+                <span class="font-display text-2xl">04</span>
+              </div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Launch & Optimize</h3>
+              <p class="text-stone text-sm">We deploy, monitor performance, and refine based on real conversations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready for a Chatbot That <em class="text-accent">Actually Works</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Book a free consultation. We'll discuss your needs and show you what's possible for your business.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

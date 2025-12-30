@@ -1,0 +1,457 @@
+---
+import '../../../styles/global.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const title = "Zapier, Make & n8n Automation | Workflow Integration | Singing River AI";
+const description = "Expert workflow automation using Zapier, Make (Integromat), and n8n for businesses in Huntsville, Florence, and North Alabama. Connect your apps and automate repetitive tasks.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const platforms = [
+  {
+    name: "Zapier",
+    tagline: "The easiest way to automate your work",
+    description: "Zapier is the most popular automation platform with 6,000+ app integrations. Best for businesses that want simple, reliable automations without technical complexity.",
+    bestFor: [
+      "Non-technical users",
+      "Simple app-to-app automations",
+      "Businesses needing maximum app coverage",
+      "Quick wins without development"
+    ],
+    features: [
+      "6,000+ app integrations",
+      "No-code visual builder",
+      "Multi-step Zaps",
+      "Filters and conditional logic",
+      "Scheduling and delays",
+      "Built-in error handling"
+    ],
+    pricing: "Free tier available, paid from $19.99/mo"
+  },
+  {
+    name: "Make (Integromat)",
+    tagline: "Visual automation for complex workflows",
+    description: "Make offers powerful visual workflow building with advanced logic capabilities. Ideal for businesses needing complex, multi-branch automations with data transformation.",
+    bestFor: [
+      "Complex multi-step workflows",
+      "Data transformation needs",
+      "Visual workflow designers",
+      "Cost-conscious high-volume users"
+    ],
+    features: [
+      "Visual scenario builder",
+      "Advanced data manipulation",
+      "Branching and routers",
+      "Error handling with retries",
+      "Scheduling flexibility",
+      "Better pricing for high volume"
+    ],
+    pricing: "Free tier available, paid from $9/mo"
+  },
+  {
+    name: "n8n",
+    tagline: "Self-hosted automation with full control",
+    description: "n8n is an open-source workflow automation tool that can be self-hosted for complete data control. Perfect for businesses with security requirements or technical teams.",
+    bestFor: [
+      "Data privacy requirements",
+      "Technical teams",
+      "Custom integration needs",
+      "Cost optimization at scale"
+    ],
+    features: [
+      "Self-hosted option",
+      "Open source (fair-code)",
+      "Custom code nodes",
+      "No data leaves your servers",
+      "Unlimited executions (self-hosted)",
+      "Active community & plugins"
+    ],
+    pricing: "Free (self-hosted), cloud from $20/mo"
+  }
+];
+
+const useCases = [
+  {
+    title: "Lead Capture to CRM",
+    description: "Automatically send form submissions to your CRM, create tasks, and trigger follow-up sequences.",
+    tools: "Zapier, Make, n8n"
+  },
+  {
+    title: "Invoice & Payment Processing",
+    description: "Create invoices when deals close, send payment reminders, and update accounting software automatically.",
+    tools: "Zapier, Make"
+  },
+  {
+    title: "Social Media Automation",
+    description: "Cross-post content, monitor mentions, aggregate engagement metrics across platforms.",
+    tools: "Zapier, Make"
+  },
+  {
+    title: "Customer Onboarding",
+    description: "Trigger welcome sequences, create accounts, assign tasks, and notify team members when new customers sign up.",
+    tools: "Zapier, Make, n8n"
+  },
+  {
+    title: "Data Sync & Backup",
+    description: "Keep databases synchronized, backup files automatically, and maintain data consistency across tools.",
+    tools: "Make, n8n"
+  },
+  {
+    title: "Reporting & Notifications",
+    description: "Aggregate data from multiple sources, generate reports, and send Slack/email notifications on key metrics.",
+    tools: "Zapier, Make, n8n"
+  }
+];
+
+const comparisonPoints = [
+  { feature: "Ease of use", zapier: "Easiest", make: "Moderate", n8n: "Technical" },
+  { feature: "App integrations", zapier: "6,000+", make: "1,500+", n8n: "400+ (growing)" },
+  { feature: "Complex workflows", zapier: "Good", make: "Excellent", n8n: "Excellent" },
+  { feature: "Self-hosting", zapier: "No", make: "No", n8n: "Yes" },
+  { feature: "Data privacy", zapier: "Cloud only", make: "Cloud only", n8n: "Full control" },
+  { feature: "Custom code", zapier: "Limited", make: "Yes", n8n: "Extensive" },
+  { feature: "Cost at scale", zapier: "Higher", make: "Moderate", n8n: "Lowest" }
+];
+
+const services = [
+  {
+    title: "Automation Audit",
+    description: "We analyze your current processes and identify automation opportunities. You'll get a prioritized list of workflows that will save the most time."
+  },
+  {
+    title: "Platform Selection",
+    description: "Not sure which tool fits your needs? We'll recommend the right platform based on your technical capabilities, budget, and specific requirements."
+  },
+  {
+    title: "Workflow Building",
+    description: "We design and build your automations—from simple two-step Zaps to complex multi-branch scenarios with error handling and notifications."
+  },
+  {
+    title: "Integration Development",
+    description: "Need to connect apps that don't have native integrations? We build custom connections using APIs, webhooks, and code nodes."
+  },
+  {
+    title: "n8n Self-Hosting Setup",
+    description: "We deploy and configure n8n on your infrastructure (or a private cloud) for businesses needing full data control and unlimited executions."
+  },
+  {
+    title: "Training & Documentation",
+    description: "We train your team to manage and modify automations, plus provide documentation so you're never dependent on us for simple changes."
+  }
+];
+
+const faqs = [
+  {
+    question: "Which automation platform should I choose?",
+    answer: "It depends on your needs. Zapier is best for non-technical users wanting simple, reliable automations with maximum app coverage. Make is ideal for complex workflows and better value at high volume. n8n is perfect for technical teams or businesses with data privacy requirements. We can help you evaluate options during a free consultation."
+  },
+  {
+    question: "Do you set up Zapier automations in Huntsville?",
+    answer: "Yes! We help businesses throughout Huntsville, Madison, and Research Park with Zapier, Make, and n8n implementations. Whether you need a single automation or a complete workflow system, we handle setup, testing, and training."
+  },
+  {
+    question: "Can you help businesses in Florence with workflow automation?",
+    answer: "Absolutely. We're based in the Shoals and work with businesses in Florence, Muscle Shoals, Tuscumbia, and Sheffield. Local businesses get the benefit of in-person consultations and training when needed."
+  },
+  {
+    question: "What is n8n and why would I use it?",
+    answer: "n8n is an open-source workflow automation tool that can run on your own servers. It's ideal for businesses that need complete data control (data never leaves your infrastructure), want unlimited executions without per-task pricing, or have technical teams who want maximum flexibility."
+  },
+  {
+    question: "How much time can workflow automation save?",
+    answer: "Most businesses save 10-20+ hours per week after implementing comprehensive workflow automation. The ROI depends on what you're automating, but common wins include eliminating data entry, automating follow-ups, and removing manual reporting tasks."
+  },
+  {
+    question: "Can you migrate automations between platforms?",
+    answer: "Yes. If you've outgrown Zapier's pricing, want Make's advanced features, or need n8n's self-hosting capabilities, we can rebuild your workflows on a new platform while minimizing disruption."
+  },
+  {
+    question: "Do you provide ongoing automation support?",
+    answer: "Yes. We offer monthly support packages for monitoring, troubleshooting, and building new automations as your needs evolve. Many clients start with implementation and continue with ongoing optimization."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/services/ai-implementation/workflow-tools/#service",
+      "name": "Zapier, Make & n8n Workflow Automation",
+      "description": "Expert workflow automation using Zapier, Make, and n8n. Connect apps, automate tasks, and streamline operations for businesses in North Alabama.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "Workflow Automation"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/workflow-tools/#webpage",
+      "url": "https://singingriverai.com/services/ai-implementation/workflow-tools",
+      "name": "Zapier, Make & n8n Automation | Singing River AI",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "AI Implementation", "item": "https://singingriverai.com/services/ai-implementation" },
+        { "@type": "ListItem", "position": 3, "name": "Workflow Tools" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/workflow-tools/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Zapier consultant Alabama, Make Integromat setup Huntsville, n8n implementation, workflow automation Florence, business automation North Alabama, Zapier expert Shoals" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-implementation" class="hover:text-accent transition-colors">AI Implementation</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Workflow Tools</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Workflow Automation</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              Zapier, Make & n8n <em>Automation</em>
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Connect your apps. Automate your workflows. Reclaim your time.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Stop copying data between apps and doing repetitive tasks manually. We build automations that connect your tools and handle the busy work—so you can focus on what matters.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#platforms" class="btn-secondary inline-flex">
+                <span>Compare Platforms</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Banner -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">10-20</div>
+              <div class="text-sm text-stone-light">Hours saved per week</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">6,000+</div>
+              <div class="text-sm text-stone-light">Apps you can connect</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">0</div>
+              <div class="text-sm text-stone-light">Data entry errors</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">24/7</div>
+              <div class="text-sm text-stone-light">Automations running</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Platform Cards -->
+      <section id="platforms" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Three Powerful <em>Platforms</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Each platform has strengths. We'll help you choose the right one—or combine them for maximum power.
+          </p>
+          <div class="grid lg:grid-cols-3 gap-8">
+            {platforms.map((platform) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <h3 class="font-display text-2xl mb-2 text-charcoal">{platform.name}</h3>
+                <p class="text-accent font-medium text-sm mb-4">{platform.tagline}</p>
+                <p class="text-stone leading-relaxed mb-4 text-sm">{platform.description}</p>
+                <p class="text-xs text-stone-light mb-4">{platform.pricing}</p>
+
+                <h4 class="font-display text-sm mb-2 text-charcoal">Best For:</h4>
+                <ul class="space-y-1 mb-4">
+                  {platform.bestFor.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <h4 class="font-display text-sm mb-2 text-charcoal">Key Features:</h4>
+                <ul class="space-y-1">
+                  {platform.features.map((feature) => (
+                    <li class="flex items-start gap-2 text-xs text-stone">
+                      <span class="text-accent">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Table -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Quick <em>Comparison</em>
+          </h2>
+          <div class="bg-white rounded-2xl overflow-x-auto">
+            <table class="w-full min-w-[500px]">
+              <thead>
+                <tr class="bg-charcoal text-cream">
+                  <th class="text-left py-4 px-4 font-display">Feature</th>
+                  <th class="text-left py-4 px-4 font-display">Zapier</th>
+                  <th class="text-left py-4 px-4 font-display">Make</th>
+                  <th class="text-left py-4 px-4 font-display">n8n</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonPoints.map((row, i) => (
+                  <tr class={i % 2 === 0 ? "bg-cream/50" : ""}>
+                    <td class="py-3 px-4 text-charcoal font-medium text-sm">{row.feature}</td>
+                    <td class="py-3 px-4 text-stone text-sm">{row.zapier}</td>
+                    <td class="py-3 px-4 text-stone text-sm">{row.make}</td>
+                    <td class="py-3 px-4 text-stone text-sm">{row.n8n}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Common <em>Automations</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Here's what most businesses automate first:
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((useCase) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg mb-2 text-charcoal">{useCase.title}</h3>
+                <p class="text-stone text-sm mb-3">{useCase.description}</p>
+                <p class="text-xs text-accent">Works with: {useCase.tools}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Our Automation <em>Services</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            From audit to implementation to ongoing support:
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-xl mb-3 text-charcoal">{service.title}</h3>
+                <p class="text-stone">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to Automate Your <em class="text-accent">Workflows</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Book a free consultation. We'll identify your biggest automation opportunities and recommend the right platform for your needs.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

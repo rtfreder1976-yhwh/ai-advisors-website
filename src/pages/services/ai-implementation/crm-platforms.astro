@@ -1,0 +1,357 @@
+---
+import '../../../styles/global.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const title = "HubSpot & GoHighLevel CRM Setup | CRM Automation | Singing River AI";
+const description = "Expert HubSpot and GoHighLevel CRM implementation for small businesses in Huntsville, Florence, and North Alabama. Lead management, sales automation, and marketing integration.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const platforms = [
+  {
+    name: "HubSpot",
+    tagline: "The industry-standard CRM for growing businesses",
+    description: "HubSpot offers a powerful free tier and scales with your business. Ideal for businesses that need robust marketing automation, content management, and detailed analytics.",
+    bestFor: [
+      "Businesses wanting a free starting point",
+      "Content marketing-focused companies",
+      "Teams needing detailed reporting",
+      "Companies planning significant growth"
+    ],
+    features: [
+      "Contact & company management",
+      "Email marketing automation",
+      "Landing pages & forms",
+      "Sales pipeline tracking",
+      "Meeting scheduling",
+      "Detailed analytics & reporting"
+    ]
+  },
+  {
+    name: "GoHighLevel",
+    tagline: "The all-in-one platform built for local businesses",
+    description: "GoHighLevel combines CRM, marketing, and communication tools in one affordable platform. Perfect for service businesses that need SMS, calls, and rapid lead follow-up.",
+    bestFor: [
+      "Local service businesses",
+      "Real estate agents & agencies",
+      "Home service contractors",
+      "Businesses needing SMS/voice"
+    ],
+    features: [
+      "Two-way SMS & calling",
+      "Missed call text-back",
+      "Review request automation",
+      "Appointment booking",
+      "Sales pipeline management",
+      "Unified inbox for all channels"
+    ]
+  }
+];
+
+const comparisonPoints = [
+  { feature: "Free tier", hubspot: "Yes (robust)", gohighlevel: "No (but affordable)" },
+  { feature: "SMS/Voice built-in", hubspot: "Add-on required", gohighlevel: "Yes" },
+  { feature: "Review management", hubspot: "Third-party needed", gohighlevel: "Built-in" },
+  { feature: "Marketing automation", hubspot: "Advanced", gohighlevel: "Good" },
+  { feature: "Reporting depth", hubspot: "Extensive", gohighlevel: "Basic to good" },
+  { feature: "Learning curve", hubspot: "Moderate", gohighlevel: "Lower" },
+  { feature: "Best for", hubspot: "Marketing-focused growth", gohighlevel: "Local service businesses" }
+];
+
+const services = [
+  {
+    title: "CRM Selection Consulting",
+    description: "Not sure which platform fits your business? We'll analyze your needs, budget, and goals to recommend the right CRM—and explain exactly why."
+  },
+  {
+    title: "Full CRM Implementation",
+    description: "Complete setup including contacts import, pipeline configuration, automation workflows, email templates, and integrations with your existing tools."
+  },
+  {
+    title: "Data Migration",
+    description: "Clean migration from your existing CRM (Salesforce, Pipedrive, spreadsheets, etc.) with data cleansing and deduplication."
+  },
+  {
+    title: "Automation Building",
+    description: "Custom workflows for lead follow-up, nurture sequences, task automation, and internal notifications that save hours every week."
+  },
+  {
+    title: "Team Training",
+    description: "Hands-on training sessions so your team actually uses the system. Includes documentation and video recordings for future reference."
+  },
+  {
+    title: "Ongoing Optimization",
+    description: "Monthly support to refine automations, build new workflows, and ensure you're getting maximum ROI from your CRM investment."
+  }
+];
+
+const faqs = [
+  {
+    question: "Should I choose HubSpot or GoHighLevel?",
+    answer: "It depends on your business type and needs. HubSpot excels for businesses focused on content marketing, detailed analytics, and those wanting a free starting point. GoHighLevel is better for local service businesses that need SMS, voice, and rapid lead response. We can help you evaluate both options during a free consultation."
+  },
+  {
+    question: "Can you set up HubSpot for businesses in Huntsville?",
+    answer: "Yes! We implement HubSpot for businesses throughout Huntsville, Madison, and the Research Park area. Whether you need the free CRM or a full Marketing Hub implementation, we handle setup, customization, and training."
+  },
+  {
+    question: "Do you offer CRM setup in Florence and the Shoals?",
+    answer: "Absolutely. We're based in the Shoals and work with businesses in Florence, Muscle Shoals, Tuscumbia, and Sheffield. Local businesses benefit from in-person training and ongoing support."
+  },
+  {
+    question: "How long does CRM implementation take?",
+    answer: "Basic setups take 1-2 weeks. Full implementations with complex automations, data migration, and integrations typically take 2-4 weeks. We'll provide a clear timeline based on your specific requirements."
+  },
+  {
+    question: "Can you migrate data from my current CRM?",
+    answer: "Yes. We migrate data from Salesforce, Pipedrive, Zoho, spreadsheets, and most other systems. We clean and deduplicate data during migration so you start fresh with accurate information."
+  },
+  {
+    question: "What's the cost difference between HubSpot and GoHighLevel?",
+    answer: "HubSpot's CRM is free, but marketing features require paid plans ($20-$800+/month). GoHighLevel runs $97-$497/month but includes features that would require expensive HubSpot add-ons. Total cost of ownership depends on which features you need—we can help you calculate this."
+  },
+  {
+    question: "Can I switch from GoHighLevel to HubSpot (or vice versa)?",
+    answer: "Yes, we handle CRM migrations in both directions. If you've outgrown one platform or your needs have changed, we can migrate your data and rebuild your automations in the new system."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/services/ai-implementation/crm-platforms/#service",
+      "name": "HubSpot & GoHighLevel CRM Implementation",
+      "description": "Expert CRM setup and automation for small businesses. HubSpot and GoHighLevel implementation, data migration, and ongoing optimization.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "CRM Implementation"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/crm-platforms/#webpage",
+      "url": "https://singingriverai.com/services/ai-implementation/crm-platforms",
+      "name": "HubSpot & GoHighLevel CRM Setup | Singing River AI",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "AI Implementation", "item": "https://singingriverai.com/services/ai-implementation" },
+        { "@type": "ListItem", "position": 3, "name": "CRM Platforms" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/services/ai-implementation/crm-platforms/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="HubSpot setup Alabama, GoHighLevel consultant Huntsville, CRM implementation Florence, HubSpot automation North Alabama, GoHighLevel setup Shoals, CRM consultant Alabama" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/services/ai-implementation" class="hover:text-accent transition-colors">AI Implementation</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">CRM Platforms</li>
+            </ol>
+          </nav>
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">CRM Implementation</span>
+            </div>
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              HubSpot & GoHighLevel <em>CRM Setup</em>
+            </h1>
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              The right CRM, configured right, for your business.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Whether you need HubSpot's marketing power or GoHighLevel's all-in-one simplicity, we'll help you choose the right platform and implement it properly. Stop losing leads to manual processes and disconnected tools.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#comparison" class="btn-secondary inline-flex">
+                <span>Compare Platforms</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Platform Cards -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Two Powerful <em>CRM Platforms</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            We're experts in both platforms. Here's what makes each one unique:
+          </p>
+          <div class="grid lg:grid-cols-2 gap-8">
+            {platforms.map((platform) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <h3 class="font-display text-3xl mb-2 text-charcoal">{platform.name}</h3>
+                <p class="text-accent font-medium mb-4">{platform.tagline}</p>
+                <p class="text-stone leading-relaxed mb-6">{platform.description}</p>
+
+                <h4 class="font-display text-lg mb-3 text-charcoal">Best For:</h4>
+                <ul class="space-y-2 mb-6">
+                  {platform.bestFor.map((item) => (
+                    <li class="flex items-start gap-2 text-stone">
+                      <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <h4 class="font-display text-lg mb-3 text-charcoal">Key Features:</h4>
+                <ul class="grid grid-cols-2 gap-2">
+                  {platform.features.map((feature) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <span class="text-accent">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Table -->
+      <section id="comparison" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Quick <em>Comparison</em>
+          </h2>
+          <div class="bg-white rounded-2xl overflow-hidden">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-charcoal text-cream">
+                  <th class="text-left py-4 px-6 font-display">Feature</th>
+                  <th class="text-left py-4 px-6 font-display">HubSpot</th>
+                  <th class="text-left py-4 px-6 font-display">GoHighLevel</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonPoints.map((row, i) => (
+                  <tr class={i % 2 === 0 ? "bg-cream/50" : ""}>
+                    <td class="py-4 px-6 text-charcoal font-medium">{row.feature}</td>
+                    <td class="py-4 px-6 text-stone">{row.hubspot}</td>
+                    <td class="py-4 px-6 text-stone">{row.gohighlevel}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-center text-stone mt-6">
+            Not sure which is right for you? <a href="/#contact" class="text-accent hover:underline">Book a free consultation</a> and we'll help you decide.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            Our CRM <em>Services</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            From initial setup to ongoing optimization, we handle everything:
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div class="bg-cream rounded-2xl p-6">
+                <h3 class="font-display text-xl mb-3 text-charcoal">{service.title}</h3>
+                <p class="text-stone">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to Get Your CRM <em class="text-accent">Working For You</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Book a free consultation. We'll discuss your business needs and recommend the right CRM solution—no pressure, just honest advice.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
