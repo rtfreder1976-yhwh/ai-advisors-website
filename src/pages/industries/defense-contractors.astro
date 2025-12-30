@@ -1,0 +1,566 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "AI for Defense Contractors in Huntsville | Proposal Automation & Compliance | Singing River AI";
+const description = "AI automation for defense contractors in Huntsville and North Alabama. Streamline proposal development, compliance documentation, and business operations. Security-conscious solutions for government contractors.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const solutions = [
+  {
+    title: "Proposal Development Acceleration",
+    description: "AI helps draft proposal sections, compile past performance narratives, and ensure compliance with RFP requirements. Reduce proposal development time while improving win rates with more competitive submissions.",
+    stat: "70%",
+    statLabel: "faster proposal drafts"
+  },
+  {
+    title: "Compliance Documentation",
+    description: "Automate the creation and maintenance of compliance documentation. AI helps ensure your policies, procedures, and reports meet DCAA, CMMC, and contract requirements.",
+    stat: "15+",
+    statLabel: "hours saved per audit"
+  },
+  {
+    title: "Technical Writing Assistance",
+    description: "AI assists with technical documentation, SOPs, and deliverable reports. Maintain consistency across documents while accelerating delivery timelines.",
+    stat: "50%",
+    statLabel: "faster documentation"
+  },
+  {
+    title: "Business Development Support",
+    description: "AI monitors opportunities on SAM.gov, analyzes RFPs for fit, and helps prioritize pursuits. Spend less time searching and more time winning.",
+    stat: "3x",
+    statLabel: "more opportunities reviewed"
+  }
+];
+
+const useCases = [
+  {
+    title: "Proposal Management",
+    items: [
+      "RFP compliance checking",
+      "Past performance compilation",
+      "Technical volume drafting",
+      "Cost narrative development"
+    ]
+  },
+  {
+    title: "Compliance & Security",
+    items: [
+      "CMMC documentation support",
+      "DCAA audit preparation",
+      "Policy document generation",
+      "Training record management"
+    ]
+  },
+  {
+    title: "Operations",
+    items: [
+      "Contract deliverable tracking",
+      "Subcontractor management",
+      "Resource allocation",
+      "Project status reporting"
+    ]
+  },
+  {
+    title: "Business Development",
+    items: [
+      "Opportunity monitoring",
+      "Competitive analysis",
+      "Teaming partner research",
+      "Capability statement updates"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "Do you work with defense contractors in Huntsville?",
+    answer: "Yes! We work with defense contractors throughout Huntsville, including companies at Cummings Research Park and those supporting Redstone Arsenal. From small 8(a) firms to established primes, we help government contractors leverage AI to win more work and deliver more efficiently."
+  },
+  {
+    question: "Is AI safe to use for government contracting work?",
+    answer: "Security is paramount. We help you implement AI tools with appropriate safeguards. For CUI and sensitive work, we recommend on-premise or government-approved cloud solutions. We never suggest using consumer AI tools for controlled information. Our focus is on administrative efficiency—not processing classified data."
+  },
+  {
+    question: "How can AI help with proposal writing?",
+    answer: "AI accelerates proposal development by helping draft sections, ensuring RFP compliance, organizing past performance, and maintaining consistency across volumes. It's like having an extra proposal coordinator who never sleeps. Most teams see 50-70% reduction in initial draft time."
+  },
+  {
+    question: "What about ITAR and export control considerations?",
+    answer: "We take export controls seriously. For ITAR-sensitive work, we only recommend AI solutions that process data within approved boundaries. Many administrative tasks (HR, finance, general business operations) don't involve controlled technical data and can benefit from AI immediately."
+  },
+  {
+    question: "Can AI help with CMMC compliance?",
+    answer: "AI can help prepare for CMMC by assisting with documentation, policy generation, and evidence collection. It won't replace your security team or C3PAO assessment, but it can significantly reduce the administrative burden of achieving and maintaining compliance."
+  },
+  {
+    question: "How does AI help small defense contractors compete with larger primes?",
+    answer: "Small contractors often lack the proposal teams that large primes maintain. AI levels the playing field by giving small teams enterprise-level proposal development capabilities. You can pursue more opportunities and submit more competitive proposals without hiring additional staff."
+  },
+  {
+    question: "What's the ROI for defense contractor AI automation?",
+    answer: "ROI depends on your business, but most contractors see returns within 2-3 months. Winning even one additional contract typically pays for years of AI investment. Beyond wins, the time savings on proposals, compliance, and administration compound quickly."
+  },
+  {
+    question: "How long does implementation take?",
+    answer: "Basic AI tools for proposal support and business operations can be implemented in 1-2 weeks. More comprehensive solutions involving compliance documentation and workflow automation typically take 3-4 weeks. We work around your proposal deadlines—never disrupting active pursuits."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/industries/defense-contractors/#service",
+      "name": "AI for Defense Contractors",
+      "description": "AI automation for defense contractors. Proposal development, compliance documentation, and business operations support for government contractors in Huntsville and North Alabama.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "serviceType": "Defense Contractor AI Automation",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Defense Contractors and Government Contractors"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/industries/defense-contractors/#webpage",
+      "url": "https://singingriverai.com/industries/defense-contractors",
+      "name": "AI for Defense Contractors | Singing River AI",
+      "description": "AI automation for defense contractors in Huntsville and North Alabama. Proposal development, compliance documentation, and security-conscious solutions.",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/industries/defense-contractors/#service" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/industries/defense-contractors/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com" },
+        { "@type": "ListItem", "position": 2, "name": "Defense Contractors AI", "item": "https://singingriverai.com/industries/defense-contractors" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/industries/defense-contractors/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI for Defense Contractors - Singing River AI" />
+    <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="AI for defense contractors, AI proposal writing defense, defense contractor automation Huntsville, government proposal AI tools, CMMC documentation AI, defense contractor AI Huntsville, Redstone Arsenal contractors AI, Research Park AI consultant" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Defense Contractors AI</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Defense & Aerospace</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI for <em>Defense Contractors</em> in Huntsville
+            </h1>
+
+            <p class="text-xl text-stone leading-relaxed mb-4">
+              Win more contracts. Deliver faster. Stay compliant.
+            </p>
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              AI automation helps defense contractors accelerate proposal development, streamline compliance documentation, and improve operational efficiency—all with security-appropriate solutions. Whether you're a small 8(a) at Research Park or an established prime supporting Redstone Arsenal, AI can give you a competitive edge.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Get a Free Consultation</span>
+              </a>
+              <a href="#solutions" class="btn-secondary inline-flex">
+                <span>See How It Works</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Banner -->
+      <section class="py-12 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">70%</div>
+              <div class="text-sm text-stone-light">Faster proposal drafts</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">3x</div>
+              <div class="text-sm text-stone-light">More opportunities reviewed</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">50%</div>
+              <div class="text-sm text-stone-light">Faster documentation</div>
+            </div>
+            <div>
+              <div class="font-display text-4xl md:text-5xl text-accent mb-2">$70B+</div>
+              <div class="text-sm text-stone-light">Annual Huntsville defense market</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions Section -->
+      <section id="solutions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            How AI Transforms <em>Government Contracting</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            Compete more effectively, deliver more efficiently, and maintain compliance—without adding overhead or compromising security.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {solutions.map((solution) => (
+              <div class="bg-cream rounded-2xl p-8">
+                <div class="flex items-start gap-6">
+                  <div class="text-center">
+                    <div class="font-display text-3xl text-accent">{solution.stat}</div>
+                    <div class="text-xs text-stone">{solution.statLabel}</div>
+                  </div>
+                  <div>
+                    <h3 class="font-display text-xl mb-3 text-charcoal">{solution.title}</h3>
+                    <p class="text-stone leading-relaxed">{solution.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            AI Automations for <em>Every Function</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((useCase) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-lg mb-4 text-charcoal">{useCase.title}</h3>
+                <ul class="space-y-2">
+                  {useCase.items.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-stone">
+                      <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="heading-display text-3xl md:text-4xl mb-6">
+                Security-Conscious <em>AI Implementation</em>
+              </h2>
+              <p class="text-lg text-stone leading-relaxed mb-6">
+                We understand the unique security requirements of defense contracting. Our approach focuses on implementing AI where it's appropriate, with proper safeguards for your specific compliance requirements.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">Administrative vs. technical data separation</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">On-premise options for sensitive environments</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">ITAR and export control awareness</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="text-charcoal">CMMC-aligned practices</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-cream rounded-2xl p-8">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Where AI Helps Most</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Proposal development</span>
+                  <span class="font-display text-charcoal">High Impact</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Compliance documentation</span>
+                  <span class="font-display text-charcoal">High Impact</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">Business development</span>
+                  <span class="font-display text-charcoal">High Impact</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-stone-light/20 pb-3">
+                  <span class="text-stone">HR & administrative</span>
+                  <span class="font-display text-charcoal">Medium Impact</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-stone">Technical deliverables</span>
+                  <span class="font-display text-charcoal">Case-by-case</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contractor Types Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-4 text-center">
+            AI Solutions for <em>All Contractor Types</em>
+          </h2>
+          <p class="text-lg text-stone text-center max-w-2xl mx-auto mb-12">
+            We work with defense contractors across Huntsville and North Alabama, from startups to established primes.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-6">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Small Business & 8(a)</h3>
+              <ul class="space-y-2 text-stone">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Enterprise-level proposal capabilities</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Compete without large BD teams</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Affordable CMMC prep support</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-2xl p-6">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Mid-Size Contractors</h3>
+              <ul class="space-y-2 text-stone">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Scale operations without overhead</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Multi-contract management</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Subcontractor coordination</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-2xl p-6">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Prime Contractors</h3>
+              <ul class="space-y-2 text-stone">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Proposal volume acceleration</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Knowledge management</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Program delivery optimization</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Huntsville Focus Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="bg-cream rounded-2xl p-8">
+              <h3 class="font-display text-xl mb-4 text-charcoal">Huntsville Defense Market</h3>
+              <p class="text-stone leading-relaxed mb-6">
+                Huntsville is one of the nation's premier defense hubs. With Redstone Arsenal, NASA Marshall, and hundreds of contractors at Cummings Research Park, the competition for contracts is fierce.
+              </p>
+              <ul class="space-y-3 text-stone">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-medium">•</span>
+                  <span>$70B+ annual defense spending</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-medium">•</span>
+                  <span>300+ defense contractors in the region</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-medium">•</span>
+                  <span>Army, NASA, MDA opportunities</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-medium">•</span>
+                  <span>Growing cybersecurity focus</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="heading-display text-3xl md:text-4xl mb-6">
+                Local AI Expertise for <em>Huntsville Contractors</em>
+              </h2>
+              <p class="text-lg text-stone leading-relaxed mb-6">
+                We understand the Huntsville defense market because we're part of North Alabama. We know the pace of proposal season, the importance of past performance, and what it takes to compete in this market.
+              </p>
+              <p class="text-stone leading-relaxed mb-6">
+                Unlike national AI consultants who treat defense as just another vertical, we specialize in practical solutions that work within the security and compliance constraints you face every day.
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Discuss Your Needs</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to Win More <em class="text-accent">Contracts</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-4">
+            Whether you're preparing for your next proposal, working toward CMMC compliance, or just exploring how AI can help your contracting business, we're here to help.
+          </p>
+          <p class="text-stone-light mb-8">
+            Book a free 30-minute consultation and I'll show you practical AI solutions for your defense contracting needs—with security and compliance in mind.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
