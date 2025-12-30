@@ -10,12 +10,28 @@ const publishDate = "2024-12-20";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How AI Can Improve Your Website's SEO Rankings",
-  "description": description,
-  "datePublished": publishDate,
-  "author": { "@type": "Person", "name": "Todd Frederickson" },
-  "publisher": { "@id": "https://singingriverai.com/#organization" }
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How AI Can Improve Your Website's SEO Rankings",
+      "description": description,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "wordCount": 1500,
+      "articleSection": "SEO",
+      "author": { "@type": "Person", "name": "Todd Frederickson" },
+      "publisher": { "@id": "https://singingriverai.com/#organization" },
+      "mainEntityOfPage": { "@id": canonicalURL.href }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singingriverai.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "AI for SEO Rankings" }
+      ]
+    }
+  ]
 };
 ---
 

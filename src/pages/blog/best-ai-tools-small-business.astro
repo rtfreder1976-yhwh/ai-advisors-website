@@ -1,0 +1,444 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Best AI Tools for Small Business in 2025 | Singing River AI";
+const description = "Discover the best AI tools for small businesses in 2025. Categorized by use case with pricing, pros, cons, and recommendations.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDate = "2024-12-28";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Best AI Tools for Small Business in 2025",
+      "description": description,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "wordCount": 3200,
+      "articleSection": "AI Tools",
+      "author": { "@type": "Person", "name": "Todd Frederickson" },
+      "publisher": { "@id": "https://singingriverai.com/#organization" },
+      "mainEntityOfPage": { "@id": canonicalURL.href }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singingriverai.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Best AI Tools for Small Business" }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Header -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Best AI Tools for Small Business</li>
+            </ol>
+          </nav>
+
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">AI Tools</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              Best AI Tools for Small Business <em>in 2025</em>
+            </h1>
+            <p class="text-stone">December 28, 2024 · 14 min read</p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-stone leading-relaxed">
+              The AI tool landscape is overwhelming. New tools launch daily, each promising to transform your business. This guide cuts through the noise to highlight tools that actually deliver value for small businesses—organized by what you're trying to accomplish.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 my-8">
+              <h4 class="font-display text-lg mb-3">Quick Navigation</h4>
+              <ul class="space-y-1 text-stone">
+                <li><a href="#writing-communication" class="text-accent hover:underline">Writing & Communication</a></li>
+                <li><a href="#marketing-content" class="text-accent hover:underline">Marketing & Content</a></li>
+                <li><a href="#customer-service" class="text-accent hover:underline">Customer Service</a></li>
+                <li><a href="#productivity" class="text-accent hover:underline">Productivity & Operations</a></li>
+                <li><a href="#automation" class="text-accent hover:underline">Automation Platforms</a></li>
+                <li><a href="#crm-sales" class="text-accent hover:underline">CRM & Sales</a></li>
+              </ul>
+            </div>
+
+            <h2 id="writing-communication" class="heading-display text-2xl mt-12 mb-4">Writing & Communication</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              These tools help with emails, documents, and any text-based communication.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">ChatGPT</h3>
+              <p class="text-sm text-accent mb-4">OpenAI | Free - $20/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                The tool that started the AI revolution. Excellent for email drafting, brainstorming, research, and general writing tasks. The free version handles most small business needs; Plus gets you GPT-4 and faster responses.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Daily writing tasks, research, brainstorming</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Generic outputs need your editing</p>
+                </div>
+              </div>
+              <p class="text-sm mt-4"><a href="/blog/chatgpt-for-small-business/" class="text-accent hover:underline">Read our ChatGPT guide →</a></p>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Claude</h3>
+              <p class="text-sm text-accent mb-4">Anthropic | Free - $20/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                Often produces more nuanced, thoughtful writing than ChatGPT. Excellent at following complex instructions and maintaining consistent tone. Great for longer documents and detailed analysis.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Long-form content, complex analysis, nuanced writing</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Less integrated with other tools</p>
+                </div>
+              </div>
+              <p class="text-sm mt-4"><a href="/blog/claude-ai-vs-chatgpt/" class="text-accent hover:underline">Compare Claude vs ChatGPT →</a></p>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Grammarly</h3>
+              <p class="text-sm text-accent mb-4">Grammarly Inc | Free - $12/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                AI-powered writing assistant that catches errors and suggests improvements as you type. Works everywhere—email, documents, social media. The premium version includes tone detection and rewrite suggestions.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Error-free communication, professional writing</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Suggestions can be overly cautious</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="marketing-content" class="heading-display text-2xl mt-12 mb-4">Marketing & Content</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Tools for creating marketing materials, social media content, and visual assets.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Jasper</h3>
+              <p class="text-sm text-accent mb-4">Jasper AI | From $49/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                Purpose-built for marketing content. Includes templates for ads, landing pages, emails, and social posts. Better at maintaining brand voice than general-purpose AI once trained on your content.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">High-volume content creation, marketing teams</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">More expensive than ChatGPT</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Canva Magic Studio</h3>
+              <p class="text-sm text-accent mb-4">Canva | Free - $13/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                AI features built into Canva's design platform. Generate images, remove backgrounds, resize for different platforms, and create designs from text prompts. Perfect for non-designers who need professional visuals.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Social media graphics, presentations, basic design</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Not for complex design work</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Buffer AI Assistant</h3>
+              <p class="text-sm text-accent mb-4">Buffer | From $6/month per channel</p>
+              <p class="text-stone leading-relaxed mb-4">
+                Social media scheduling with built-in AI for post generation and optimization. Suggests best posting times, generates hashtags, and helps repurpose content for different platforms.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Consistent social media presence</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">AI features are supplementary, not core</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="customer-service" class="heading-display text-2xl mt-12 mb-4">Customer Service</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              AI tools for handling customer inquiries and support.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Intercom Fin</h3>
+              <p class="text-sm text-accent mb-4">Intercom | $0.99/resolution</p>
+              <p class="text-stone leading-relaxed mb-4">
+                AI chatbot that actually works. Trained on your help docs and past conversations. Handles common questions automatically and knows when to hand off to humans. Pay-per-resolution pricing aligns cost with value.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Businesses with significant support volume</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Requires existing Intercom setup</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Tidio</h3>
+              <p class="text-sm text-accent mb-4">Tidio | Free - $29/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                Affordable AI chatbot for small businesses. Easy to set up with pre-built templates. Good for answering FAQs, capturing leads, and basic support automation.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Small businesses starting with chatbots</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Less sophisticated than enterprise options</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="productivity" class="heading-display text-2xl mt-12 mb-4">Productivity & Operations</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Tools that help you work more efficiently.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Otter.ai</h3>
+              <p class="text-sm text-accent mb-4">Otter | Free - $17/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                AI meeting transcription and notes. Records meetings, identifies speakers, generates summaries, and extracts action items. Integrates with Zoom, Google Meet, and Microsoft Teams.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Anyone with frequent meetings</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Accuracy varies with audio quality</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Notion AI</h3>
+              <p class="text-sm text-accent mb-4">Notion | $10/month add-on</p>
+              <p class="text-stone leading-relaxed mb-4">
+                AI capabilities built into Notion's workspace. Summarize meeting notes, draft content, brainstorm ideas, and translate text—all within your existing Notion workflow.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Teams already using Notion</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Only useful if you're in Notion ecosystem</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Calendly</h3>
+              <p class="text-sm text-accent mb-4">Calendly | Free - $16/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                AI-enhanced scheduling that eliminates the back-and-forth. Smart features include automatic time zone detection, buffer management, and routing based on meeting type.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Anyone who schedules meetings externally</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Basic AI, mostly rule-based</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="automation" class="heading-display text-2xl mt-12 mb-4">Automation Platforms</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Connect your tools and automate workflows between them.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Zapier</h3>
+              <p class="text-sm text-accent mb-4">Zapier | Free - $69/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                The most popular automation platform with 6,000+ app integrations. New AI features let you describe workflows in plain English and get suggestions for automations. Essential for connecting your tech stack.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Businesses with multiple tools to connect</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Can get expensive at high volumes</p>
+                </div>
+              </div>
+              <p class="text-sm mt-4"><a href="/solutions/workflow-automation/" class="text-accent hover:underline">Learn about workflow automation →</a></p>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">Make (formerly Integromat)</h3>
+              <p class="text-sm text-accent mb-4">Make | Free - $16/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                More powerful than Zapier for complex automations, with a visual builder that shows data flow. Better pricing for high-volume operations. Steeper learning curve but more flexibility.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Complex workflows, high-volume automation</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">More technical to set up</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="crm-sales" class="heading-display text-2xl mt-12 mb-4">CRM & Sales</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              AI-enhanced customer relationship management and sales tools.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">GoHighLevel</h3>
+              <p class="text-sm text-accent mb-4">HighLevel | From $97/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                All-in-one platform with CRM, automation, and AI capabilities. Built for agencies and local businesses. Includes appointment booking, SMS/email marketing, and AI-powered lead nurturing.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Service businesses wanting all-in-one solution</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Learning curve, can be overwhelming</p>
+                </div>
+              </div>
+              <p class="text-sm mt-4"><a href="/services/ai-implementation/gohighlevel/" class="text-accent hover:underline">Our GoHighLevel implementation service →</a></p>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h3 class="font-display text-xl mb-2">HubSpot</h3>
+              <p class="text-sm text-accent mb-4">HubSpot | Free - $800+/month</p>
+              <p class="text-stone leading-relaxed mb-4">
+                Industry-standard CRM with extensive AI features at higher tiers. AI-powered email writing, predictive lead scoring, and conversation intelligence. Free tier is genuinely useful for small teams.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-medium text-charcoal">Best for:</span>
+                  <p class="text-stone">Growing businesses with sales teams</p>
+                </div>
+                <div>
+                  <span class="font-medium text-charcoal">Limitation:</span>
+                  <p class="text-stone">Advanced AI features require expensive plans</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">How to Choose</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Don't try to adopt everything at once. Here's how to prioritize:
+            </p>
+            <ol class="space-y-3 text-stone mb-6 list-decimal list-inside">
+              <li><strong>Start with ChatGPT or Claude.</strong> These general-purpose tools handle most writing needs at low or no cost.</li>
+              <li><strong>Add one automation tool.</strong> Zapier or Make can connect your existing systems.</li>
+              <li><strong>Address your biggest pain point.</strong> Meeting notes? Customer service? Choose a specialized tool for that.</li>
+              <li><strong>Expand from there.</strong> Once you see value from initial tools, expand strategically.</li>
+            </ol>
+
+            <div class="bg-cream rounded-2xl p-8 mt-12">
+              <h3 class="font-display text-xl mb-4">Need Help Choosing?</h3>
+              <p class="text-stone mb-4">
+                Not sure which tools are right for your specific situation? We help small businesses evaluate options and implement the right solutions.
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Book Free Consultation</span>
+              </a>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="mt-12 pt-8 border-t border-stone/20">
+              <h3 class="font-display text-xl mb-6">Related Articles</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <a href="/blog/how-to-use-ai-small-business/" class="group">
+                  <div class="bg-cream rounded-xl p-4">
+                    <span class="text-sm text-accent">AI Tools</span>
+                    <h4 class="font-display text-lg mt-1 group-hover:text-accent transition-colors">How to Use AI in Your Small Business</h4>
+                  </div>
+                </a>
+                <a href="/blog/chatgpt-for-small-business/" class="group">
+                  <div class="bg-cream rounded-xl p-4">
+                    <span class="text-sm text-accent">AI Tools</span>
+                    <h4 class="font-display text-lg mt-1 group-hover:text-accent transition-colors">ChatGPT for Small Business: A Practical Guide</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

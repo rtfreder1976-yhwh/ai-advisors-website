@@ -1,0 +1,383 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "AI for Small Business | Affordable AI Solutions | Singing River AI";
+const description = "Practical AI solutions designed for small businesses. Affordable AI consulting, automation, and training that delivers real ROI. Free 30-minute consultation.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const benefits = [
+  {
+    stat: "10+",
+    label: "Hours Saved Weekly",
+    description: "Average time savings from automating repetitive tasks like follow-ups, scheduling, and data entry."
+  },
+  {
+    stat: "78%",
+    label: "Faster Response",
+    description: "AI-powered lead response beats competitors and wins more business."
+  },
+  {
+    stat: "3x",
+    label: "ROI in Year One",
+    description: "Typical return on investment from well-implemented AI automation."
+  },
+  {
+    stat: "$0",
+    label: "Enterprise Budgets",
+    description: "You don't need Fortune 500 resources to benefit from AI."
+  }
+];
+
+const useCases = [
+  {
+    title: "Lead Follow-Up Automation",
+    description: "Respond to inquiries instantly, 24/7. No more lost leads because you couldn't reply fast enough."
+  },
+  {
+    title: "Appointment Scheduling",
+    description: "AI handles booking, reminders, and rescheduling—eliminating the back-and-forth."
+  },
+  {
+    title: "Customer Communication",
+    description: "Automated but personalized email sequences that nurture leads and retain customers."
+  },
+  {
+    title: "Document Processing",
+    description: "Extract data from invoices, contracts, and forms automatically."
+  },
+  {
+    title: "Content Creation",
+    description: "Generate marketing copy, social posts, and emails in minutes instead of hours."
+  },
+  {
+    title: "Data Analysis",
+    description: "Turn spreadsheets into insights without hiring a data analyst."
+  }
+];
+
+const industries = [
+  { name: "Professional Services", href: "/industries/professional-services/" },
+  { name: "Healthcare", href: "/industries/healthcare/" },
+  { name: "Real Estate", href: "/industries/real-estate/" },
+  { name: "Home Services", href: "/industries/home-services/" }
+];
+
+const faqs = [
+  {
+    question: "Is AI affordable for small businesses?",
+    answer: "Yes. Many AI tools have free tiers or cost less than $100/month. Our consulting is priced for small business budgets—not enterprise rates. We focus on solutions that pay for themselves quickly through time savings and increased revenue."
+  },
+  {
+    question: "Do I need technical skills to use AI?",
+    answer: "No. The AI tools we recommend and implement are designed for non-technical users. We provide training so your team can use them confidently, and ongoing support when questions arise."
+  },
+  {
+    question: "How quickly can I see results?",
+    answer: "Many automations can be implemented in days, not months. Simple wins like lead follow-up automation often show results within the first week. More complex implementations typically take 2-4 weeks."
+  },
+  {
+    question: "What if AI makes mistakes?",
+    answer: "We design systems with appropriate human oversight. AI handles the repetitive work while your team reviews and approves important decisions. We also build in safeguards and monitoring."
+  },
+  {
+    question: "How do I know if my business is ready for AI?",
+    answer: "If you have repetitive tasks, respond to leads, schedule appointments, or create content—you're ready. Take our free AI Readiness Quiz or schedule a consultation to identify your best opportunities."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/ai-for-small-business/#webpage",
+      "url": "https://singingriverai.com/ai-for-small-business/",
+      "name": "AI for Small Business | Singing River AI",
+      "description": description,
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/ai-for-small-business/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "AI for Small Business" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/ai-for-small-business/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Solutions for Small Business - Singing River AI" />
+    <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Singing River AI" />
+    <meta name="keywords" content="AI for small business, small business AI solutions, affordable AI consulting, AI automation small business, small business automation" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">AI for Small Business</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Small Business Solutions</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              AI That Works for <em>Small Business</em>
+            </h1>
+
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              You don't need a Fortune 500 budget to benefit from AI. We help small businesses automate repetitive tasks, respond to leads faster, and free up time for work that actually grows your business. Practical solutions, affordable pricing, real results.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Book Free Consultation</span>
+              </a>
+              <a href="/ai-readiness-quiz" class="btn-secondary inline-flex">
+                <span>Take the AI Readiness Quiz</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Stats Section -->
+      <section class="py-16 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {benefits.map((benefit) => (
+              <div class="text-center">
+                <div class="font-display text-4xl md:text-5xl text-accent mb-2">{benefit.stat}</div>
+                <div class="font-medium text-cream mb-1">{benefit.label}</div>
+                <p class="text-stone-light text-sm">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="heading-display text-3xl md:text-4xl mb-4">
+              What AI Can Do for <em>Your Business</em>
+            </h2>
+            <p class="text-stone text-lg">
+              These aren't futuristic concepts—they're practical applications small businesses are using right now to save time and grow revenue.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {useCases.map((useCase, index) => (
+              <div class="bg-cream rounded-2xl p-8 card-hover">
+                <div class="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-6">
+                  <span class="font-display text-xl">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 class="font-display text-xl mb-3 text-charcoal">{useCase.title}</h3>
+                <p class="text-stone leading-relaxed">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Small Business Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="heading-display text-3xl md:text-4xl mb-6">
+                Why Small Businesses Have an <em>AI Advantage</em>
+              </h2>
+              <div class="space-y-6 text-stone">
+                <p class="leading-relaxed">
+                  Large enterprises spend months in committee meetings before adopting new technology. You can implement AI next week. That speed is a competitive advantage.
+                </p>
+                <p class="leading-relaxed">
+                  You also know your business inside and out. You can immediately spot which automations will save time and which won't work for your specific situation. That context is invaluable.
+                </p>
+                <p class="leading-relaxed font-medium text-charcoal">
+                  The small businesses that adopt AI now will outcompete those that wait.
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-8">
+              <h3 class="font-display text-xl mb-6 text-charcoal">Explore by Industry</h3>
+              <div class="space-y-4">
+                {industries.map((industry) => (
+                  <a href={industry.href} class="flex items-center justify-between p-4 bg-cream rounded-xl hover:bg-accent/10 transition-colors group">
+                    <span class="font-medium text-charcoal">{industry.name}</span>
+                    <svg class="w-5 h-5 text-accent group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions Links Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Popular <em>AI Solutions</em>
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <a href="/solutions/crm-automation/" class="bg-cream rounded-2xl p-8 card-hover group">
+              <h3 class="font-display text-xl mb-3 text-charcoal group-hover:text-accent transition-colors">CRM Automation</h3>
+              <p class="text-stone leading-relaxed mb-4">Automated lead follow-up, customer nurturing, and pipeline management.</p>
+              <span class="text-accent font-medium">Learn more →</span>
+            </a>
+            <a href="/solutions/workflow-automation/" class="bg-cream rounded-2xl p-8 card-hover group">
+              <h3 class="font-display text-xl mb-3 text-charcoal group-hover:text-accent transition-colors">Workflow Automation</h3>
+              <p class="text-stone leading-relaxed mb-4">Connect your tools and eliminate manual data transfer between systems.</p>
+              <span class="text-accent font-medium">Learn more →</span>
+            </a>
+            <a href="/solutions/appointment-automation/" class="bg-cream rounded-2xl p-8 card-hover group">
+              <h3 class="font-display text-xl mb-3 text-charcoal group-hover:text-accent transition-colors">Appointment Automation</h3>
+              <p class="text-stone leading-relaxed mb-4">AI-powered scheduling that books, confirms, and reminds automatically.</p>
+              <span class="text-accent font-medium">Learn more →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Content Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Learn More About <em>AI for Business</em>
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <a href="/blog/chatgpt-for-small-business/" class="group">
+              <div class="bg-cream rounded-2xl p-6 card-hover">
+                <span class="text-sm text-accent font-medium">Blog</span>
+                <h3 class="font-display text-lg mt-2 mb-2 text-charcoal group-hover:text-accent transition-colors">ChatGPT for Small Business: A Practical Guide</h3>
+                <p class="text-stone text-sm">Learn how to use ChatGPT effectively for emails, content, and customer service.</p>
+              </div>
+            </a>
+            <a href="/blog/how-to-use-ai-small-business/" class="group">
+              <div class="bg-cream rounded-2xl p-6 card-hover">
+                <span class="text-sm text-accent font-medium">Blog</span>
+                <h3 class="font-display text-lg mt-2 mb-2 text-charcoal group-hover:text-accent transition-colors">How to Use AI in Your Small Business</h3>
+                <p class="text-stone text-sm">10 practical ways to start using AI in your business today.</p>
+              </div>
+            </a>
+            <a href="/services/ai-consulting/" class="group">
+              <div class="bg-cream rounded-2xl p-6 card-hover">
+                <span class="text-sm text-accent font-medium">Service</span>
+                <h3 class="font-display text-lg mt-2 mb-2 text-charcoal group-hover:text-accent transition-colors">AI Strategy & Consulting</h3>
+                <p class="text-stone text-sm">Get a customized AI roadmap for your specific business needs.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to See What AI Can Do for <em class="text-accent">Your Business</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-4">
+            Every business is different. Let's talk about your specific challenges and find the AI solutions that will actually help.
+          </p>
+          <p class="text-stone-light mb-8">
+            <strong class="text-cream">Free 30-minute consultation.</strong> No obligation, no sales pressure.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

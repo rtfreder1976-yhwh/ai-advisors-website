@@ -1,0 +1,281 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "How to Choose the Right AI Consultant for Your Business | Singing River AI";
+const description = "Learn how to evaluate and choose an AI consultant. What to look for, red flags to avoid, and questions to ask before hiring.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDate = "2024-12-28";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Choose the Right AI Consultant for Your Business",
+      "description": description,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "wordCount": 2100,
+      "articleSection": "AI Consulting",
+      "author": { "@type": "Person", "name": "Todd Frederickson" },
+      "publisher": { "@id": "https://singingriverai.com/#organization" },
+      "mainEntityOfPage": { "@id": canonicalURL.href }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singingriverai.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "How to Choose AI Consultant" }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Header -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">How to Choose AI Consultant</li>
+            </ol>
+          </nav>
+
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">AI Consulting</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              How to Choose the Right <em>AI Consultant</em>
+            </h1>
+            <p class="text-stone">December 28, 2024 · 9 min read</p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-stone leading-relaxed">
+              The AI consulting market is exploding—and so is the number of people calling themselves "AI consultants." Some are genuinely skilled. Others watched a few YouTube videos and hung out a shingle. Here's how to tell the difference and find a consultant who'll actually help your business.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">What to Look For</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">1. Practical Experience, Not Just Theory</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              The best AI consultants have actually implemented solutions—not just studied them. Ask about specific projects they've completed. What did they build? What results did it achieve? What problems did they encounter?
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              Be cautious of consultants who speak only in generalities or whose experience is limited to personal projects. Business AI implementation has unique challenges that only come from doing the work.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">2. Industry or Business-Type Experience</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              AI implementation for a <a href="/industries/healthcare/" class="text-accent hover:underline">healthcare practice</a> looks different from AI for a <a href="/industries/real-estate/" class="text-accent hover:underline">real estate agency</a>. While core principles transfer, industry-specific knowledge helps consultants understand your workflows, compliance requirements, and common pain points.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              That said, don't rule out consultants without direct industry experience if they have strong general skills and ask good questions. Sometimes fresh perspective is valuable.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">3. Clear Communication</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Good consultants explain complex concepts in plain language. If someone drowns you in jargon or makes simple things sound complicated, that's a warning sign. You should understand what they're proposing and why.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              Pay attention to how they listen. Do they ask questions about your specific situation? Or do they launch into a sales pitch without understanding your needs?
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">4. Honest About Limitations</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              AI can't solve every problem. Trustworthy consultants will tell you when AI isn't the right solution or when your expectations aren't realistic. If someone promises everything with no downsides, be skeptical.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              Good consultants also know the limits of their own expertise. They'll recommend specialists for areas outside their skillset rather than pretending to know everything.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">5. Focus on Business Outcomes</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Technology is a means to an end. The best consultants talk about business results—time saved, revenue increased, problems solved—not just technical features. They should connect every recommendation to your actual business goals.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Red Flags to Avoid</h2>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">⚠</span>
+                <span><strong>Guarantees specific results.</strong> No one can guarantee AI will save you exactly X hours or generate Y revenue. Be wary of precise promises.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">⚠</span>
+                <span><strong>Pushes expensive solutions immediately.</strong> Good consultants start with your problem, not with what they want to sell.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">⚠</span>
+                <span><strong>Won't explain their approach.</strong> If they're secretive about methodology, you might be paying for something you could do yourself.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">⚠</span>
+                <span><strong>No references or case studies.</strong> Legitimate consultants have happy clients willing to vouch for them.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">⚠</span>
+                <span><strong>Pressures you to decide quickly.</strong> Quality consultants don't need high-pressure tactics.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">⚠</span>
+                <span><strong>Only talks about AI hype.</strong> If the conversation is all buzzwords and future potential with no practical application, look elsewhere.</span>
+              </li>
+            </ul>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Questions to Ask</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Before hiring an AI consultant, get answers to these questions:
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h4 class="font-display text-lg mb-4 text-charcoal">About Their Experience</h4>
+              <ul class="space-y-2 text-stone">
+                <li>• What AI projects have you completed for businesses like mine?</li>
+                <li>• What results did those projects achieve?</li>
+                <li>• What's a project that didn't go as planned? What did you learn?</li>
+                <li>• Can you provide references from past clients?</li>
+              </ul>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h4 class="font-display text-lg mb-4 text-charcoal">About Their Process</h4>
+              <ul class="space-y-2 text-stone">
+                <li>• How do you determine which AI solutions are right for my business?</li>
+                <li>• What does your discovery/assessment process look like?</li>
+                <li>• How do you handle projects that encounter unexpected challenges?</li>
+                <li>• What training and documentation do you provide?</li>
+              </ul>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <h4 class="font-display text-lg mb-4 text-charcoal">About the Engagement</h4>
+              <ul class="space-y-2 text-stone">
+                <li>• What will you need from me and my team?</li>
+                <li>• How long will implementation take?</li>
+                <li>• What ongoing support do you provide?</li>
+                <li>• How do you handle changes in scope?</li>
+                <li>• What happens if the solution doesn't work as expected?</li>
+              </ul>
+            </div>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">DIY vs. Hiring a Consultant</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Not every AI implementation needs a consultant. Here's when to DIY and when to get help:
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Do It Yourself When:</h3>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>You're comfortable learning new technology</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>You have time to experiment and iterate</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>The implementation is straightforward (basic chatbot, simple automation)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Budget is very tight</span>
+              </li>
+            </ul>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Hire a Consultant When:</h3>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>You need results quickly</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Multiple systems need to integrate</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>You're not sure where to start or what's possible</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>The stakes are high (customer-facing, revenue-critical)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>You want to avoid common pitfalls and best-practice mistakes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Your team needs training</span>
+              </li>
+            </ul>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">The Bottom Line</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              A good AI consultant is a partner, not just a vendor. They should understand your business, communicate clearly, and focus on results that matter to you. Take time to evaluate options, ask hard questions, and trust your instincts about who you want to work with.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              The investment in finding the right consultant pays dividends. A great consultant can compress months of learning into weeks and help you avoid expensive mistakes. A poor choice can waste time and money while leaving you frustrated with AI in general.
+            </p>
+
+            <div class="bg-cream rounded-2xl p-8 mt-12">
+              <h3 class="font-display text-xl mb-4">See If We're a Good Fit</h3>
+              <p class="text-stone mb-4">
+                Not every consultant is right for every business. We offer free 30-minute consultations so you can evaluate our approach and see if we're the right fit for your needs. No pressure, no obligation.
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Book Free Consultation</span>
+              </a>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="mt-12 pt-8 border-t border-stone/20">
+              <h3 class="font-display text-xl mb-6">Related Articles</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <a href="/blog/ai-consulting-cost-guide/" class="group">
+                  <div class="bg-cream rounded-xl p-4">
+                    <span class="text-sm text-accent">AI Consulting</span>
+                    <h4 class="font-display text-lg mt-1 group-hover:text-accent transition-colors">How Much Does AI Consulting Cost?</h4>
+                  </div>
+                </a>
+                <a href="/blog/ai-implementation-roi/" class="group">
+                  <div class="bg-cream rounded-xl p-4">
+                    <span class="text-sm text-accent">AI Consulting</span>
+                    <h4 class="font-display text-lg mt-1 group-hover:text-accent transition-colors">AI Implementation ROI: What to Expect</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

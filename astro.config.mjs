@@ -51,6 +51,15 @@ export default defineConfig({
             lastmod: today
           };
         }
+        // Solution pages - high priority for conversion
+        if (item.url.includes('/solutions/') || item.url.includes('/ai-for-small-business')) {
+          return {
+            ...item,
+            priority: 0.9,
+            changefreq: 'monthly',
+            lastmod: today
+          };
+        }
         // Default for other pages
         return {
           ...item,

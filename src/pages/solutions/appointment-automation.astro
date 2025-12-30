@@ -1,0 +1,370 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Appointment Scheduling Automation | AI Booking System | Singing River AI";
+const description = "Automate appointment scheduling with AI. 24/7 booking, automatic reminders, smart rescheduling, and no-show reduction. Free consultation for small businesses.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-image.png', Astro.site);
+
+const features = [
+  {
+    title: "24/7 Online Booking",
+    description: "Clients book appointments anytime—even at 2am on Sunday. No phone tag, no back-and-forth emails. Just instant confirmation."
+  },
+  {
+    title: "Automatic Reminders",
+    description: "SMS and email reminders at the right intervals. Reduce no-shows by up to 80% with smart reminder sequences."
+  },
+  {
+    title: "Intelligent Rescheduling",
+    description: "When clients need to reschedule, AI handles it automatically. Open slots get filled, your calendar stays optimized."
+  },
+  {
+    title: "Calendar Sync",
+    description: "Real-time sync with Google Calendar, Outlook, and other calendars. Never double-book again."
+  },
+  {
+    title: "Buffer Time Management",
+    description: "Automatic travel time, prep time, and break buffers between appointments. No more back-to-back overload."
+  },
+  {
+    title: "Waitlist Automation",
+    description: "When cancellations happen, waitlisted clients get notified automatically. Fill every slot without manual effort."
+  }
+];
+
+const industries = [
+  {
+    name: "Healthcare & Medical",
+    examples: "Patient appointments, follow-ups, procedure scheduling",
+    href: "/industries/healthcare/"
+  },
+  {
+    name: "Professional Services",
+    examples: "Client consultations, meetings, reviews",
+    href: "/industries/professional-services/"
+  },
+  {
+    name: "Home Services",
+    examples: "Service calls, estimates, maintenance visits",
+    href: "/industries/home-services/"
+  },
+  {
+    name: "Real Estate",
+    examples: "Property showings, buyer consultations, listing appointments",
+    href: "/industries/real-estate/"
+  }
+];
+
+const stats = [
+  { value: "80%", label: "Reduction in no-shows" },
+  { value: "5+", label: "Hours saved weekly" },
+  { value: "24/7", label: "Booking availability" },
+  { value: "90%", label: "Of clients prefer online booking" }
+];
+
+const faqs = [
+  {
+    question: "How does appointment automation reduce no-shows?",
+    answer: "Strategic reminder sequences (typically 48 hours, 24 hours, and 2 hours before) keep appointments top of mind. Easy rescheduling options mean clients change times instead of simply not showing up. Most businesses see 60-80% reduction in no-shows."
+  },
+  {
+    question: "Can clients still call to book appointments?",
+    answer: "Absolutely. Online booking supplements phone scheduling—it doesn't replace it. Many clients prefer the convenience of online booking, which frees up your phone lines for clients who want to call."
+  },
+  {
+    question: "What if I have complex scheduling rules?",
+    answer: "We handle complexity: different appointment types with different durations, specific staff for specific services, location-based availability, intake requirements, and more. The system adapts to your rules, not the other way around."
+  },
+  {
+    question: "Will this integrate with my existing calendar?",
+    answer: "Yes. We integrate with Google Calendar, Microsoft Outlook, Apple Calendar, and most practice management systems. Your existing calendar becomes the source of truth."
+  },
+  {
+    question: "How much does appointment automation cost?",
+    answer: "Implementation typically ranges from $1,500-$5,000 depending on complexity. Ongoing platform costs vary by solution but are usually $50-200/month. The ROI from reduced no-shows and time savings typically covers costs within the first month."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/solutions/appointment-automation/#service",
+      "name": "Appointment Scheduling Automation",
+      "description": description,
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "serviceType": "Appointment Automation",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/solutions/appointment-automation/#webpage",
+      "url": "https://singingriverai.com/solutions/appointment-automation/",
+      "name": "Appointment Scheduling Automation | Singing River AI",
+      "description": description,
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/solutions/appointment-automation/#service" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://singingriverai.com/solutions/appointment-automation/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://singingriverai.com/ai-for-small-business/" },
+        { "@type": "ListItem", "position": 3, "name": "Appointment Automation" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/solutions/appointment-automation/#faq",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Appointment Scheduling Automation - Singing River AI" />
+    <meta property="og:site_name" content="Singing River AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Singing River AI" />
+    <meta name="keywords" content="appointment scheduling automation, AI booking system, automated scheduling, online appointment booking, reduce no-shows, appointment reminders" />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-32 pb-20 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/ai-for-small-business/" class="hover:text-accent transition-colors">Solutions</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Appointment Automation</li>
+            </ol>
+          </nav>
+
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">AI Solution</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              <em>Appointment Automation</em> That Fills Your Calendar
+            </h1>
+
+            <p class="text-lg text-stone leading-relaxed mb-8">
+              Stop playing phone tag. Stop losing clients to no-shows. AI-powered scheduling lets clients book 24/7, sends smart reminders, and keeps your calendar full—automatically.
+            </p>
+
+            <a href="/#contact" class="btn-primary inline-flex">
+              <span>Get Started</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-16 bg-charcoal text-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat) => (
+              <div>
+                <div class="font-display text-4xl md:text-5xl text-accent mb-2">{stat.value}</div>
+                <p class="text-stone-light">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="heading-display text-3xl md:text-4xl mb-4">
+              Complete Scheduling <em>Automation</em>
+            </h2>
+            <p class="text-stone text-lg">
+              Everything you need to automate the entire appointment lifecycle—from booking to follow-up.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div class="bg-cream rounded-2xl p-8 card-hover">
+                <div class="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center text-cream mb-6">
+                  <span class="font-display text-xl">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 class="font-display text-xl mb-3 text-charcoal">{feature.title}</h3>
+                <p class="text-stone leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Scheduling Solutions by <em>Industry</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            {industries.map((industry) => (
+              <a href={industry.href} class="bg-white rounded-2xl p-8 card-hover group">
+                <h3 class="font-display text-xl mb-2 text-charcoal group-hover:text-accent transition-colors">{industry.name}</h3>
+                <p class="text-stone leading-relaxed mb-4">{industry.examples}</p>
+                <span class="text-accent font-medium">See industry solutions →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            How It <em>Works</em>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">1</div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">Client Finds You</h3>
+              <p class="text-stone text-sm">They visit your website, click a link, or scan a QR code.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">2</div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">They Book Online</h3>
+              <p class="text-stone text-sm">Pick a service, choose an available time, enter their info. Done in 60 seconds.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">3</div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">AI Takes Over</h3>
+              <p class="text-stone text-sm">Confirmation sent. Reminders scheduled. Calendar updated. Intake forms sent if needed.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-display text-2xl mx-auto mb-4">4</div>
+              <h3 class="font-display text-lg mb-2 text-charcoal">They Show Up</h3>
+              <p class="text-stone text-sm">With reminder sequences, they're 80% more likely to keep the appointment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Frequently Asked <em>Questions</em>
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-6">
+                <h3 class="font-display text-lg text-charcoal mb-3">{faq.question}</h3>
+                <p class="text-stone leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Solutions Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 class="heading-display text-3xl md:text-4xl mb-12 text-center">
+            Related <em>Solutions</em>
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <a href="/solutions/crm-automation/" class="bg-cream rounded-2xl p-8 card-hover group">
+              <h3 class="font-display text-xl mb-3 text-charcoal group-hover:text-accent transition-colors">CRM Automation</h3>
+              <p class="text-stone leading-relaxed mb-4">Connect scheduling with your lead management and follow-up.</p>
+              <span class="text-accent font-medium">Learn more →</span>
+            </a>
+            <a href="/solutions/workflow-automation/" class="bg-cream rounded-2xl p-8 card-hover group">
+              <h3 class="font-display text-xl mb-3 text-charcoal group-hover:text-accent transition-colors">Workflow Automation</h3>
+              <p class="text-stone leading-relaxed mb-4">Integrate scheduling with your other business processes.</p>
+              <span class="text-accent font-medium">Learn more →</span>
+            </a>
+            <a href="/services/ai-implementation/" class="bg-cream rounded-2xl p-8 card-hover group">
+              <h3 class="font-display text-xl mb-3 text-charcoal group-hover:text-accent transition-colors">AI Implementation</h3>
+              <p class="text-stone leading-relaxed mb-4">Full-service AI implementation for your business.</p>
+              <span class="text-accent font-medium">Learn more →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-charcoal text-cream">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="heading-display text-3xl md:text-4xl mb-6">
+            Ready to <em class="text-accent">Fill Your Calendar Automatically</em>?
+          </h2>
+          <p class="text-stone-light text-lg mb-8">
+            Let's set up scheduling automation that works for your business. Free 30-minute consultation.
+          </p>
+          <a href="/#contact" class="btn-primary inline-flex bg-accent hover:bg-accent-dark">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

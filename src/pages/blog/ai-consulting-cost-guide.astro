@@ -1,0 +1,275 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "How Much Does AI Consulting Cost? A Complete Guide | Singing River AI";
+const description = "Understand AI consulting costs for small businesses. Learn about pricing models, what affects cost, and how to calculate ROI on AI investments.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const publishDate = "2024-12-28";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How Much Does AI Consulting Cost? A Complete Guide",
+      "description": description,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "wordCount": 2200,
+      "articleSection": "AI Consulting",
+      "author": { "@type": "Person", "name": "Todd Frederickson" },
+      "publisher": { "@id": "https://singingriverai.com/#organization" },
+      "mainEntityOfPage": { "@id": canonicalURL.href }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singingriverai.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "AI Consulting Cost Guide" }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Header -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">AI Consulting Cost Guide</li>
+            </ol>
+          </nav>
+
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">AI Consulting</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              How Much Does AI Consulting Cost? <em>A Complete Guide</em>
+            </h1>
+            <p class="text-stone">December 28, 2024 · 9 min read</p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-stone leading-relaxed">
+              "What's this going to cost?" It's the first question most business owners ask about AI consulting—and it's a fair one. Here's an honest breakdown of what AI consulting costs, what affects pricing, and how to think about ROI.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">The Short Answer</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              AI consulting for small businesses typically ranges from <strong>$1,500 to $15,000</strong> for most projects. Enterprise-level implementations can run $50,000+, but those aren't what most small businesses need.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              Here's a rough breakdown:
+            </p>
+
+            <div class="bg-cream rounded-2xl p-6 mb-6">
+              <div class="space-y-4">
+                <div class="flex justify-between items-center pb-4 border-b border-stone/20">
+                  <span class="font-medium text-charcoal">AI Strategy Assessment</span>
+                  <span class="text-accent font-display">$500 - $2,500</span>
+                </div>
+                <div class="flex justify-between items-center pb-4 border-b border-stone/20">
+                  <span class="font-medium text-charcoal">Single Automation Implementation</span>
+                  <span class="text-accent font-display">$1,500 - $5,000</span>
+                </div>
+                <div class="flex justify-between items-center pb-4 border-b border-stone/20">
+                  <span class="font-medium text-charcoal">CRM + Automation Setup</span>
+                  <span class="text-accent font-display">$3,000 - $10,000</span>
+                </div>
+                <div class="flex justify-between items-center pb-4 border-b border-stone/20">
+                  <span class="font-medium text-charcoal">Comprehensive AI Implementation</span>
+                  <span class="text-accent font-display">$8,000 - $25,000</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-charcoal">Ongoing Support (Monthly)</span>
+                  <span class="text-accent font-display">$500 - $2,000/mo</span>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">What Affects AI Consulting Costs</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">1. Complexity of Implementation</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              A simple lead follow-up automation costs less than a full <a href="/solutions/crm-automation/" class="text-accent hover:underline">CRM automation system</a> with multiple integrations. The more systems involved, the more configuration required, and the higher the cost.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">2. Customization Required</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Off-the-shelf solutions with standard configurations cost less than custom-built automations. If your business has unique workflows or specific requirements, expect to pay more for tailored solutions.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">3. Number of Integrations</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Connecting two systems is straightforward. Connecting five systems that all need to share data and trigger actions? That's more complex—and more expensive.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">4. Training Needs</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Some businesses need extensive <a href="/services/ai-training/" class="text-accent hover:underline">team training</a> to use AI tools effectively. Others have tech-savvy teams that pick things up quickly. Training adds value but also adds cost.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">5. Consultant Experience and Location</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Consultants in major metros often charge more than those in smaller markets. Experience level matters too—seasoned consultants charge more but often deliver faster, more reliable results.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Pricing Models Explained</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Project-Based Pricing</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              A fixed price for a defined scope of work. You know exactly what you're paying before the project starts. This is most common for specific implementations like "set up automated lead follow-up" or "implement appointment scheduling."
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Best for:</strong> Well-defined projects with clear deliverables.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Hourly Consulting</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Pay for actual time spent. Rates typically range from $100-$300/hour depending on expertise and location. Good for strategy sessions, training, or ongoing advisory work.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Best for:</strong> Advisory work, training sessions, or exploratory projects.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Retainer/Monthly Support</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Ongoing support for a fixed monthly fee. Includes monitoring, adjustments, troubleshooting, and strategy guidance. Typically $500-$2,000/month for small businesses.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>Best for:</strong> Businesses that want ongoing optimization and support.
+            </p>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">How to Calculate ROI</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              The real question isn't "what does it cost?" but "what's the return?" Here's how to think about AI ROI:
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Time Savings</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              If you save 10 hours per week on manual tasks, and your time is worth $50/hour, that's $500/week or $26,000/year in recovered productivity. A $5,000 implementation pays for itself in about 10 weeks.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Increased Conversions</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              If faster lead response increases your close rate from 20% to 25%, and you get 100 leads per month worth $1,000 each, that's an extra $5,000/month in revenue.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Reduced No-Shows</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              If <a href="/solutions/appointment-automation/" class="text-accent hover:underline">automated reminders</a> reduce no-shows by 50%, and each no-show costs you $200 in lost revenue, the math adds up fast.
+            </p>
+
+            <div class="bg-charcoal text-cream rounded-2xl p-6 my-8">
+              <h4 class="font-display text-lg mb-3">Quick ROI Calculator</h4>
+              <p class="text-stone-light mb-4">Most well-implemented AI projects deliver 3-10x return on investment within the first year. If you're not seeing at least 2x ROI potential, it might not be the right project.</p>
+            </div>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Red Flags in AI Consulting Pricing</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Watch out for these warning signs:
+            </p>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span><strong>No clear scope or deliverables.</strong> You should know exactly what you're getting.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span><strong>Quotes that seem too good to be true.</strong> Quality work costs money. Rock-bottom prices often mean corners cut.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span><strong>No mention of training or handoff.</strong> You need to understand and maintain what's built.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span><strong>Pressure to decide immediately.</strong> Good consultants give you time to think.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent">•</span>
+                <span><strong>No discovery process.</strong> If they quote without understanding your business, run.</span>
+              </li>
+            </ul>
+
+            <h2 class="heading-display text-2xl mt-12 mb-4">Getting the Most Value from Your Investment</h2>
+            <ul class="space-y-3 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Start with a strategy session.</strong> Identify highest-impact opportunities before diving into implementation.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Focus on quick wins first.</strong> Build momentum with projects that show fast ROI.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Invest in training.</strong> Your team's ability to use tools effectively determines long-term value.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span><strong>Plan for ongoing optimization.</strong> AI systems improve with tuning. Budget for support.</span>
+              </li>
+            </ul>
+
+            <div class="bg-cream rounded-2xl p-8 mt-12">
+              <h3 class="font-display text-xl mb-4">Get a Custom Quote</h3>
+              <p class="text-stone mb-4">
+                Every business is different. The best way to understand what AI consulting will cost for your specific situation is to talk through your needs. Our consultations are free and no-obligation.
+              </p>
+              <a href="/#contact" class="btn-primary inline-flex">
+                <span>Book Free Consultation</span>
+              </a>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="mt-12 pt-8 border-t border-stone/20">
+              <h3 class="font-display text-xl mb-6">Related Articles</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <a href="/blog/how-to-choose-ai-consultant/" class="group">
+                  <div class="bg-cream rounded-xl p-4">
+                    <span class="text-sm text-accent">AI Consulting</span>
+                    <h4 class="font-display text-lg mt-1 group-hover:text-accent transition-colors">How to Choose the Right AI Consultant</h4>
+                  </div>
+                </a>
+                <a href="/blog/ai-implementation-roi/" class="group">
+                  <div class="bg-cream rounded-xl p-4">
+                    <span class="text-sm text-accent">AI Consulting</span>
+                    <h4 class="font-display text-lg mt-1 group-hover:text-accent transition-colors">AI Implementation ROI: What to Expect</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
