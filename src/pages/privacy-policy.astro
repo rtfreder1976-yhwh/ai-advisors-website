@@ -1,0 +1,308 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Privacy Policy | Singing River AI";
+const description = "Privacy Policy for Singing River AI. Learn how we collect, use, and protect your personal information when using our AI consulting services.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const effectiveDate = "January 8, 2026";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": canonicalURL.href,
+      "url": canonicalURL.href,
+      "name": "Privacy Policy | Singing River AI",
+      "description": description,
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy Policy" }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Breadcrumb -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Privacy Policy</li>
+            </ol>
+          </nav>
+
+          <!-- Header -->
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">Legal</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              Privacy Policy
+            </h1>
+            <p class="text-stone">Effective Date: {effectiveDate}</p>
+          </div>
+
+          <!-- Document Control -->
+          <div class="bg-cream rounded-2xl p-6 mb-10">
+            <h2 class="font-display text-lg mb-4">Document Control</h2>
+            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
+              <div>
+                <span class="text-stone">Document Title</span>
+                <p class="font-medium text-charcoal">Singing River AI Privacy Policy</p>
+              </div>
+              <div>
+                <span class="text-stone">Document ID</span>
+                <p class="font-medium text-charcoal">SRI-PP-001</p>
+              </div>
+              <div>
+                <span class="text-stone">Current Version</span>
+                <p class="font-medium text-charcoal">1.0</p>
+              </div>
+              <div>
+                <span class="text-stone">Effective Date</span>
+                <p class="font-medium text-charcoal">{effectiveDate}</p>
+              </div>
+            </div>
+
+            <h3 class="font-display text-md mb-3">Revision History</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-stone/20">
+                    <th class="text-left py-2 font-medium text-charcoal">Version</th>
+                    <th class="text-left py-2 font-medium text-charcoal">Effective Date</th>
+                    <th class="text-left py-2 font-medium text-charcoal">Summary of Changes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-stone/10">
+                    <td class="py-2 text-stone">1.0</td>
+                    <td class="py-2 text-stone">2026-01-08</td>
+                    <td class="py-2 text-stone">Initial Draft and Release</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 text-stone">0.9</td>
+                    <td class="py-2 text-stone">2026-01-05</td>
+                    <td class="py-2 text-stone">Internal Review Draft</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+
+            <!-- Section 1 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">1. Introduction</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Singing River AI ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI consulting services, visit our website, or engage with us in any capacity.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              By using our services, you consent to the data practices described in this policy. If you do not agree with the terms of this Privacy Policy, please do not access or use our services.
+            </p>
+
+            <!-- Section 2 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">2. Information We Collect</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Personal Information</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              We may collect personally identifiable information that you voluntarily provide to us, including but not limited to: name, email address, phone number, business name, mailing address, and payment information.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Business Information</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              In the course of providing our consulting services, we may collect information about your business operations, processes, customer data, and technical systems as necessary to deliver our services.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Technical Information</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              We automatically collect certain information when you visit our website, including your IP address, browser type, operating system, access times, and the pages you have viewed.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Third-Party Platform Data</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              When we implement solutions using platforms such as GoHighLevel or other automation or technology tools, we may access data within those platforms as authorized by you to perform our services.
+            </p>
+
+            <!-- Section 3 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">3. How We Use Your Information</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              We use the information we collect for the following purposes:
+            </p>
+            <ul class="space-y-2 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To provide, maintain, and improve our consulting services</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To communicate with you regarding projects, updates, and support</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To process payments and manage billing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To customize and optimize our services for your business needs</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To comply with legal obligations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To protect our rights and prevent fraud</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              <strong>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</strong>
+            </p>
+
+            <!-- Section 4 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">4. Information Sharing and Disclosure</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              We may share your information in the following circumstances:
+            </p>
+            <ul class="space-y-2 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>With service providers and contractors who assist us in delivering our services (subject to confidentiality agreements)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>With third-party platforms (such as GoHighLevel) as necessary to implement your solutions</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>When required by law, court order, or governmental authority</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>To protect our rights, property, or safety, or that of our clients or others</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>In connection with a merger, acquisition, or sale of assets</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              Any third parties with whom we share your information are obligated to protect your data and use it only for the purposes for which it was shared.
+            </p>
+
+            <!-- Section 5 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">5. Data Security</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              We implement reasonable administrative, technical, and physical security measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.
+            </p>
+
+            <!-- Section 6 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">6. Data Retention</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              We retain your personal information for as long as necessary to fulfill the purposes for which it was collected, to comply with legal obligations, resolve disputes, and enforce our agreements. When your information is no longer needed, we will securely delete or anonymize it.
+            </p>
+
+            <!-- Section 7 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">7. Your Rights</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              Depending on your location, you may have certain rights regarding your personal information, including:
+            </p>
+            <ul class="space-y-2 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The right to access the personal information we hold about you</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The right to request correction of inaccurate information</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The right to request deletion of your information</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The right to object to or restrict certain processing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The right to data portability</span>
+              </li>
+            </ul>
+            <p class="text-stone leading-relaxed mb-6">
+              To exercise any of these rights, please contact us using the information provided below. We will respond to your request within a reasonable timeframe.
+            </p>
+
+            <!-- Section 8 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">8. Cookies and Tracking Technologies</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Our website may use cookies and similar tracking technologies to enhance your experience and analyze site usage. You can control cookie settings through your browser preferences. Disabling cookies may affect certain features of our website.
+            </p>
+
+            <!-- Section 9 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">9. Third-Party Links</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Our website or services may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to review the privacy policies of any third-party sites you visit.
+            </p>
+
+            <!-- Section 10 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">10. Children's Privacy</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child, we will take steps to delete that information.
+            </p>
+
+            <!-- Section 11 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">11. Changes to This Privacy Policy</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. We will notify you of any material changes by posting the updated policy on our website with a new effective date. Your continued use of our services after such changes constitutes your acceptance of the updated policy.
+            </p>
+
+            <!-- Section 12 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">12. Contact Us</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
+            </p>
+
+            <div class="bg-charcoal text-cream rounded-2xl p-6 my-8">
+              <p class="font-display text-lg mb-2">Singing River AI</p>
+              <p class="text-stone-light mb-1">Tuscumbia, Alabama</p>
+              <p class="text-stone-light mb-1">Email: <a href="mailto:legal@singingriverai.com" class="text-accent hover:underline">legal@singingriverai.com</a></p>
+              <p class="text-stone-light">Phone: <a href="tel:+12567403195" class="text-accent hover:underline">256-740-3195</a></p>
+            </div>
+
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
