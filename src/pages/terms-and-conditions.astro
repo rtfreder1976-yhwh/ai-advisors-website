@@ -1,0 +1,307 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Terms and Conditions | Singing River AI";
+const description = "Terms and Conditions for Singing River AI consulting services. Review the agreement governing our AI consulting, implementation, and support services.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const effectiveDate = "January 9, 2026";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": canonicalURL.href,
+      "url": canonicalURL.href,
+      "name": "Terms and Conditions | Singing River AI",
+      "description": description,
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singingriverai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Terms and Conditions" }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="grain-overlay">
+    <Header />
+    <main>
+      <article class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+          <!-- Breadcrumb -->
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-stone">
+              <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+              <li><span class="mx-2">/</span></li>
+              <li class="text-charcoal font-medium">Terms and Conditions</li>
+            </ol>
+          </nav>
+
+          <!-- Header -->
+          <div class="mb-8">
+            <span class="text-sm text-accent font-medium uppercase tracking-wider">Legal</span>
+            <h1 class="heading-display text-4xl md:text-5xl mt-4 mb-4">
+              Terms and Conditions
+            </h1>
+            <p class="text-stone">Effective Date: {effectiveDate}</p>
+          </div>
+
+          <!-- Document Control -->
+          <div class="bg-cream rounded-2xl p-6 mb-10">
+            <h2 class="font-display text-lg mb-4">Document Control</h2>
+            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
+              <div>
+                <span class="text-stone">Document Title</span>
+                <p class="font-medium text-charcoal">Singing River AI Terms and Conditions</p>
+              </div>
+              <div>
+                <span class="text-stone">Document ID</span>
+                <p class="font-medium text-charcoal">SRI-TC-001</p>
+              </div>
+              <div>
+                <span class="text-stone">Current Version</span>
+                <p class="font-medium text-charcoal">1.0</p>
+              </div>
+              <div>
+                <span class="text-stone">Effective Date</span>
+                <p class="font-medium text-charcoal">{effectiveDate}</p>
+              </div>
+            </div>
+
+            <h3 class="font-display text-md mb-3">Revision History</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-stone/20">
+                    <th class="text-left py-2 font-medium text-charcoal">Version</th>
+                    <th class="text-left py-2 font-medium text-charcoal">Effective Date</th>
+                    <th class="text-left py-2 font-medium text-charcoal">Summary of Changes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-stone/10">
+                    <td class="py-2 text-stone">1.0</td>
+                    <td class="py-2 text-stone">2026-01-09</td>
+                    <td class="py-2 text-stone">Initial Draft and Release</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 text-stone">0.9</td>
+                    <td class="py-2 text-stone">2026-01-08</td>
+                    <td class="py-2 text-stone">Internal Review Draft</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none">
+
+            <!-- Section 1 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">1. Agreement to Terms</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              By engaging Singing River AI ("Company," "we," "our," or "us") for consulting services, you ("Client," "you," or "your") agree to be bound by these Terms and Conditions. If you are entering into this agreement on behalf of a business or organization, you represent that you have the authority to bind that entity to these terms. If you do not agree to these terms, do not engage with our services.
+            </p>
+
+            <!-- Section 2 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">2. Services</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Singing River AI provides AI consulting services including, but not limited to: GoHighLevel implementation and customization; business process automation; CRM setup and optimization; workflow automation using tools such as n8n; AI integration and strategy consulting; and related technical consulting services.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              The specific scope, deliverables, timeline, and pricing for each project will be defined in a separate Statement of Work (SOW), proposal, or written agreement between the parties.
+            </p>
+
+            <!-- Section 3 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">3. Client Responsibilities</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              The Client agrees to:
+            </p>
+            <ul class="space-y-2 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>Provide timely access to necessary systems, accounts, and information required for the project</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>Designate a primary point of contact for communication</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>Respond to requests for information, feedback, or approvals in a timely manner</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>Ensure that any data or content provided to us does not violate any third-party rights</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>Comply with the terms of service of any third-party platforms integrated as part of our services</span>
+              </li>
+            </ul>
+
+            <!-- Section 4 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">4. Payment Terms</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Payment terms will be specified in the applicable proposal or Statement of Work. Unless otherwise agreed in writing, invoices are due on the invoice due date. Late payments may incur interest at a rate of 1.5% per month or the maximum rate permitted by law, whichever is lower.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              We reserve the right to suspend services for accounts more than thirty (30) days past due. The Client remains responsible for all fees incurred prior to suspension or termination.
+            </p>
+
+            <!-- Section 5 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">5. Intellectual Property</h2>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Client Materials</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              The Client retains all ownership rights to materials, data, content, and intellectual property provided to us for use in the project.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Deliverables</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              Upon full payment, the Client receives ownership of custom deliverables created specifically for their project, excluding any pre-existing materials, frameworks, templates, or tools owned by the Company.
+            </p>
+
+            <h3 class="font-display text-xl mt-8 mb-3">Company Materials</h3>
+            <p class="text-stone leading-relaxed mb-6">
+              We retain ownership of all pre-existing intellectual property, proprietary methodologies, templates, frameworks, and tools used in providing our services. The Client receives a non-exclusive license to use such materials as incorporated into their deliverables.
+            </p>
+
+            <!-- Section 6 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">6. Confidentiality</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Both parties agree to maintain the confidentiality of proprietary information disclosed during the engagement. Confidential information includes business strategies, customer data, technical specifications, pricing, and any other information marked as confidential or that a reasonable person would understand to be confidential. This obligation survives the termination of our engagement for a period of three (3) years.
+            </p>
+
+            <!-- Section 7 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">7. Warranties and Disclaimers</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              We warrant that our services will be performed in a professional and workmanlike manner consistent with industry standards. We will make reasonable efforts to correct any material defects in our work within a reasonable time after written notice.
+            </p>
+            <div class="bg-cream rounded-xl p-6 my-6">
+              <p class="text-stone leading-relaxed text-sm uppercase font-medium">
+                EXCEPT AS EXPRESSLY SET FORTH HEREIN, ALL SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE DISCLAIM ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE SPECIFIC BUSINESS OUTCOMES, REVENUE INCREASES, OR RESULTS FROM THE USE OF OUR SERVICES.
+              </p>
+            </div>
+
+            <!-- Section 8 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">8. Limitation of Liability</h2>
+            <div class="bg-cream rounded-xl p-6 my-6">
+              <p class="text-stone leading-relaxed text-sm uppercase font-medium">
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, SINGING RIVER AI SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST DATA, OR BUSINESS INTERRUPTION, ARISING OUT OF OR RELATED TO THESE TERMS OR OUR SERVICES. OUR TOTAL LIABILITY FOR ANY CLAIMS ARISING UNDER THESE TERMS SHALL NOT EXCEED THE TOTAL FEES PAID BY THE CLIENT TO US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
+              </p>
+            </div>
+
+            <!-- Section 9 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">9. Indemnification</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              The Client agrees to indemnify, defend, and hold harmless Singing River AI and its owners, employees, and contractors from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from:
+            </p>
+            <ul class="space-y-2 text-stone mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The Client's breach of these Terms</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The Client's violation of any law or third-party rights</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>The Client's use of deliverables in violation of applicable laws</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">•</span>
+                <span>Any content or data provided by the Client</span>
+              </li>
+            </ul>
+
+            <!-- Section 10 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">10. Term and Termination</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Either party may terminate an ongoing engagement with thirty (30) days written notice. Either party may terminate immediately upon written notice if the other party materially breaches these Terms and fails to cure such breach within fifteen (15) days of receiving written notice.
+            </p>
+            <p class="text-stone leading-relaxed mb-6">
+              Upon termination, the Client shall pay for all services rendered up to the termination date. Sections regarding intellectual property, confidentiality, limitation of liability, and indemnification shall survive termination.
+            </p>
+
+            <!-- Section 11 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">11. Independent Contractor</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Singing River AI is an independent contractor. Nothing in these Terms creates an employment, partnership, joint venture, or agency relationship between the parties.
+            </p>
+
+            <!-- Section 12 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">12. Force Majeure</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              Neither party shall be liable for delays or failures in performance resulting from circumstances beyond their reasonable control, including natural disasters, war, terrorism, labor disputes, government actions, or internet service disruptions.
+            </p>
+
+            <!-- Section 13 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">13. Governing Law and Dispute Resolution</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              These Terms shall be governed by and construed in accordance with the laws of the State of Alabama, without regard to its conflict of law principles. Any disputes arising under these Terms shall be resolved through good faith negotiation. If negotiation fails, disputes shall be submitted to binding arbitration in Colbert County, Alabama, in accordance with the rules of the American Arbitration Association.
+            </p>
+
+            <!-- Section 14 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">14. Modifications</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              We reserve the right to modify these Terms at any time. Material changes will be communicated to active clients in writing. Continued use of our services after such notification constitutes acceptance of the modified Terms.
+            </p>
+
+            <!-- Section 15 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">15. Entire Agreement</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              These Terms, together with any applicable Statement of Work or proposal, constitute the entire agreement between the parties regarding the subject matter hereof and supersede all prior agreements, understandings, and communications. Any amendments must be in writing and signed by both parties.
+            </p>
+
+            <!-- Section 16 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">16. Severability</h2>
+            <p class="text-stone leading-relaxed mb-6">
+              If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.
+            </p>
+
+            <!-- Section 17 -->
+            <h2 class="heading-display text-2xl mt-10 mb-4">17. Contact Information</h2>
+            <p class="text-stone leading-relaxed mb-4">
+              For questions about these Terms and Conditions, please contact:
+            </p>
+
+            <div class="bg-charcoal text-cream rounded-2xl p-6 my-8">
+              <p class="font-display text-lg mb-2">Singing River AI</p>
+              <p class="text-stone-light mb-1">Tuscumbia, Alabama</p>
+              <p class="text-stone-light mb-1">Email: <a href="mailto:legal@singingriverai.com" class="text-accent hover:underline">legal@singingriverai.com</a></p>
+              <p class="text-stone-light">Phone: <a href="tel:+12567403195" class="text-accent hover:underline">256-740-3195</a></p>
+            </div>
+
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
