@@ -1,0 +1,473 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Free AI Marketing Assessment & Business Analysis Report | Singing River AI";
+const description = "Get your free AI marketing assessment report with personalized recommendations. Our business marketing analysis identifies automation opportunities, AI tools, and a custom implementation roadmap. Free marketing report for North Alabama businesses.";
+
+const reportIncludes = [
+  {
+    title: "Business Marketing Analysis",
+    description: "Comprehensive analysis of your marketing and business processes to identify where AI automation can drive the highest impact on lead generation, customer engagement, and revenue.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`
+  },
+  {
+    title: "Marketing Automation Quick Wins",
+    description: "Actionable AI marketing recommendations you can implement immediately—from automated lead follow-up to AI-powered content creation and customer communication.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`
+  },
+  {
+    title: "ROI & Marketing Impact Analysis",
+    description: "Estimated time and cost savings based on your current marketing processes, with realistic projections for AI-driven improvements to conversion rates and customer acquisition.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+  },
+  {
+    title: "AI Marketing Tool Recommendations",
+    description: "Specific AI marketing tools and platforms suited to your business—from ChatGPT for content to CRM automation, chatbots, and email marketing AI solutions.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`
+  },
+  {
+    title: "Marketing Implementation Roadmap",
+    description: "A prioritized action plan for your AI marketing transformation—from quick automation wins to longer-term strategic initiatives that compound over time.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>`
+  },
+  {
+    title: "Competitive Analysis",
+    description: "Honest evaluation of how AI marketing can position you ahead of competitors, plus risk assessment to ensure successful implementation.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`
+  }
+];
+
+const benefits = [
+  "Understand exactly where AI can transform your marketing and operations",
+  "Get actionable marketing automation recommendations you can implement immediately",
+  "Receive honest, no-hype business analysis from an experienced AI consultant",
+  "Learn which AI marketing tools are worth your time and budget",
+  "Discover marketing opportunities your competitors might be missing",
+  "No obligation - this free marketing report is yours to keep"
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://singingriverai.com/ai-readiness-report/#webpage",
+      "url": "https://singingriverai.com/ai-readiness-report/",
+      "name": "Free AI Marketing Assessment & Business Analysis Report | Singing River AI",
+      "description": "Get your free AI marketing assessment report with personalized recommendations. Our business marketing analysis identifies automation opportunities and provides a custom implementation roadmap.",
+      "isPartOf": { "@id": "https://singingriverai.com/#website" },
+      "about": { "@id": "https://singingriverai.com/#organization" },
+      "keywords": "free marketing report, business marketing analysis, AI marketing assessment, marketing automation, AI business analysis"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://singingriverai.com/ai-readiness-report/#service",
+      "name": "Free AI Marketing Assessment Report",
+      "alternateName": ["Free Marketing Report", "Business Marketing Analysis", "AI Marketing Assessment"],
+      "description": "Free personalized AI marketing assessment that analyzes your business operations, identifies marketing automation opportunities, and provides a custom implementation roadmap for growth.",
+      "provider": { "@id": "https://singingriverai.com/#organization" },
+      "serviceType": ["AI Assessment", "Marketing Analysis", "Business Consulting"],
+      "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://singingriverai.com/ai-readiness-report/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in the free AI marketing assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our free AI marketing assessment includes a comprehensive business marketing analysis, identification of marketing automation opportunities, AI tool recommendations, ROI projections, and a prioritized implementation roadmap specific to your industry and goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the marketing report really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the AI marketing assessment report is completely free with no obligation. We provide this valuable business analysis to help companies in North Alabama understand their AI and marketing automation potential before making any investment decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to receive my free marketing report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After you submit your request, we'll schedule a brief discovery call to learn about your business and marketing needs. Your personalized AI marketing assessment report is typically delivered within 3-5 business days after our conversation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of businesses benefit from an AI marketing assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any business looking to improve their marketing efficiency can benefit. This includes real estate agents, professional services firms, home service contractors, healthcare practices, and small to medium businesses wanting to automate lead follow-up, content creation, customer communication, and marketing workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from other marketing audits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike generic marketing audits, our AI marketing assessment specifically focuses on automation opportunities and AI tools that can transform your marketing. We provide actionable recommendations with specific tools, realistic ROI projections, and a step-by-step implementation roadmap."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-cream relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-64 h-64 bg-stone/5 rounded-full blur-2xl"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left: Content -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Free Marketing Report</span>
+            </div>
+
+            <h1 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              Get Your Free <em>AI Marketing Assessment</em>
+            </h1>
+
+            <p class="text-lg text-stone leading-relaxed mb-8 max-w-xl">
+              Discover exactly how AI can transform your marketing and business operations. Our personalized business marketing analysis identifies your highest-impact automation opportunities, recommends specific AI tools, and provides a clear implementation roadmap.
+            </p>
+
+            <ul class="space-y-3 mb-8">
+              {benefits.slice(0, 3).map((benefit) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-charcoal">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="#request-report" class="btn-primary inline-flex">
+              <span>Request Your Free Report</span>
+            </a>
+          </div>
+
+          <!-- Right: Visual/Stats -->
+          <div class="relative">
+            <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-xl shadow-charcoal/5">
+              <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-4">
+                  <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 class="font-display text-2xl text-charcoal mb-2">Your Free Marketing Report</h3>
+                <p class="text-stone">Delivered within 3-5 business days</p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                  <div class="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center">
+                    <span class="font-display text-lg text-accent-dark">1</span>
+                  </div>
+                  <div>
+                    <p class="font-medium text-charcoal">Business Marketing Analysis</p>
+                    <p class="text-sm text-stone">Tailored to your industry</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                  <div class="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center">
+                    <span class="font-display text-lg text-accent-dark">2</span>
+                  </div>
+                  <div>
+                    <p class="font-medium text-charcoal">Marketing Automation Wins</p>
+                    <p class="text-sm text-stone">Immediate action items</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                  <div class="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center">
+                    <span class="font-display text-lg text-accent-dark">3</span>
+                  </div>
+                  <div>
+                    <p class="font-medium text-charcoal">AI Marketing Roadmap</p>
+                    <p class="text-sm text-stone">Step-by-step action plan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="w-12 h-px bg-accent"></div>
+            <span class="text-sm font-medium text-stone uppercase tracking-widest">What's Included</span>
+            <div class="w-12 h-px bg-accent"></div>
+          </div>
+
+          <h2 class="heading-display text-3xl md:text-4xl lg:text-5xl mb-6">
+            Everything You'll <em>Receive</em>
+          </h2>
+
+          <p class="text-lg text-stone max-w-2xl mx-auto">
+            Your free AI marketing assessment is a comprehensive business analysis designed to give you clarity and actionable insights for marketing automation and AI implementation.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reportIncludes.map((item) => (
+            <div class="bg-cream rounded-2xl p-8 card-hover">
+              <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 text-accent shadow-sm">
+                <Fragment set:html={item.icon} />
+              </div>
+              <h3 class="font-display text-xl text-charcoal mb-3">{item.title}</h3>
+              <p class="text-stone leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Get a Report Section -->
+    <section class="py-20 lg:py-28 bg-charcoal text-cream">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone-light uppercase tracking-widest">Why Get This Free Report</span>
+            </div>
+
+            <h2 class="heading-display text-3xl md:text-4xl lg:text-5xl mb-6">
+              Start Your AI Marketing Journey with <em>Clarity</em>
+            </h2>
+
+            <p class="text-lg text-stone-light leading-relaxed mb-8">
+              Most businesses know AI could help their marketing but aren't sure where to start. Our free marketing report cuts through the hype and gives you a clear, honest business analysis of your automation opportunities.
+            </p>
+
+            <ul class="space-y-4">
+              {benefits.map((benefit) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-cream">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="relative">
+            <div class="bg-charcoal-light rounded-2xl p-8 lg:p-10 border border-stone/20">
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display text-xl text-cream mb-2">100% Free Marketing Report</h4>
+                    <p class="text-stone-light">This business marketing analysis is completely free. Use it to guide your own AI marketing journey or explore working with us further.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display text-xl text-cream mb-2">Quick Turnaround</h4>
+                    <p class="text-stone-light">After a brief discovery call, you'll receive your personalized AI marketing assessment within 3-5 business days.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display text-xl text-cream mb-2">Personalized Business Analysis</h4>
+                    <p class="text-stone-light">This isn't a generic template. Every marketing report is customized based on your specific business, industry, and growth goals.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Form Section -->
+    <section class="py-20 lg:py-28 bg-cream relative overflow-hidden" id="request-report">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-charcoal/5 rounded-full blur-2xl"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          <!-- Left Column: Info -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-px bg-accent"></div>
+              <span class="text-sm font-medium text-stone uppercase tracking-widest">Get Started</span>
+            </div>
+
+            <h2 class="heading-display text-4xl md:text-5xl lg:text-6xl mb-6">
+              Request Your <em>Free Marketing Report</em>
+            </h2>
+
+            <p class="text-lg text-stone mb-8 max-w-lg">
+              Fill out the form and we'll schedule a brief discovery call to learn about your business and marketing goals. Your personalized AI marketing assessment will be delivered within 3-5 business days.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+                  <span class="font-display text-lg text-accent-dark">1</span>
+                </div>
+                <div>
+                  <h4 class="font-medium text-charcoal mb-1">Submit Your Request</h4>
+                  <p class="text-stone">Tell us about your business and marketing challenges</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+                  <span class="font-display text-lg text-accent-dark">2</span>
+                </div>
+                <div>
+                  <h4 class="font-medium text-charcoal mb-1">Discovery Call</h4>
+                  <p class="text-stone">Brief 15-minute call to understand your marketing operations</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+                  <span class="font-display text-lg text-accent-dark">3</span>
+                </div>
+                <div>
+                  <h4 class="font-medium text-charcoal mb-1">Receive Your Free Report</h4>
+                  <p class="text-stone">Get your personalized AI marketing assessment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Form -->
+          <div class="lg:pl-8">
+            <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-xl shadow-charcoal/5">
+              <script type="text/javascript" src="https://services.leadconnectorhq.com/prospecting/client/widget_script.js"></script>
+              <iframe
+                id="prospecting-widget"
+                src="https://services.leadconnectorhq.com/prospecting/widgets/load/696ab6716e62df9c4c7f961a"
+                frameborder="0"
+                style="display: block; width: 100%; min-height: 600px;"
+              ></iframe>
+              <p class="text-sm text-stone text-center mt-6">
+                Questions? Email us at <a href="mailto:info@singingriverai.com" class="text-accent hover:underline">info@singingriverai.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="w-12 h-px bg-accent"></div>
+            <span class="text-sm font-medium text-stone uppercase tracking-widest">FAQ</span>
+            <div class="w-12 h-px bg-accent"></div>
+          </div>
+
+          <h2 class="heading-display text-3xl md:text-4xl lg:text-5xl">
+            Common <em>Questions</em>
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-cream rounded-2xl p-6 lg:p-8">
+            <h3 class="font-display text-xl text-charcoal mb-3">What is included in the free AI marketing assessment?</h3>
+            <p class="text-stone leading-relaxed">Our free marketing report includes a comprehensive business marketing analysis, identification of marketing automation opportunities, AI tool recommendations, ROI projections for your specific situation, and a prioritized implementation roadmap tailored to your industry and goals.</p>
+          </div>
+
+          <div class="bg-cream rounded-2xl p-6 lg:p-8">
+            <h3 class="font-display text-xl text-charcoal mb-3">Is the marketing report really free?</h3>
+            <p class="text-stone leading-relaxed">Yes, the AI marketing assessment is completely free with no strings attached. We offer this business analysis to help companies in North Alabama understand their marketing automation potential. The report is yours to keep and use however you'd like, whether you decide to work with us or not.</p>
+          </div>
+
+          <div class="bg-cream rounded-2xl p-6 lg:p-8">
+            <h3 class="font-display text-xl text-charcoal mb-3">How long does the discovery call take?</h3>
+            <p class="text-stone leading-relaxed">The discovery call is typically just 15-20 minutes. We'll ask about your business operations, current marketing processes, biggest challenges, and growth goals. This helps us create a truly personalized marketing analysis rather than a generic template.</p>
+          </div>
+
+          <div class="bg-cream rounded-2xl p-6 lg:p-8">
+            <h3 class="font-display text-xl text-charcoal mb-3">When will I receive my free marketing report?</h3>
+            <p class="text-stone leading-relaxed">After your discovery call, you'll receive your personalized AI marketing assessment within 3-5 business days. We take time to thoroughly analyze your situation and provide actionable, specific recommendations for marketing automation and AI tools.</p>
+          </div>
+
+          <div class="bg-cream rounded-2xl p-6 lg:p-8">
+            <h3 class="font-display text-xl text-charcoal mb-3">What types of businesses benefit from an AI marketing assessment?</h3>
+            <p class="text-stone leading-relaxed">Any business looking to improve marketing efficiency can benefit from this free report. This includes real estate agents, professional services firms (law, accounting, consulting), home service contractors, healthcare practices, and small to medium businesses wanting to automate lead follow-up, content creation, customer communication, and marketing workflows.</p>
+          </div>
+
+          <div class="bg-cream rounded-2xl p-6 lg:p-8">
+            <h3 class="font-display text-xl text-charcoal mb-3">What happens after I receive my report?</h3>
+            <p class="text-stone leading-relaxed">The marketing report is yours to use as you see fit. Many businesses use our business analysis to guide their own AI marketing initiatives. If you'd like help implementing the recommendations, we offer a follow-up consultation to discuss next steps. There's no pressure or obligation to continue working with us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 lg:py-28 bg-charcoal text-cream">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="heading-display text-3xl md:text-4xl lg:text-5xl mb-6">
+          Ready to Transform Your <em>Marketing</em>?
+        </h2>
+        <p class="text-lg text-stone-light mb-8 max-w-2xl mx-auto">
+          Get your free AI marketing assessment and start your automation journey with clarity and confidence. Our business marketing analysis gives you the roadmap you need.
+        </p>
+        <a href="#request-report" class="btn-primary inline-flex bg-accent text-charcoal hover:bg-accent-dark">
+          <span>Get Your Free Marketing Report</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
