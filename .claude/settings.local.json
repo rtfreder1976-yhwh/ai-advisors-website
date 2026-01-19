@@ -31,7 +31,8 @@
       "WebFetch(domain:www.aigrowthpartners.net)",
       "WebFetch(domain:singingriver.com)",
       "Bash(vercel domains:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []
