@@ -1,0 +1,155 @@
+---
+// src/pages/thank-you.astro
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Protocol Activated | Voice Dominance AI</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary: #4facfe;
+                --secondary: #00f2fe;
+                --accent: #10b981;
+                --bg-dark: #0f172a;
+                --bg-darker: #020617;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --glass: rgba(255, 255, 255, 0.03);
+                --glass-border: rgba(255, 255, 255, 0.1);
+                --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+            }
+
+            body {
+                font-family: var(--font-sans);
+                background-color: var(--bg-darker);
+                color: var(--text-main);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+            }
+
+            .container {
+                text-align: center;
+                max-width: 600px;
+                padding: 2rem;
+            }
+
+            .gradient-text {
+                background: linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .card {
+                padding: 2.5rem;
+                background: var(--glass);
+                border: 1px solid var(--glass-border);
+                border-radius: 24px;
+                margin: 2rem 0;
+                text-align: left;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 1rem 2.5rem;
+                border-radius: 12px;
+                font-weight: 800;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: center;
+                border: 1px solid var(--glass-border);
+                color: var(--text-main);
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .animate {
+                animation: fadeIn 1s forwards;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 1rem;
+                display: flex;
+                gap: 10px;
+            }
+
+            li::before {
+                content: "✓";
+                color: var(--accent);
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container animate">
+            <div style="font-size: 5rem; margin-bottom: 2rem">🚀</div>
+            <h1 class="gradient-text" style="font-size: 3rem; font-weight: 900">
+                Protocol Activated.
+            </h1>
+            <p
+                style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-muted)"
+            >
+                Your Forensic Synchronization Event has been triggered.
+            </p>
+
+            <div class="card">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem">
+                    What Happens Now:
+                </h3>
+                <ul>
+                    <li>
+                        <strong>Forensic Audit Initiated:</strong> Our team is already
+                        scanning the aggregators.
+                    </li>
+                    <li>
+                        <strong>Check Your Inbox:</strong> Within 10 minutes, you
+                        will receive your manual verification checklist.
+                    </li>
+                    <li>
+                        <strong>Shield Activation:</strong> Your Google Business Profile
+                        is now under monitored protection.
+                    </li>
+                </ul>
+            </div>
+
+            <p style="color: var(--text-muted); margin-bottom: 3rem">
+                If you have any immediate questions, text our priority line at
+                [Phone Number].
+            </p>
+
+            <a href="/" class="btn">RETURN TO COMMAND CENTER</a>
+        </div>
+    </body>
+</html>
