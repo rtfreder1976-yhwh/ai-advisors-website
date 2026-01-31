@@ -1,0 +1,35 @@
+[
+    {
+        "slug": "house-cleaning",
+        "name": "House Cleaning",
+        "description": "Professional recurring house cleaning services.",
+        "seoTitle": "Best House Cleaning Services",
+        "features": [
+            "Weekly/Bi-weekly",
+            "Trusted Cleaners",
+            "Eco-friendly Products"
+        ]
+    },
+    {
+        "slug": "deep-cleaning",
+        "name": "Deep Cleaning",
+        "description": "Thorough deep cleaning for spring cleaning or special occasions.",
+        "seoTitle": "Top-Rated Deep Cleaning",
+        "features": [
+            "Baseboards & Blinds",
+            "Inside Appliances",
+            "Detailed Scrubbing"
+        ]
+    },
+    {
+        "slug": "move-out-cleaning",
+        "name": "Move-Out Cleaning",
+        "description": "Guaranteed move-out cleaning to get your deposit back.",
+        "seoTitle": "Deposit-Back Move Out Cleaning",
+        "features": [
+            "Deposit Guarantee",
+            "Checklist Based",
+            "Landlord Approved"
+        ]
+    }
+]

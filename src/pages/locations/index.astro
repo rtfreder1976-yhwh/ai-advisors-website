@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import servicesData from "../../data/services.json";
+import locationsData from "../../data/locations.json";
+
+const pageTitle = "Our Service Areas | Singing River AI Template";
+const pageDescription = "Browse our service areas and cleaning offerings.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+    <main
+        class="min-h-screen bg-neutral-900 text-white font-sans pt-32 pb-20 px-4"
+    >
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center">
+                Reference: Generated Location Pages
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {
+                    locationsData.map((location) => (
+                        <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+                            <h2 class="text-2xl font-bold mb-4 text-rose-400">
+                                {location.name}
+                            </h2>
+                            <div class="flex flex-col gap-2">
+                                {servicesData.map((service) => (
+                                    <a
+                                        href={`/locations/${service.slug}/${location.slug}`}
+                                        class="block p-3 rounded-lg bg-neutral-900 hover:bg-neutral-700 transition-colors border border-neutral-800"
+                                    >
+                                        <span class="font-medium text-white">
+                                            {service.name}
+                                        </span>
+                                        <span class="text-neutral-500 text-sm block">
+                                            in {location.name}
+                                        </span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </main>
+</Layout>

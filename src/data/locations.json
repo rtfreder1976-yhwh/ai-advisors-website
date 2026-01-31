@@ -1,0 +1,122 @@
+[
+    {
+        "slug": "huntsville-downtown",
+        "name": "Downtown Huntsville",
+        "zipCodes": [
+            "35801"
+        ],
+        "neighborhoods": [
+            "Twickenham",
+            "Old Town",
+            "The Siren"
+        ]
+    },
+    {
+        "slug": "huntsville-ledges",
+        "name": "The Ledges",
+        "zipCodes": [
+            "35802"
+        ],
+        "neighborhoods": [
+            "The Ledges",
+            "Jones Valley",
+            "Piedmont"
+        ]
+    },
+    {
+        "slug": "huntsville-mcmullen",
+        "name": "McMullen Cove",
+        "zipCodes": [
+            "35763"
+        ],
+        "neighborhoods": [
+            "McMullen Cove",
+            "Hampton Cove",
+            "Owens Cross Roads"
+        ]
+    },
+    {
+        "slug": "huntsville-south",
+        "name": "South Huntsville",
+        "zipCodes": [
+            "35803"
+        ],
+        "neighborhoods": [
+            "Redstone",
+            "Bailey Cove",
+            "Mountain Gap"
+        ]
+    },
+    {
+        "slug": "madison-clifts",
+        "name": "Madison (Clifts Cove)",
+        "zipCodes": [
+            "35756"
+        ],
+        "neighborhoods": [
+            "Clifts Cove",
+            "County Line Rd",
+            "Madison City"
+        ]
+    },
+    {
+        "slug": "madison-east",
+        "name": "East Madison",
+        "zipCodes": [
+            "35758"
+        ],
+        "neighborhoods": [
+            "Rainbow Mountain",
+            "Highland Lakes",
+            "Research Park"
+        ]
+    },
+    {
+        "slug": "florence-creekwood",
+        "name": "Florence (Creekwood)",
+        "zipCodes": [
+            "35630"
+        ],
+        "neighborhoods": [
+            "Creekwood",
+            "Hickory Hills",
+            "Sweetwater"
+        ]
+    },
+    {
+        "slug": "florence-heatherton",
+        "name": "Heatherton Heights",
+        "zipCodes": [
+            "35633"
+        ],
+        "neighborhoods": [
+            "Heatherton",
+            "Blackberry Trail",
+            "Zip City"
+        ]
+    },
+    {
+        "slug": "muscle-shoals-highlands",
+        "name": "Muscle Shoals Highlands",
+        "zipCodes": [
+            "35661"
+        ],
+        "neighborhoods": [
+            "Highlands",
+            "Ford City",
+            "Wilson Dam"
+        ]
+    },
+    {
+        "slug": "athens-canebrake",
+        "name": "Athens (Canebrake)",
+        "zipCodes": [
+            "35613"
+        ],
+        "neighborhoods": [
+            "Canebrake Club",
+            "Midway",
+            "Lindsay Lane"
+        ]
+    }
+]

@@ -1,46 +1,30 @@
+# Productized Growth System (AI + GHL + pSEO)
+
+**Current Status:** Phase 4 (Launch & Sales)  
+**Last Updated:** 2026-01-30
+
+## 📂 Key Planning Documents
+*   **[task_plan.md](./task_plan.md)**: The Master Plan. Tracks what is built, what is next, and our Strategy. **Start here.**
+*   **[findings.md](./findings.md)**: Research notes, skill mappings, and strategic frameworks used (Pricing, Launch, Voice AI).
+*   **[progress.md](./progress.md)**: A chronological log of every change made to this codebase.
+
+## 🛠 Asset Documentation
+*   **[docs/GHL_SNAPSHOT_SOP.md](./docs/GHL_SNAPSHOT_SOP.md)**: Step-by-step Standard Operating Procedure for building the GoHighLevel Master Snapshot.
+*   **[docs/VOICE_AI_FLOW.md](./docs/VOICE_AI_FLOW.md)**: Configuration guide for the Vapi.ai Receptionist Agent.
+
+## 🚀 The Stack
+1.  **Web**: Astro + Tailwind + Programmatic SEO (Source in `src/pages/locations/`).
+2.  **Ops**: GoHighLevel (Workflows defined in SOP).
+3.  **Voice**: Vapi.ai (Flow defined in SOP).
+
+## ⚡ Quick Start
+1.  **Run the Site**: `npm run dev` (Runs on `http://localhost:4321` or `4322`).
+2.  **View pSEO Template**: Go to `http://localhost:4322/locations/house-cleaning/austin`.
+3.  **Scale Locations**: Edit `src/data/locations.json`.
+
+---
+
+*(Original Astro README below)*
+
 # Astro Starter Kit: Basics
-
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+...
