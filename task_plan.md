@@ -32,7 +32,7 @@ Phase 4: Launch & Sales
 ### Phase 4: Launch & Sales
 - [x] **Data**: Populate `src/data/locations.json` with real North AL data.
 - [x] **GHL**: Build the Snapshot (Autopilot Mode).
-- [ ] **Deploy**: Deploy the Astro site to Vercel/Netlify for public access.
+- [x] **Deploy**: Deploy the Astro site (Triggered via GitHub CI/CD).
 - [ ] **Content**: Record "Peer-to-Peer" Demo Loom video (Scheduled: Tomorrow).
 - [ ] **Outreach**: Post the scripts in 3 Cleaning Business Owners groups.
 - [ ] **Sales**: Close 3 "Alpha" clients @ $2.5k setup + $297/mo SaaS.
@@ -47,11 +47,19 @@ Phase 4: Launch & Sales
 ## Decisions Made
 | Decision | Rationale |
 |----------|-----------|
+| **Niche First: Cleaning** | "The Riches are in the Niches." We start with one to build the case study fast. |
+| **Expansion Strategy** | Once the "Cleaning Snapshot" is proven, we simply copy/paste it for **Landscaping, HVAC, and Pest Control**. |
 | **Productized Service Model** | High ticket + standardized delivery = scalable revenue without linear time cost. |
 | **Programmatic SEO** | Replaces manual SEO labor. Generates local authority at scale. |
 | **Native GHL AI (vs Vapi)** | Simpler setup, lower cost ($0.02/msg), better calendar integration, no complex webhooks. |
 | **Astro for Web** | Performance + Content Collections make it perfect for pSEO. |
 | **GoHighLevel (GHL)** | The delivery engine. Simplifies "Ops" to "Snapshot Copy". sticky MRR. |
+
+## Future Verticals (The "Copy-Paste" Roadmap)
+1.  **Landscaping/Lawn Care** (High recurrence, identical booking flow).
+2.  **Pressure Washing/Detailing** (High ticket, visual testimonials).
+3.  **Pest Control** (Subscription model, urgent need).
+4.  **HVAC/Plumbing** (Very high ticket, emergency response focus).
 
 ## Errors Encountered
 | Error | Attempt | Resolution |

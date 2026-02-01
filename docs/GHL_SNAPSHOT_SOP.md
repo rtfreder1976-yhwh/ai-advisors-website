@@ -54,8 +54,17 @@ Create these as **Contact Fields** (so you can use them easily in SMS/Email temp
     *   Buffer: 30 mins.
     *   Sync: Sync to Client's Google Calendar.
 
-## 5. Deployment Checklist
-1.  Create Sub-account.
+## 5. Agency Admin: Packaging the Product
+**Critical Step: Do this AFTER building everything in your "Lab" Sub-account.**
+1.  Go to **Agency View** > **Settings** > **Snapshots**.
+2.  Click **Create New Snapshot**.
+3.  Name it: `Cleaning Biz System v1`.
+4.  Select your "Lab" Sub-account as the source.
+5.  Click **Save**.
+6.  *Optional:* Click "Share Snapshot" to get the permanent link for clients.
+
+## 6. Client Deployment Checklist
+1.  Create Client Sub-account.
 2.  Load Snapshot.
 3.  Buy Phone Number (Twilio/LC Phone).
 4.  Connect Domain (for Funnels).
